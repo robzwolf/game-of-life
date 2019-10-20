@@ -9,3 +9,5 @@ We need to define the following to enable us to complete the literature survey:
 - What `at scale` could mean, in the sense of simulating the Game of Life in the browser
 - What `performant` could mean, in the sense of simulating the Game of Life in the browser
 
+### Existing Implementations
+Summary of existing implementations out there on the web – doing a simple Google search for `game of life implementation` or similar is probably a great way to start this.
