@@ -1,0 +1,11 @@
+# Literature Survey (Draft)
+by [Robbie Jakob-Whitworth](https://robbie.xyz), L3 [Natural Sciences](https://www.dur.ac.uk/natural.sciences/) at [Durham University](https://www.dur.ac.uk/).
+
+## Sections
+### Definitions
+We need to define the following to enable us to complete the literature survey:
+
+- [Conway's `Game of Life`](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)
+- What `at scale` could mean, in the sense of simulating the Game of Life in the browser
+- What `performant` could mean, in the sense of simulating the Game of Life in the browser
+
