@@ -1,4 +1,4 @@
-# Project Plan
+# Project Plan (Draft)
 
 ## Overview
 - Implementation and visualisation of [Conway's Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)
