@@ -8,9 +8,9 @@
 
 
 ## Research Question
-_To what extent is it better to have web browsers simulate Conway's Game of Life client-side, or should it be computed server side?_
+_To what extent is it better to have web browsers simulate Conway's Game of Life client-side versus having it be computed server-side?_
 
-Thoughts – could this be modified to better reflect implementations of different types, e.g. only rendering differences in the browser, only telling the client's browser about the changes, etc?
+Thoughts – could this research question be modified to better reflect implementations of different types, e.g. only rendering differences in the browser, only telling the client's browser about the changes, etc?
 
 ## Deliverables
 ### Basic
@@ -22,7 +22,7 @@ Thoughts – could this be modified to better reflect implementations of differe
 - **Analyse** and **evaluate** each technique, **in detail**, suggesting improvements **for each**
 - **Compare** the performance of each implementation across **different devices** with different **levels of computing power**
 
-### Advanced
+### Advanced
 - Use **several** different techniques to implement Conway's Game of Life such that a **minimum level of performance is achieved** on all devices above some **reasonable threshold of computing power**
 - **Analyse** and **evaluate** each technique, in detail, with a **comprehensive** set of criticism and improvements for each
 - **Compare** the performance of each implementation across different devices with different levels of computing power
