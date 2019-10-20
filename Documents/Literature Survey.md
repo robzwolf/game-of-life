@@ -40,3 +40,6 @@ https://www.ics.uci.edu/~welling/teaching/271fall09/Turing-Machine-Life.pdf
 
 **Game of Life Cellular Automata**  
 https://link.springer.com/book/10.1007%2F978-1-84996-217-9
+
+**Synchronous versus asynchronous updating in the 'Game of Life'**  
+https://journals.aps.org/pre/abstract/10.1103/PhysRevE.59.3876
