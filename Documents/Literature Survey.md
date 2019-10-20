@@ -30,16 +30,25 @@ Could talk a bit about different diffing algorithms, like React's [reconciliatio
 
 ### Relevant Links
 **JavaScript is Turing Complete**  
-https://www.freecodecamp.org/news/javascript-is-turing-complete-explained-41a34287d263/
+https://www.freecodecamp.org/news/javascript-is-turing-complete-explained-41a34287d263/  
+_Broad description of what it means to be Turing complete_
 
 **Reconciliation – React**  
-https://reactjs.org/docs/reconciliation.html
+https://reactjs.org/docs/reconciliation.html  
+_Documention on how React's diffing algorithms_
 
 **A Turing Machine In Conway's Game Of Life**  
-https://www.ics.uci.edu/~welling/teaching/271fall09/Turing-Machine-Life.pdf
+https://www.ics.uci.edu/~welling/teaching/271fall09/Turing-Machine-Life.pdf  
+_Implementation of a Turing machine in Conway's Game of Life_
 
 **Game of Life Cellular Automata**  
-https://link.springer.com/book/10.1007%2F978-1-84996-217-9
+https://link.springer.com/book/10.1007%2F978-1-84996-217-9  
+_Comprehensive investigation of gliders, complexity and different applications of Game of Life_
 
 **Synchronous versus asynchronous updating in the 'Game of Life'**  
-https://journals.aps.org/pre/abstract/10.1103/PhysRevE.59.3876
+https://journals.aps.org/pre/abstract/10.1103/PhysRevE.59.3876  
+_An implementation where only a random fraction of sites are to be updated on each iteration of the game._
+
+**The Game of Life: Universality Revisited**  
+https://link.springer.com/chapter/10.1007/978-94-015-9153-9_2  
+_Explanation of different applications of Turing completeness (boolean circuits etc.) within the Game of Life_
