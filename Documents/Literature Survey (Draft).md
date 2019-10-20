@@ -1,6 +1,8 @@
 # Literature Survey (Draft)
 by [Robbie Jakob-Whitworth](https://robbie.xyz), L3 [Natural Sciences](https://www.dur.ac.uk/natural.sciences/) at [Durham University](https://www.dur.ac.uk/).
 
+_This document is still very much a draft, and at this stage is more an outline of what this document will eventually look like._
+
 ## Sections
 ### Definitions
 We need to define the following to enable us to complete the literature survey:
