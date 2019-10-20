@@ -37,3 +37,6 @@ https://reactjs.org/docs/reconciliation.html
 
 **A Turing Machine In Conway's Game Of Life**  
 https://www.ics.uci.edu/~welling/teaching/271fall09/Turing-Machine-Life.pdf
+
+**Game of Life Cellular Automata**  
+https://link.springer.com/book/10.1007%2F978-1-84996-217-9
