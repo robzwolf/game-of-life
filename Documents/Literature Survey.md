@@ -52,3 +52,7 @@ _An implementation where only a random fraction of sites are to be updated on ea
 **The Game of Life: Universality Revisited**  
 https://link.springer.com/chapter/10.1007/978-94-015-9153-9_2  
 _Explanation of different applications of Turing completeness (boolean circuits etc.) within the Game of Life_
+
+**The fantastic combinations of John Conway's new solitaire game "life"**  
+https://www.jstor.org/stable/24927642?seq=4#metadata_info_tab_contents
+_Original Scientific American article that popularised the Game of Life_
