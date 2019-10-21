@@ -21,7 +21,7 @@ Talk about Turing machines and completeness etc.
 Not super relevant to the rest of the project though, this section would be more of an aside.
 
 ### Doing all Simulation Client-Side
-Talk about how a full simulation of the Game of Life might work in an entirely client-side implentation.
+Talk about how a full simulation of the Game of Life might work in an entirely client-side implementation.
 
 ### Doing the Heavy-Lifting Server-Side
 Talk about how having a backend server doing the actual calculation and simulation, and then just sending relevant information to the browser, might work.
