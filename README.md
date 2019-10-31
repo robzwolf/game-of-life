@@ -1,8 +1,42 @@
-# Game of Life – Level 3 Computer Science Project
-Level 3 Computer Science project at [Durham University](https://www.dur.ac.uk/computer.science/), by [Robbie Jakob-Whitworth](https://robbie.xyz). 
+# Game of Life
+**Level 3 Computer Science project at [Durham University](https://www.dur.ac.uk/computer.science/), by [Robbie Jakob-Whitworth](https://robbie.xyz).**
 
-The details of this project are still to be decided, but may comprise the following ideas:
-- Implementation and visualisation of [Conway's Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)
-- Consideration of performance issues of Game of Life at scale
-- Being smart about rendering, e.g. only rendering changes rather than re-rendering the entire visualisation on each iteration (a bit like [how React uses diffing algorithms](https://reactjs.org/docs/reconciliation.html))
-- An appreciation of the fact that the Game of Life is Turing complete
+This project is about investigating different techniques for visualising and simulating [Conway's Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life).
+
+For further details about objectives, deliverables, and the research question, see the [Project Plan](Documents/Source/Project%20Plan.md).
+
+## Quick Start
+TBC.
+
+## Documents
+Relevant documents are stored in both formats in this repository:
+- An editable source
+- A final, published PDF
+
+Editable documents are stored in [Documents/Source](Documents/Source).
+
+Final, published files are stored in [Documents/Final](Documents/Final).
+
+Relevant documents are as follows:
+
+
+|File        |Editable File        |Published File       |
+|------------|---------------------|---------------------|
+|Project Plan |[Project Plan.md](Documents/Source/Project%20Plan.md) |[Project Plan.pdf](Documents/Final/Project%Plan.pdf)|
+|Literature Survey|TBC|TBC|
+
+### Converting a Document from GitHub-Flavoured Markdown to PDF
+The following slightly convoluted steps produce a clean PDF from a GitHub-flavoured markdown file.
+
+1. Open the markdown file in [Atom](https://atom.io/), a free text editor.
+2. Once in Atom, open a preview of the markdown file by pressing `Ctrl`+`Shift`+`M`.
+    > This is the same key combination on both Windows and macOS.
+3. With the focus on the preview window, save the preview as an HTML file.
+    > `⌘`+`Shift`+`S`
+4. Open the saved HTML file in Google Chrome, and use its `Save as PDF` feature.
+    > Set the scale to `70%` for optimum, consistent visual results.
+
+### Meeting Notes
+For each meeting with the supervisor, copy the file [Logbook/Meeting Notes/TEMPLATE.md](Logbook/Meeting%20Notes/TEMPLATE.md) and save it as a new file, with the date of the meeting in ISO8601 format (e.g. 2019-12-25).
+
+Meeting notes can be found in the [Documents/Meeting Notes](Documents/Meeting%20Notes) directory.
