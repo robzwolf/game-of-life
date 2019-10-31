@@ -37,6 +37,6 @@ The following slightly convoluted steps produce a clean PDF from a GitHub-flavou
     > Set the scale to `70%` for optimum, consistent visual results.
 
 ### Meeting Notes
-For each meeting with the supervisor, copy the file [Logbook/Meeting Notes/TEMPLATE.md](Logbook/Meeting%20Notes/TEMPLATE.md) and save it as a new file, with the date of the meeting in ISO8601 format (e.g. 2019-12-25).
+For each meeting with the supervisor, copy the file [Documents/Meeting Notes/TEMPLATE.md](Documents/Meeting%20Notes/TEMPLATE.md) and save it as a new file, with the date of the meeting in ISO8601 format (e.g. 2019-12-25).
 
 Meeting notes can be found in the [Documents/Meeting Notes](Documents/Meeting%20Notes) directory.
