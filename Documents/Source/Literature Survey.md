@@ -1,3 +1,11 @@
+# **STOP!** This document is an old version and has been replaced by the following Google Doc:
+
+https://docs.google.com/document/d/1f3Qgao7WAvY9Of11-YSw6nsAx21ldypqUjD4GKeCy3w/edit#heading=h.mtt16cyvjg30
+
+If you still wish to see the earliest of early drafts of the literature survey, then keep reading!
+
+-------------------
+
 # Literature Survey (Draft)
 by [Robbie Jakob-Whitworth](https://robbie.xyz), L3 [Natural Sciences](https://www.dur.ac.uk/natural.sciences/) at [Durham University](https://www.dur.ac.uk/).
 
