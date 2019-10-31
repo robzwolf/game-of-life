@@ -22,7 +22,7 @@ Relevant documents are as follows:
 
 |File        |Editable File        |Published File       |
 |------------|---------------------|---------------------|
-|Project Plan |[Project Plan.md](Documents/Source/Project%20Plan.md) |[Project Plan.pdf](Documents/Final/Project%Plan.pdf)|
+|Project Plan |[Project Plan.md](Documents/Source/Project%20Plan.md) |[Project Plan.pdf](Documents/Final/Project%20Plan.pdf)|
 |Literature Survey|TBC|TBC|
 
 ### Converting a Document from GitHub-Flavoured Markdown to PDF
