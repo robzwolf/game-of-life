@@ -23,7 +23,7 @@ Relevant documents are as follows:
 |File        |Editable File        |Published File       |
 |------------|---------------------|---------------------|
 |Project Plan |[Project Plan.md](Documents/Source/Project%20Plan.md) |[Project Plan.pdf](Documents/Final/Project%20Plan.pdf)|
-|Literature Survey|TBC|TBC|
+|Literature Survey|[Literature Survey (Google Docs)](https://docs.google.com/document/d/1f3Qgao7WAvY9Of11-YSw6nsAx21ldypqUjD4GKeCy3w/edit#heading=h.mtt16cyvjg30)|[Literature Survey.pdf](Documents/Final/Literature%20Survey.pdf)|
 
 ### Converting a Document from GitHub-Flavoured Markdown to PDF
 The following slightly convoluted steps produce a clean PDF from a GitHub-flavoured markdown file.
