@@ -1,0 +1,31 @@
+{
+  "name": "game-of-life-implementation-1",
+  "version": "1.0.0",
+  "description": "First visualisation of Conway's Game of Life, using native <div>s on the page.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npm i && webpack",
+    "clean": "rm -rf public/dist/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robzwolf/game-of-life.git"
+  },
+  "author": "Robbie Jakob-Whitworth",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/robzwolf/game-of-life/issues"
+  },
+  "homepage": "https://github.com/robzwolf/game-of-life#readme",
+  "devDependencies": {
+    "css-loader": "^3.2.0",
+    "mini-css-extract-plugin": "^0.8.0",
+    "node-sass": "^4.13.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "sass-loader": "^8.0.0",
+    "style-loader": "^1.0.0",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
+  }
+}
