@@ -42,3 +42,22 @@ The following slightly convoluted steps produce a clean PDF from a GitHub-flavou
 For each meeting with the supervisor, copy the file [Documents/Meeting Notes/TEMPLATE.md](Documents/Meeting%20Notes/TEMPLATE.md) and save it as a new file, with the date of the meeting in ISO8601 format (e.g. 2019-12-25).
 
 Meeting notes can be found in the [Documents/Meeting Notes](Documents/Meeting%20Notes) directory.
+
+## Deploy Previews
+Check the issues tab on [GitHub](https://github.com/robzwolf/game-of-life) to find preview URLs for each
+relevant branch.
+
+### Adding a New Preview URL for a New Branch
+If creating a new branch, e.g. `feature/zeroth-implementation`, add the following to the `netlify.toml` file **on**
+**the `master` branch of this repo**.
+
+```
+[context."feature/zeroth-implementation"]  # Contains the branch name
+    base = "src/implementation-0/"         # The directory for that implementaiton
+    publish = "public/"                    # The directory to publish, relative to the base directory
+    command = "npm i && npm run build"     # Build command to run, in the base directory
+```
+
+Netlify will then automatically pick up the new branch upon push and will deploy it.
+
+You should manually add a new issue to GitHub with the `preview-url` label and a link to the preview URL for that branch.
