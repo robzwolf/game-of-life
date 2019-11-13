@@ -17,9 +17,11 @@
     cd public/
     python3 -m http.server
     ```
+   
+   ...or just open `public/dist/index.html` in your browser from your local filesystem, served over `file:///`.
 4. Site is now running on [http://localhost:8000](http://localhost:8000)!
 
-### Troubleshooting
+## Troubleshooting
 Use node.js v12.13.0.
 
 You can use [nvm](https://github.com/nvm-sh/nvm) to install different node.js versions. 
@@ -31,3 +33,10 @@ npm run clean
 ```
 
 Which is the same as removing the `node_modules/` directory and the `public/dist/` directory.
+
+## Local Development
+You can watch (automatically re-build the assets upon save) with:
+
+```
+npm run watch
+```
