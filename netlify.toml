@@ -1,0 +1,4 @@
+[context."feature/first-implementation"]
+    base = "src/implementation-1/"
+    publish = "src/implementation-1/public/"
+    command = "npm i && npm run build"
