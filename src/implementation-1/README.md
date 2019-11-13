@@ -50,7 +50,3 @@ npm run test
 ```
 
 ...will run ESLint.
-
-
-# Testing
-1
