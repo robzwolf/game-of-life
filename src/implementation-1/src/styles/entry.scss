@@ -1,4 +1,7 @@
-body {
-    background: red;
-}
+@import "../../node_modules/normalize-scss/sass/_normalize.scss";
+@include normalize();
 
+@import "colours";
+@import "body";
+
+@import "interface";
