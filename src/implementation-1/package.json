@@ -2,11 +2,10 @@
   "name": "game-of-life-implementation-1",
   "version": "1.0.0",
   "description": "First visualisation of Conway's Game of Life, using native <div>s on the page.",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npm i && webpack",
-    "clean": "rm -rf public/dist/"
+    "build": "webpack",
+    "clean": "rm -rf node_modules public/dist/"
   },
   "repository": {
     "type": "git",
