@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "First visualisation of Conway's Game of Life, using native <div>s on the page.",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "eslint src/js/",
+    "lint-fix": "eslint --fix src/js/",
     "build": "webpack",
     "watch": "webpack --watch",
     "clean": "rm -rf node_modules public/dist/"

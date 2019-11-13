@@ -35,8 +35,18 @@ npm run clean
 Which is the same as removing the `node_modules/` directory and the `public/dist/` directory.
 
 ## Local Development
+### Asset Watching
 You can watch (automatically re-build the assets upon save) with:
 
 ```
 npm run watch
 ```
+
+### Linting
+This project uses ESLint to enforce good code standards for JavaScript, extending the AirBnB style guide.
+
+```
+npm run test
+```
+
+...will run ESLint.
