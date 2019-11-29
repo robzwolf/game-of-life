@@ -6,5 +6,58 @@
     height: 8px;
     background: red;
     border: 1px solid blue;
+    flex-shrink: 0;
+    
+    [data-size="1"] & {
+      width: 1px;
+      height: 1px;
+    }
+
+    [data-size="2"] & {
+      width: 2px;
+      height: 2px;
+    }
+
+    [data-size="3"] & {
+      width: 3px;
+      height: 3px;
+    }
+
+    [data-size="4"] & {
+      width: 4px;
+      height: 4px;
+    }
+
+    [data-size="5"] & {
+      width: 5px;
+      height: 5px;
+    }
+
+    [data-size="6"] & {
+      width: 6px;
+      height: 6px;
+    }
+
+    [data-size="7"] & {
+      width: 7px;
+      height: 7px;
+    }
+
+    [data-size="8"] & {
+      width: 8px;
+      height: 8px;
+    }
+
+    [data-size="9"] & {
+      width: 9px;
+      height: 9px;
+    }
+
+    [data-size="10"] & {
+      width: 10px;
+      height: 10px;
+    }
+
   }
 }
+

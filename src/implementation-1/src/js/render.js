@@ -1,13 +1,21 @@
 class Render {
-    constructor(app) {
+    constructor(app, options = {}) {
         this.app = app;
 
         this.helloWorld();
-        this.addBoxes();
+        this.addBoxes(options);
     }
 
-    addBoxes(width = 100, height = 100) {
-        const container = document.createElement('div')
+    setCellSize(size) {
+        if (![1, 2, 3, 4, 5, 6, 7, 8, 9, 10].includes(size)) {
+            console.error('Invalid size (must be an integer between 1 and 10 inclusive): ', size);
+        } else {
+            this.app.dataset.size = size;
+        }
+    }
+
+    addBoxes({ width = 100, height = 100, cellSize = 7 }) {
+        const container = document.createElement('div');
         container.classList.add('cells');
 
         for (let i = 0; i < width; i++) {
@@ -20,6 +28,7 @@ class Render {
             container.appendChild(row);
         }
 
+        this.setCellSize(cellSize);
         this.app.appendChild(container);
     }
 
