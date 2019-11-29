@@ -4,6 +4,7 @@ class Render {
     constructor(app, options = {}) {
         this.app = app;
         this.addBoxes(options);
+        this.setupClickListener();
     }
 
     setCellSize(size) {
@@ -61,6 +62,17 @@ class Render {
 
         if (entireHeight > viewportHeight) {
             this.app.scrollTop = (entireHeight - viewportHeight) / 2;
+        }
+    }
+
+    setupClickListener() {
+        this.app.addEventListener('mousedown', this.handleCellClick);
+    }
+
+    handleCellClick(event) {
+        console.log(`Clicked on cell (${event.target.dataset.xCoord}, ${event.target.dataset.yCoord}):`, event.target);
+        if (event.target.classList.contains('cell')) {
+            event.target.classList.toggle('alive');
         }
     }
 
