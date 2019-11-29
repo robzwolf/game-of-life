@@ -30,6 +30,37 @@ class Render {
 
         this.setCellSize(cellSize);
         this.app.appendChild(container);
+
+        this.scrollToCentre();
+    }
+
+    scrollToCentre() {
+        this.scrollToCentreVertically();
+        this.scrollToCentreHorizontally();
+    }
+
+    scrollToCentreHorizontally() {
+        // Entire width of the app
+        const entireWidth = this.app.scrollWidth;
+
+        // Width of viewport
+        const viewportWidth = this.app.clientWidth;
+
+        if (entireWidth > viewportWidth) {
+            this.app.scrollLeft = (entireWidth - viewportWidth) / 2;
+        }
+    }
+
+    scrollToCentreVertically() {
+        // Entire height of the app
+        const entireHeight = this.app.scrollHeight;
+
+        // Height of viewport
+        const viewportHeight = this.app.clientHeight;
+
+        if (entireHeight > viewportHeight) {
+            this.app.scrollTop = (entireHeight - viewportHeight) / 2;
+        }
     }
 
     createCell(xCoord, yCoord) {
