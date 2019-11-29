@@ -20,11 +20,11 @@ class Render {
         const container = document.createElement('div');
         container.classList.add('cells');
 
-        for (let i = 0; i < width; i++) {
+        for (let i = 1; i <= width; i++) {
             const row = document.createElement('div');
             row.classList.add('row');
-            for (let j = 0; j < height; j++) {
-                const cell = this.createCell(i, j);
+            for (let j = 1; j <= height; j++) {
+                const cell = Render.createCell(i, j);
                 row.appendChild(cell);
             }
             container.appendChild(row);
@@ -65,7 +65,7 @@ class Render {
         }
     }
 
-    createCell(xCoord, yCoord) {
+    static createCell(xCoord, yCoord) {
         const cell = document.createElement('div');
         cell.classList.add('cell');
         cell.dataset.xCoord = xCoord;
