@@ -1,12 +1,39 @@
 .row {
   display: flex;
 
+  $cellBorderStyle: 1px solid $borderBlack;
+
   .cell {
+    /**
+     * CELL COLOURS
+     */
+    $aliveColour: $royalBlue;
+    $deadColour: $pastelGreen;
+
+    // Default width and height
     width: 8px;
     height: 8px;
-    background: red;
-    border: 1px solid blue;
+
+    // Force the cell to stay square
     flex-shrink: 0;
+
+    // Change the $deadColour above
+    background: $deadColour;
+
+    /**
+     * CELL BORDERS
+     */
+    border-top: $cellBorderStyle;
+    border-left: $cellBorderStyle;
+
+    // Right-hand-side border for last cell of the row
+    &:last-child {
+      border-right: $cellBorderStyle;
+    }
+
+    /**
+     * CELL SIZES
+     */
 
     // Allows us to do data-size="20" to get 20px x 20px cells
     @for $size from 1 through 30 {
@@ -16,6 +43,14 @@
       }
     }
 
+    &.alive {
+      background: $aliveColour;
+    }
+  }
+
+  // Bottom border for last row of cells
+  &:last-child .cell {
+    border-bottom: $cellBorderStyle;
   }
 }
 
