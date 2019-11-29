@@ -17,7 +17,7 @@
     // Force the cell to stay square
     flex-shrink: 0;
 
-    // Change the $deadColour above
+    // Additional styles
     background: $deadColour;
     cursor: pointer;
 
@@ -42,6 +42,15 @@
         width: #{$size}px;
         height: #{$size}px;
       }
+    }
+
+    /**
+    Gives us the 'trail' effect where cells change colour immediately on hover but take a little while to fade away
+     */
+    transition: background 0.3s;
+    &:hover {
+      background: $palePastelGreen;
+      transition-duration: 0s;
     }
 
     &.alive {
