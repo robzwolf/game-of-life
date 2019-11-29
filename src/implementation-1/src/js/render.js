@@ -2,7 +2,17 @@ import Helpers from './helpers';
 
 class Render {
     constructor(app, options = {}) {
+        // Initialise variables
         this.app = app;
+        this.currentlyDragging = false;
+
+        // Bindings
+        // See https://stackoverflow.com/a/31368520/2176546
+        this.handleMouseDown = this.handleMouseDown.bind(this);
+        this.handleMouseUp = this.handleMouseUp.bind(this);
+        this.handleCellMouseEnter = this.handleCellMouseEnter.bind(this);
+
+        // Method calls
         this.addBoxes(options);
         this.setupClickListener();
     }
@@ -26,13 +36,13 @@ class Render {
             for (let j = 1; j <= height; j++) {
                 const cell = Render.createCell(i, j);
                 row.appendChild(cell);
+                cell.addEventListener('mouseenter', this.handleCellMouseEnter);
             }
             container.appendChild(row);
         }
 
         this.setCellSize(cellSize);
         this.app.appendChild(container);
-
         this.scrollToCentre();
     }
 
@@ -66,13 +76,31 @@ class Render {
     }
 
     setupClickListener() {
-        this.app.addEventListener('mousedown', this.handleCellClick);
+        this.app.addEventListener('mousedown', this.handleMouseDown);
+        this.app.addEventListener('mouseup', this.handleMouseUp);
     }
 
-    handleCellClick(event) {
-        console.log(`Clicked on cell (${event.target.dataset.xCoord}, ${event.target.dataset.yCoord}):`, event.target);
+    handleMouseDown(event) {
+        this.currentlyDragging = true;
         if (event.target.classList.contains('cell')) {
             event.target.classList.toggle('alive');
+        }
+    }
+
+    handleMouseUp() {
+        this.currentlyDragging = false;
+    }
+
+    /**
+     * If user is dragging and currentlyDragging flag is true, make the cell alive
+     * We don't toggle alive/dead because if the user mouses out and back into a cell then
+     * it toggles in a way the user doesn't necessarily expect
+     * @param event
+     */
+    handleCellMouseEnter(event) {
+        const cell = event.target;
+        if (this.currentlyDragging) {
+            cell.classList.add('alive');
         }
     }
 
