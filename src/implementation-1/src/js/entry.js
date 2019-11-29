@@ -2,6 +2,6 @@ import '../styles/entry.scss';
 import Render from './render';
 
 console.log('Hello, world!');
-console.log(Render);
 
-const renderEngine = new Render();
+const app = document.querySelector('.app');
+const renderEngine = new Render(app);
