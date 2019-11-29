@@ -3,13 +3,12 @@ import Helpers from './helpers';
 class Render {
     constructor(app, options = {}) {
         this.app = app;
-
-        this.helloWorld();
         this.addBoxes(options);
     }
 
     setCellSize(size) {
         if (!Helpers.cssRuleExists(`[data-size="${size}"] .row .cell`)) {
+            // eslint-disable-next-line no-console
             console.error('Invalid size: ', size);
         } else {
             this.app.dataset.size = size;
@@ -71,10 +70,6 @@ class Render {
         cell.dataset.xCoord = xCoord;
         cell.dataset.yCoord = yCoord;
         return cell;
-    }
-
-    helloWorld() {
-        console.log('initialised render');
     }
 }
 
