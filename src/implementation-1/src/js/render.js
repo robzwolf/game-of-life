@@ -1,3 +1,5 @@
+import Helpers from './helpers';
+
 class Render {
     constructor(app, options = {}) {
         this.app = app;
@@ -7,8 +9,8 @@ class Render {
     }
 
     setCellSize(size) {
-        if (![1, 2, 3, 4, 5, 6, 7, 8, 9, 10].includes(size)) {
-            console.error('Invalid size (must be an integer between 1 and 10 inclusive): ', size);
+        if (!Helpers.cssRuleExists(`[data-size="${size}"] .row .cell`)) {
+            console.error('Invalid size: ', size);
         } else {
             this.app.dataset.size = size;
         }

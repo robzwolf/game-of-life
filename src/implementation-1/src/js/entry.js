@@ -4,4 +4,4 @@ import Render from './render';
 console.log('Hello, world!');
 
 const app = document.querySelector('.app');
-const renderEngine = new Render(app, { cellSize: 10 });
+const renderEngine = new Render(app, { cellSize: 15 });
