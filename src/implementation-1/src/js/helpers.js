@@ -60,12 +60,30 @@ class Helpers {
     }
 
     /**
-     * Check whether the simluation is currently paused.
+     * Check whether the simulation is currently paused.
      * @param body
      * @returns boolean
      */
     static isPaused(body) {
         return (body && body.classList && !body.classList.contains('playing'));
+    }
+
+    /**
+     * Check whether a DOM node (cell) is alive or not.
+     * @param cell
+     * @returns boolean
+     */
+    static cellIsAlive(cell) {
+        return (cell && cell.classList && cell.classList.contains('alive'));
+    }
+
+    /**
+     * Check whether a DOM node (cell) is alive or not.
+     * @param cell
+     * @returns boolean
+     */
+    static cellIsDead(cell) {
+        return (cell && cell.classList && !cell.classList.contains('alive'));
     }
 }
 
