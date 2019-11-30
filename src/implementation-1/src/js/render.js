@@ -120,7 +120,7 @@ class Render {
     static toggleCell(cell) {
         if (Helpers.isDrawing(document.body)) {
             cell.classList.add('alive');
-        } else if (Helpers.isDrawing(document.body)) {
+        } else if (Helpers.isErasing(document.body)) {
             cell.classList.remove('alive');
         } else {
             cell.classList.toggle('alive');
