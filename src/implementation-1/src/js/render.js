@@ -26,7 +26,7 @@ class Render {
         this.addBoxes(options);
         this.setupClickListener();
         this.setupKeyListeners();
-        this.disableRightClick();
+        Render.disableRightClick();
     }
 
     setCellSize(size) {
@@ -152,16 +152,11 @@ class Render {
         }
     }
 
-    disableRightClick() {
-        document.addEventListener('contextmenu', this.handleContextMenu);
-    }
-
     /**
      * Stops the right-click menu appearing when drawing using Ctrl on a Mac
-     * @param event
      */
-    handleContextMenu(event) {
-        event.preventDefault();
+    static disableRightClick() {
+        document.addEventListener('contextmenu', Helpers.eventPreventDefault);
     }
 
     /**

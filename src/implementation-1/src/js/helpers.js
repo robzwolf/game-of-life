@@ -14,6 +14,14 @@ class Helpers {
             }
         });
     }
+
+    /**
+     * Prevents default action for any event.
+     * @param event
+     */
+    static eventPreventDefault(event) {
+        event.preventDefault();
+    }
 }
 
 export default Helpers;
