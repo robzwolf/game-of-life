@@ -22,6 +22,51 @@ class Helpers {
     static eventPreventDefault(event) {
         event.preventDefault();
     }
+
+    /**
+     * Check whether a DOM node is indeed a node that has the class name 'cell'.
+     * @param node
+     * @returns boolean
+     */
+    static isCell(node) {
+        return (node && node.classList && node.classList.contains('cell'));
+    }
+
+    /**
+     * Check whether the user is currently in drawing mode.
+     * @param body
+     * @returns boolean
+     */
+    static isDrawing(body) {
+        return (body && body.classList && body.classList.contains('drawing'));
+    }
+
+    /**
+     * Check whether the user is currently in erasing mode.
+     * @param body
+     * @returns boolean
+     */
+    static isErasing(body) {
+        return (body && body.classList && body.classList.contains('erasing'));
+    }
+
+    /**
+     * Check whether the user is currently playing the simulation.
+     * @param body
+     * @returns boolean
+     */
+    static isPlaying(body) {
+        return (body && body.classList && body.classList.contains('playing'));
+    }
+
+    /**
+     * Check whether the simluation is currently paused.
+     * @param body
+     * @returns boolean
+     */
+    static isPaused(body) {
+        return (body && body.classList && !body.classList.contains('playing'));
+    }
 }
 
 export default Helpers;

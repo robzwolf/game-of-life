@@ -60,7 +60,7 @@ class AppInterface {
     }
 
     setErasingFlag(flag) {
-        if (flag === true && !this.body.classList.contains('drawing')) {
+        if (flag === true && !Helpers.isDrawing(this.body)) {
             this.body.classList.add('erasing');
         } else {
             this.body.classList.remove('erasing');

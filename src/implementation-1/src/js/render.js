@@ -89,7 +89,7 @@ class Render {
 
     handleMouseDown(event) {
         this.currentlyDragging = true;
-        if (event.target.classList.contains('cell')) {
+        if (Helpers.isCell(event.target)) {
             Render.toggleCell(event.target);
         }
     }
@@ -105,7 +105,7 @@ class Render {
      * @param event
      */
     handleCellMouseEnter(event) {
-        if (this.currentlyDragging && event.target.classList.contains('cell')) {
+        if (this.currentlyDragging && Helpers.isCell(event.target)) {
             Render.toggleCell(event.target);
         }
     }
@@ -118,9 +118,9 @@ class Render {
      * @param cell
      */
     static toggleCell(cell) {
-        if (document.body.classList.contains('drawing')) {
+        if (Helpers.isDrawing(document.body)) {
             cell.classList.add('alive');
-        } else if (document.body.classList.contains('erasing')) {
+        } else if (Helpers.isDrawing(document.body)) {
             cell.classList.remove('alive');
         } else {
             cell.classList.toggle('alive');
