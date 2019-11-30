@@ -4,17 +4,29 @@ class Render {
     constructor(app, options = {}) {
         // Initialise variables
         this.app = app;
+
+        // Whether the user is currently clicking and dragging across a number of cells
         this.currentlyDragging = false;
+
+        // Whether the user is holding the Alt key to force alive drawing
+        this.drawingFlag = false;
+
+        // Whether the user is holding the Ctrl key to force cleaning
+        this.cleaningFlag = false;
 
         // Bindings
         // See https://stackoverflow.com/a/31368520/2176546
         this.handleMouseDown = this.handleMouseDown.bind(this);
         this.handleMouseUp = this.handleMouseUp.bind(this);
         this.handleCellMouseEnter = this.handleCellMouseEnter.bind(this);
+        this.handleKeyDown = this.handleKeyDown.bind(this);
+        this.handleKeyUp = this.handleKeyUp.bind(this);
 
         // Method calls
         this.addBoxes(options);
         this.setupClickListener();
+        this.setupKeyListeners();
+        this.disableRightClick();
     }
 
     setCellSize(size) {
@@ -83,7 +95,7 @@ class Render {
     handleMouseDown(event) {
         this.currentlyDragging = true;
         if (event.target.classList.contains('cell')) {
-            event.target.classList.toggle('alive');
+            this.toggleCell(event.target);
         }
     }
 
@@ -98,9 +110,74 @@ class Render {
      * @param event
      */
     handleCellMouseEnter(event) {
-        const cell = event.target;
-        if (this.currentlyDragging) {
+        if (this.currentlyDragging && event.target.classList.contains('cell')) {
+            this.toggleCell(event.target);
+        }
+    }
+
+    setupKeyListeners() {
+        document.body.addEventListener('keydown', this.handleKeyDown);
+        document.body.addEventListener('keyup', this.handleKeyUp);
+    }
+
+    handleKeyDown(event) {
+        switch (event.key) {
+            case 'Alt': {
+                this.drawingFlag = true;
+                break;
+            }
+            case 'Control': {
+                this.cleaningFlag = true;
+                break;
+            }
+            default: {
+                break;
+            }
+        }
+    }
+
+    handleKeyUp(event) {
+        switch (event.key) {
+            case 'Alt': {
+                this.drawingFlag = false;
+                break;
+            }
+            case 'Control': {
+                this.cleaningFlag = false;
+                break;
+            }
+            default: {
+                break;
+            }
+        }
+    }
+
+    disableRightClick() {
+        document.addEventListener('contextmenu', this.handleContextMenu);
+    }
+
+    /**
+     * Stops the right-click menu appearing when drawing using Ctrl on a Mac
+     * @param event
+     */
+    handleContextMenu(event) {
+        event.preventDefault();
+    }
+
+    /**
+     * If user is holding Alt, then we should only ever draw and make cells alive.
+     * If user is holding Ctrl, then we should only ever clean and kill cells.
+     * If both are held, Alt takes preference.
+     * If neither are held, toggle whether the cell is currently alive or dead.
+     * @param cell
+     */
+    toggleCell(cell) {
+        if (this.drawingFlag === true) {
             cell.classList.add('alive');
+        } else if (this.drawingFlag === false && this.cleaningFlag === true) {
+            cell.classList.remove('alive');
+        } else {
+            cell.classList.toggle('alive');
         }
     }
 

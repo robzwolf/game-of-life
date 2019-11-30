@@ -15,7 +15,7 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
-    "indent": [2, 4],
+    "indent": [2, 4, { "SwitchCase": 1 }],
     "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
     "max-len": ["error", { "code": 120 }]
   },
