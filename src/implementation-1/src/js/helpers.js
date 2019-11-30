@@ -10,6 +10,7 @@ class Helpers {
                 return Array.from(stylesheet.cssRules).some((rule) => rule.selectorText === selectorText);
             } catch (e) {
                 // Continue to next stylesheet
+                return false;
             }
         });
     }
