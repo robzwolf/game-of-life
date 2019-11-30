@@ -38,7 +38,8 @@ class ComputationEngine {
                 const newRow = [];
                 row.forEach((cell, cellIndex) => {
                     let newCell;
-                    if (ComputationEngine.cellShouldLive(rowIndex, cellIndex, board)) {
+                    const cellShouldLive = ComputationEngine.cellShouldLive(rowIndex, cellIndex, board);
+                    if (cellShouldLive) {
                         newCell = true;
                     } else {
                         newCell = false;
@@ -49,7 +50,7 @@ class ComputationEngine {
             });
         }
 
-        console.log(newBoard);
+        this.renderUpdatedBoard(this.app, newBoard);
     }
 
     getCurrentBoard() {
@@ -60,8 +61,23 @@ class ComputationEngine {
             const cellStatuses = cells.map((cell) => Helpers.cellIsAlive(cell));
             board.push(cellStatuses);
         });
-        console.log(board);
         return board;
+    }
+
+    renderUpdatedBoard(app, newBoard) {
+        const rows = this.app.querySelectorAll('.row');
+        rows.forEach((row) => {
+            const cells = row.childNodes;
+            cells.forEach((cell) => {
+                const { xCoord: rowIndex, yCoord: cellIndex } = cell.dataset;
+                const newStatus = newBoard[rowIndex][cellIndex];
+                if (newStatus === true) {
+                    cell.classList.add('alive');
+                } else {
+                    cell.classList.remove('alive');
+                }
+            });
+        });
     }
 
     /**
@@ -73,10 +89,9 @@ class ComputationEngine {
      */
     static cellShouldLive(rowIndex, cellIndex, board) {
         const numNeighbours = this.getNumberOfNeighbours(rowIndex, cellIndex, board);
-        console.log(numNeighbours);
         const cell = board[rowIndex][cellIndex];
 
-        if (cell === true && numNeighbours === 2 && numNeighbours === 3) {
+        if (cell === true && (numNeighbours === 2 || numNeighbours === 3)) {
             return true;
         }
 
