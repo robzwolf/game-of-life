@@ -1,0 +1,31 @@
+# Project Meeting 06/12/2019
+
+Robbie and Steven
+
+## Questions
+- Let's review the (incomplete) basic implementation: https://feature-first-implementation--robbie-game-of-life.netlify.com/
+
+
+## Progress
+
+- Nice front-end to edit alive/dead cells via DOM
+- Back-end extracts model from view then updates and modifies the classes of cells
+- Works well on 100x100
+- Rules for GoL are all implemented, can run one generation at a time
+- Good progress
+
+## Targets for Next Time
+
+- Try it on 1000x1000 to see how it performs (or even bigger)
+- Have a play loop with adjustable speed
+
+## Issues
+
+
+## Deadlines
+
+January
+
+## Next Meeting
+
+11:15 12/12/2019
