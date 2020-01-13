@@ -12,6 +12,7 @@
     ```
     npm run build
     ```
+
 3. Launch a static server:
     ```
     cd public/
@@ -19,6 +20,7 @@
     ```
    
    ...or just open `public/dist/index.html` in your browser from your local filesystem, served over `file:///`.
+   
 4. Site is now running on [http://localhost:8000](http://localhost:8000)!
 
 ## Troubleshooting
