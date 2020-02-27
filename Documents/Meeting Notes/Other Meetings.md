@@ -8,6 +8,7 @@ following dates and times:
 - 4th February 2020, 14:00
 - 13th February 2020, 11:15
 - 21st February 2020, 12:00
+- 27th February 2020, 14:00
 
 The topics discussed included the L3 project, Computer Science into Schools,
 amongst other academic and personal matters.
