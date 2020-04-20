@@ -41,7 +41,7 @@
      */
 
     // Allows us to do data-size="20" to get 20px x 20px cells
-    @for $size from 1 through 30 {
+    @for $size from 1 through 50 {
       [data-size="#{$size}"] & {
         width: #{$size}px;
         height: #{$size}px;
