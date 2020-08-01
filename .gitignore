@@ -2,3 +2,4 @@
 node_modules/
 .idea/
 src/implementation-1/public/dist/
+src/implementation-2/public/dist/
