@@ -2,3 +2,8 @@
     base = "src/implementation-1/"
     publish = "public/"
     command = "npm i && npm run build"
+
+[context."2nd/second-implementation"]
+    base = "src/implementation-2/"
+    publish = "public/"
+    command = "npm i && npm run build"
