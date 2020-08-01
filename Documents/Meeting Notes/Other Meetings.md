@@ -15,6 +15,17 @@ following dates and times:
 - 3rd April 2020, 14:00
 - 16th April 2020, 14:00
 - 20th April 2020, 14:00
+- 23rd April 2020, 14:30
+- 28th April 2020, 14:00
+- 1st May 2020, 15:30
+- 11th May 2020, 13:00
+- 19th May 2020, 16:00
+- 28th May 2020, 14:00
+- 5th June 2020, 14:00
+- 6th July 2020, 14:30
+- 13th July 2020, 14:30
+- 21st July 2020, 13:00
+- 3rd August 2020, 13:00
 
 
 The topics discussed included the L3 project, Computer Science into Schools,
