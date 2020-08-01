@@ -15,8 +15,7 @@
 
 3. Launch a static server:
     ```
-    cd public/
-    python3 -m http.server
+    npm run serve
     ```
    
    ...or just open `public/dist/index.html` in your browser from your local filesystem, served over `file:///`.
@@ -24,9 +23,17 @@
 4. Site is now running on [http://localhost:8000](http://localhost:8000)!
 
 ## Troubleshooting
-Use node.js v12.13.0.
+### Make sure you're using the right version of node.js
+Use node.js **v14.7.0**.
 
-You can use [nvm](https://github.com/nvm-sh/nvm) to install different node.js versions. 
+You can use [nvm](https://github.com/nvm-sh/nvm) to install different node.js versions.
+
+### I'm getting `gyp: No Xcode or CLT version detected!`
+If you're on macOS Catalina, follow the instructions here to install Xcode command line tools:  
+[https://github.com/nodejs/node-gyp/blob/master/macOS_Catalina.md](https://github.com/nodejs/node-gyp/blob/master/macOS_Catalina.md)
+
+Note that you might have run `xcode-select --install` already, but node.js doesn't see them. If this is the case, follow
+the instructions in the above document.
 
 If something went wrong during the installation process, try cleaning everything:
 
