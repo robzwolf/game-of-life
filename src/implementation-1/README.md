@@ -20,7 +20,7 @@
    
    ...or just open `public/dist/index.html` in your browser from your local filesystem, served over `file:///`.
    
-4. Site is now running on [http://localhost:8000](http://localhost:8000)!
+4. Site is now running on [http://localhost:9080](http://localhost:9080)!
 
 ## Troubleshooting
 ### Make sure you're using the right version of node.js
