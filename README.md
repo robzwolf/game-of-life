@@ -6,7 +6,9 @@ This project is about investigating different techniques for visualising and sim
 For further details about objectives, deliverables, and the research question, see the [Project Plan](Documents/Source/Project%20Plan.md).
 
 ## Quick Start
-TBC.
+Currently working on implementation #1, simple `<div>`s.
+
+Deploy previews are managed using Netlify.
 
 ## Documents
 Relevant documents are stored in both formats in this repository:
