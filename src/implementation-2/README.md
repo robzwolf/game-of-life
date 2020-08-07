@@ -35,6 +35,7 @@ If you're on macOS Catalina, follow the instructions here to install Xcode comma
 Note that you might have run `xcode-select --install` already, but node.js doesn't see them. If this is the case, follow
 the instructions in the above document.
 
+### Anything else
 If something went wrong during the installation process, try cleaning everything:
 
 ```
