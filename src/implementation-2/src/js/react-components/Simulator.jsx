@@ -8,8 +8,11 @@ class Simulator extends React.Component {
         super(props);
 
         this.state = {
-            board: this.initialBoardState()
+            board: this.initialBoardState(),
+            currentlyDragging: false,
         };
+
+        this.setCellState = this.setCellState.bind(this);
     }
 
     componentDidMount() {
@@ -19,12 +22,18 @@ class Simulator extends React.Component {
 
     initialBoardState() {
         // false to be dead, true to be alive
-        const initialState = false;
-        return (
-            new Array(this.props.height).fill(
-                new Array(this.props.width).fill(initialState)
-            )
-        )
+        const initiallyAlive = false;
+        return Array(this.props.height).fill().map(() =>
+            Array(this.props.width).fill(initiallyAlive)
+        );
+    }
+
+    setCellState(cellX, cellY, alive) {
+        const newBoard = [...this.state.board];
+        newBoard[cellY][cellX] = alive;
+        this.setState({
+            board: newBoard
+        });
     }
 
     _scrollToCentreVertically() {
@@ -64,6 +73,7 @@ class Simulator extends React.Component {
             >
                 <Grid
                     board={this.state.board}
+                    setCellState={this.setCellState}
                     {...this.props}
                 />
             </main>

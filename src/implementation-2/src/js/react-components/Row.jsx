@@ -11,6 +11,7 @@ class Row extends React.Component {
                         yCoord={this.props.rowIndex}
                         key={`cell-${i}-${this.props.rowIndex}`}
                         alive={this.props.rowBoard[i]}
+                        setCellState={this.props.setCellState}
                     />
                 )}
             </div>

@@ -11,6 +11,7 @@ class Grid extends React.Component {
                         rowIndex={i}
                         key={`row-${i}`}
                         rowBoard={this.props.board[i]}
+                        setCellState={this.props.setCellState}
                     />
                 )}
             </div>
