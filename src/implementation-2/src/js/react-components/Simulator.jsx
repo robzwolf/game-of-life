@@ -10,6 +10,39 @@ class Simulator extends React.Component {
         super(props);
     }
 
+    componentDidMount() {
+        this._scrollToCentreVertically();
+        this._scrollToCentreHorizontally()
+    }
+
+    _scrollToCentreVertically() {
+        const { element } = this;
+
+        // Entire height of the app
+        const entireHeight = element.scrollHeight;
+
+        // Height of viewport
+        const viewportHeight = element.clientHeight;
+
+        if (entireHeight > viewportHeight) {
+            this.element.scrollTop = (entireHeight - viewportHeight) / 2;
+        }
+    }
+
+    _scrollToCentreHorizontally() {
+        const { element } = this;
+
+        // Entire width of the app
+        const entireWidth = element.scrollWidth
+
+        // Width of viewport
+        const viewportWidth = element.clientWidth
+
+        if (entireWidth > viewportWidth) {
+            element.scrollLeft = (entireWidth - viewportWidth) / 2
+        }
+    }
+
     _renderRow(numberOfCells, rowIndex) {
         const cells = [];
         for (let i = 0; i < numberOfCells; i += 1) {
@@ -38,11 +71,15 @@ class Simulator extends React.Component {
 
     render() {
         return (
-            <div className="app" data-size={this.props.cellSize}>
+            <main
+                className="app"
+                data-size={this.props.cellSize}
+                ref={element => this.element = element}
+            >
                 <Grid>
                     {this._renderRows(this.props.height)}
                 </Grid>
-            </div>
+            </main>
         )
     }
 }
