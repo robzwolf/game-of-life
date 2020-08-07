@@ -6,9 +6,16 @@ import Simulator from "./Simulator";
 class GameOfLife extends React.Component {
     constructor(props) {
         super(props);
+
+        this.setCurrentlyDragging = this.setCurrentlyDragging.bind(this);
+
         this.state = {
             currentlyDragging: false
         }
+    }
+
+    setCurrentlyDragging(isDragging) {
+        this.setState({currentlyDragging: isDragging});
     }
 
     render() {
@@ -19,7 +26,10 @@ class GameOfLife extends React.Component {
                     <ModeNotification mode="drawing"/>
                     <ModeNotification mode="erasing"/>
                 </header>
-                <Simulator />
+                <Simulator
+                    setCurrentlyDragging={this.setCurrentlyDragging}
+                    currentlyDragging={this.state.currentlyDragging}
+                />
                 <footer className="bar">
                     <div className="footer-contents">
                         <NextIterationButton />

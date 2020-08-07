@@ -15,7 +15,7 @@ class Cell extends React.PureComponent {
         return (
             <div
                 className={["cell", this.props.isAlive && "alive"].join(" ")}
-                // onClick={this.toggleAlive}
+                onMouseEnter={(e) => this.props.handleCellMouseEnter(e)}
                 data-x-coord={this.props.xCoord}
                 data-y-coord={this.props.yCoord}
             />

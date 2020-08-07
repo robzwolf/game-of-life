@@ -23,6 +23,7 @@ class Row extends React.Component {
                         key={`cell-${i}-${this.props.rowIndex}`}
                         isAlive={this.props.rowBoard[i]}
                         setCellState={this.props.setCellState}
+                        handleCellMouseEnter={this.props.handleCellMouseEnter}
                     />
                 )}
             </div>

@@ -19,7 +19,8 @@ class Grid extends React.PureComponent {
         return (
             <div
                 className="cells"
-                onClick={(e) => this.handleClick(e)}
+                onMouseDown={(e) => this.props.handleMouseDown(e)}
+                onMouseUp={(e) => this.props.handleMouseUp(e)}
             >
                 {[...new Array(this.props.height)].map((_, i) =>
                     <Row
@@ -29,6 +30,7 @@ class Grid extends React.PureComponent {
                         rowBoard={this.props.board[i]}
                         oldRowBoard={[...this.props.oldBoard[i]]}
                         setCellState={this.props.setCellState}
+                        handleCellMouseEnter={this.props.handleCellMouseEnter}
                     />
                 )}
             </div>

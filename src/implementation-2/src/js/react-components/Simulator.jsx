@@ -9,10 +9,13 @@ class Simulator extends React.Component {
 
         this.state = {
             board: this.initialBoardState(),
-            currentlyDragging: false,
         };
 
         this.setCellState = this.setCellState.bind(this);
+        this.handleMouseDown = this.handleMouseDown.bind(this);
+        this.handleMouseUp = this.handleMouseUp.bind(this);
+        this.handleCellMouseEnter = this.handleCellMouseEnter.bind(this);
+        this.toggleCell = this.toggleCell.bind(this);
     }
 
     componentDidMount() {
@@ -35,6 +38,27 @@ class Simulator extends React.Component {
             oldBoard: [...this.state.board],
             board: newBoard
         });
+    }
+
+    toggleCell(cellElement) {
+        const { xCoord, yCoord } = cellElement.dataset;
+        const isAlive = this.state.board[yCoord][xCoord];
+        this.setCellState(xCoord, yCoord, !isAlive);
+    }
+
+    handleCellMouseEnter(event) {
+        if (this.props.currentlyDragging) {
+            this.toggleCell(event.target);
+        }
+    }
+
+    handleMouseDown(event) {
+        this.props.setCurrentlyDragging(true);
+        this.toggleCell(event.target);
+    }
+
+    handleMouseUp() {
+        this.props.setCurrentlyDragging(false);
     }
 
     _scrollToCentreVertically() {
@@ -76,6 +100,9 @@ class Simulator extends React.Component {
                     board={this.state.board}
                     oldBoard={this.state.oldBoard || [...this.state.board]}
                     setCellState={this.setCellState}
+                    handleMouseDown={this.handleMouseDown}
+                    handleMouseUp={this.handleMouseUp}
+                    handleCellMouseEnter={this.handleCellMouseEnter}
                     {...this.props}
                 />
             </main>
