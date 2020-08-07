@@ -86,8 +86,8 @@ class Simulator extends React.Component {
 export default Simulator;
 
 Simulator.defaultProps = {
-    width: 3,
-    height: 3,
+    width: 100,
+    height: 100,
     cellSize: 40
 }
 
