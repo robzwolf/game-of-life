@@ -5,6 +5,7 @@
   "scripts": {
     "test": "eslint src/js/",
     "lint-fix": "eslint --fix src/js/",
+    "format": "prettier --write \"{,!(node_modules)/**/}*.js\"",
     "build": "webpack",
     "watch": "webpack --watch",
     "clean": "rm -rf node_modules public/dist/",
@@ -19,16 +20,24 @@
   "bugs": {
     "url": "https://github.com/robzwolf/game-of-life/issues"
   },
+  "prettier": "@imaginary-cloud/prettier-config",
   "homepage": "https://github.com/robzwolf/game-of-life#readme",
   "devDependencies": {
     "@babel/core": "^7.11.0",
     "@babel/preset-env": "^7.11.0",
     "@babel/preset-react": "^7.10.4",
+    "@imaginary-cloud/eslint-config-react": "^1.0.1",
     "babel-loader": "^8.1.0",
     "css-loader": "^3.6.0",
     "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.2.0",
     "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.20.5",
+    "eslint-plugin-react-hooks": "^2.5.1",
     "mini-css-extract-plugin": "^0.8.2",
     "node-sass": "^4.14.1",
     "normalize-scss": "^7.0.1",
@@ -39,7 +48,8 @@
     "webpack-cli": "^3.3.12"
   },
   "dependencies": {
-    "eslint-plugin-react": "^7.20.5",
+    "airbnb": "0.0.2",
+    "prettier": "^2.0.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "static-server": "^2.2.1"
