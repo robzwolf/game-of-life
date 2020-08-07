@@ -1,8 +1,16 @@
 import React from 'react';
 import ModeNotification from "./ModeNotification";
 import NextIterationButton from "./NextIterationButton";
+import Simulator from "./Simulator";
 
 class GameOfLife extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            currentlyDragging: false
+        }
+    }
+
     render() {
         return (
             <React.Fragment>
@@ -11,7 +19,7 @@ class GameOfLife extends React.Component {
                     <ModeNotification mode="drawing"/>
                     <ModeNotification mode="erasing"/>
                 </header>
-                <main className="app" />
+                <Simulator />
                 <footer className="bar">
                     <div className="footer-contents">
                         <NextIterationButton />
