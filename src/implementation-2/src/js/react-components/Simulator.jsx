@@ -28,9 +28,9 @@ class Simulator extends React.Component {
         );
     }
 
-    setCellState(cellX, cellY, alive) {
+    setCellState(cellX, cellY, isAlive) {
         const newBoard = [...this.state.board];
-        newBoard[cellY][cellX] = alive;
+        newBoard[cellY][cellX] = isAlive;
         this.setState({
             board: newBoard
         });

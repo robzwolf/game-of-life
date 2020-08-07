@@ -8,13 +8,13 @@ class Cell extends React.Component {
     }
 
     toggleAlive() {
-        this.props.setCellState(this.props.xCoord, this.props.yCoord, !this.props.alive);
+        this.props.setCellState(this.props.xCoord, this.props.yCoord, !this.props.isAlive);
     }
 
     render() {
         return (
             <div
-                className={["cell", this.props.alive && "alive"].join(" ")}
+                className={["cell", this.props.isAlive && "alive"].join(" ")}
                 // onClick={this.toggleAlive}
                 data-x-coord={this.props.xCoord}
                 data-y-coord={this.props.yCoord}
