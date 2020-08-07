@@ -10,6 +10,7 @@ class Grid extends React.Component {
                         width={this.props.width}
                         rowIndex={i}
                         key={`row-${i}`}
+                        rowBoard={this.props.board[i]}
                     />
                 )}
             </div>

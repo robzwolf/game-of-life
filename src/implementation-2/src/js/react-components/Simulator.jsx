@@ -6,11 +6,25 @@ import Grid from "./Grid";
 class Simulator extends React.Component {
     constructor(props) {
         super(props);
+
+        this.state = {
+            board: this.initialBoardState()
+        };
     }
 
     componentDidMount() {
         this._scrollToCentreVertically();
         this._scrollToCentreHorizontally()
+    }
+
+    initialBoardState() {
+        // false to be dead, true to be alive
+        const initialState = false;
+        return (
+            new Array(this.props.height).fill(
+                new Array(this.props.width).fill(initialState)
+            )
+        )
     }
 
     _scrollToCentreVertically() {
@@ -48,7 +62,10 @@ class Simulator extends React.Component {
                 data-size={this.props.cellSize}
                 ref={element => this.element = element}
             >
-                <Grid {...this.props} />
+                <Grid
+                    board={this.state.board}
+                    {...this.props}
+                />
             </main>
         )
     }
