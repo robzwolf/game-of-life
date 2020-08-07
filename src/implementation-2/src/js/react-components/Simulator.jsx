@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import AirbnbPropTypes from 'airbnb-prop-types';
 import Grid from "./Grid";
 import Cell from "./Cell";
 import Row from "./Row";
@@ -36,7 +38,7 @@ class Simulator extends React.Component {
 
     render() {
         return (
-            <div className="app">
+            <div className="app" data-size={this.props.cellSize}>
                 <Grid>
                     {this._renderRows(this.props.height)}
                 </Grid>
@@ -50,5 +52,11 @@ export default Simulator;
 Simulator.defaultProps = {
     width: 100,
     height: 100,
-    cellSize: 7
+    cellSize: 40
+}
+
+Simulator.propTypes = {
+    width: PropTypes.number,
+    height: PropTypes.number,
+    cellSize: AirbnbPropTypes.range(1, 41) // between 1 and 40, inclusive
 }
