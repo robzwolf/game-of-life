@@ -2,8 +2,8 @@ import React from 'react';
 
 class GameOfLife extends React.Component {
     render() {
-        return <b>Hello World</b>
+        return <b>Hello World</b>;
     }
 }
 
-export default GameOfLife
+export default GameOfLife;

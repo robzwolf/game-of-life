@@ -12,5 +12,6 @@ import ReactDOM from 'react-dom';
 // const renderEngine = new Render(app, { cellSize: 40 });
 // const computationEngine = new ComputationEngine(app, { playPauseButton, body: document.body, app });
 
-import GameOfLife from './react-components/GameOfLife'
+import GameOfLife from './react-components/GameOfLife.jsx';
+
 ReactDOM.render(<GameOfLife />, document.querySelector('.app'));
