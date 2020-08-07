@@ -15,7 +15,7 @@ class Cell extends React.Component {
         return (
             <div
                 className={["cell", this.props.alive && "alive"].join(" ")}
-                onClick={this.toggleAlive}
+                // onClick={this.toggleAlive}
                 data-x-coord={this.props.xCoord}
                 data-y-coord={this.props.yCoord}
             />
