@@ -50,6 +50,7 @@
   },
   "dependencies": {
     "airbnb": "0.0.2",
+    "airbnb-prop-types": "^2.16.0",
     "prettier": "^2.0.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
