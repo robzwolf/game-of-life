@@ -32,6 +32,7 @@ class Simulator extends React.Component {
         const newBoard = [...this.state.board];
         newBoard[cellY][cellX] = isAlive;
         this.setState({
+            oldBoard: [...this.state.board],
             board: newBoard
         });
     }
@@ -73,6 +74,7 @@ class Simulator extends React.Component {
             >
                 <Grid
                     board={this.state.board}
+                    oldBoard={this.state.oldBoard || [...this.state.board]}
                     setCellState={this.setCellState}
                     {...this.props}
                 />

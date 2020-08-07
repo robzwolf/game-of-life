@@ -2,6 +2,18 @@ import React from 'react';
 import Cell from "./Cell";
 
 class Row extends React.Component {
+    shouldComponentUpdate(nextProps, nextState, nextContext) {
+        // Row only needs to update if any of the cell aliveness states have changed
+        console.log(nextProps.rowBoard, this.props.oldRowBoard);
+        for (let i = 0; i < nextProps.rowBoard.length; i += 1) {
+            if (nextProps.rowBoard[i] !== this.props.oldRowBoard[i]) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     render() {
         return (
             <div className="row">

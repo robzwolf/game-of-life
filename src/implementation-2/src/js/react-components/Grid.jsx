@@ -1,7 +1,7 @@
 import React from 'react';
 import Row from "./Row";
 
-class Grid extends React.Component {
+class Grid extends React.PureComponent {
     constructor(props) {
         super(props);
 
@@ -27,6 +27,7 @@ class Grid extends React.Component {
                         rowIndex={i}
                         key={`row-${i}`}
                         rowBoard={this.props.board[i]}
+                        oldRowBoard={[...this.props.oldBoard[i]]}
                         setCellState={this.props.setCellState}
                     />
                 )}

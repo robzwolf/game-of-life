@@ -1,6 +1,6 @@
 import React from 'react';
 
-class Cell extends React.Component {
+class Cell extends React.PureComponent {
     constructor(props) {
         super(props);
 
