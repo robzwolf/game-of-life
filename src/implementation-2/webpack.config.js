@@ -14,6 +14,9 @@ module.exports = (env, argv) => {
       path: path.resolve(__dirname, 'public/dist'),
       filename: 'app.js',
     },
+    resolve: {
+      extensions: [".webpack.js", ".web.js", ".js", ".json", ".jsx"]
+    },
     module: {
       rules: [
         {
