@@ -1,17 +1,18 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-class NextIterationButton extends React.Component {
-    render() {
-        return (
-            <a
-                className="play-pause"
-                href="#"
-                onClick={this.props.handleNextIterationClick}
-            >
-                Next Iteration →
-            </a>
-        )
-    }
-}
+const NextIterationButton = ({ handleNextIterationClick }) => (
+    <button
+        className="play-pause"
+        onClick={handleNextIterationClick}
+        type="button"
+    >
+        Next Iteration →
+    </button>
+)
 
 export default NextIterationButton;
+
+NextIterationButton.propTypes = {
+    handleNextIterationClick: PropTypes.func.isRequired,
+}
