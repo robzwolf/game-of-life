@@ -7,6 +7,12 @@ import Grid from "./Grid";
 import ComputationEngine from "../computation-engine";
 
 class GameOfLife extends React.Component {
+    static deepCopy(board) {
+        return board.map(row =>
+            row.map(value => value)
+        )
+    }
+
     constructor(props) {
         super(props);
 
@@ -37,92 +43,20 @@ class GameOfLife extends React.Component {
     }
 
     componentDidMount() {
-        this._scrollToCentreHorizontally()
-        this._scrollToCentreVertically()
-    }
-
-    _scrollToCentreVertically() {
-        const { simulatorNode } = this;
-
-        // Entire height of the app
-        const entireHeight = simulatorNode.scrollHeight;
-
-        // Height of viewport
-        const viewportHeight = simulatorNode.clientHeight;
-
-        if (entireHeight > viewportHeight) {
-            simulatorNode.scrollTop = (entireHeight - viewportHeight) / 2;
-        }
-    }
-
-    _scrollToCentreHorizontally() {
-        const { simulatorNode } = this;
-
-        // Entire width of the app
-        const entireWidth = simulatorNode.scrollWidth
-
-        // Width of viewport
-        const viewportWidth = simulatorNode.clientWidth
-
-        if (entireWidth > viewportWidth) {
-            simulatorNode.scrollLeft = (entireWidth - viewportWidth) / 2
-        }
-    }
-
-    initialBoardState() {
-        // false to be dead, true to be alive
-        const initiallyAlive = false;
-        return Array(this.props.height).fill().map(() =>
-            Array(this.props.width).fill(initiallyAlive)
-        );
-    }
-
-    toggleCell(cellElement) {
-        const { xCoord, yCoord } = cellElement.dataset;
-        const isAlive = this.state.board[yCoord][xCoord];
-
-        let newAliveState;
-        if (this.state.drawing) {
-            newAliveState = true;
-        } else if (this.state.erasing) {
-            newAliveState = false;
-        } else {
-            newAliveState = !isAlive;
-        }
-
-        this.setCellState(xCoord, yCoord, newAliveState);
-    }
-
-    handleCellMouseEnter(event) {
-        if (this.state.currentlyDragging) {
-            this.toggleCell(event.target);
-        }
-    }
-
-    handleMouseDown(event) {
-        this.setState({currentlyDragging: true});
-        this.toggleCell(event.target);
-    }
-
-    handleMouseUp() {
-        this.setState({currentlyDragging: false});
+        this.scrollToCentreHorizontally()
+        this.scrollToCentreVertically()
     }
 
     setCellState(cellX, cellY, isAlive) {
-        const newBoard = this.deepCopy(this.state.board);
-        const oldBoard = this.deepCopy(this.state.board);
+        const { board } = this.state;
+        const newBoard = GameOfLife.deepCopy(board);
+        const oldBoard = GameOfLife.deepCopy(board);
 
         newBoard[cellY][cellX] = isAlive;
         this.setState({
             oldBoard,
             board: newBoard
         });
-    }
-
-    deepCopy(board) {
-        return board.map(row =>
-            row.map(value => value)
-        )
     }
 
     setDrawingFlag(flag) {
@@ -140,7 +74,8 @@ class GameOfLife extends React.Component {
     }
 
     setErasingFlag(flag) {
-        if (flag === true && this.state.drawing === false) {
+        const { drawing } = this.state;
+        if (flag === true && drawing === false) {
             this.setState({
                 erasing: true
             })
@@ -148,6 +83,77 @@ class GameOfLife extends React.Component {
             this.setState({
                 erasing: false
             })
+        }
+    }
+
+    handleMouseDown(event) {
+        this.setState({currentlyDragging: true});
+        this.toggleCell(event.target);
+    }
+
+    handleMouseUp() {
+        this.setState({currentlyDragging: false});
+    }
+
+    handleCellMouseEnter(event) {
+    const { currentlyDragging } = this.state;
+        if (currentlyDragging) {
+            this.toggleCell(event.target);
+        }
+    }
+
+    toggleCell(cellElement) {
+        const { xCoord, yCoord } = cellElement.dataset;
+        const { board, drawing, erasing } = this.state;
+        const isAlive = board[yCoord][xCoord];
+
+        let newAliveState;
+        if (drawing) {
+            newAliveState = true;
+        } else if (erasing) {
+            newAliveState = false;
+        } else {
+            newAliveState = !isAlive;
+        }
+
+        this.setCellState(xCoord, yCoord, newAliveState);
+    }
+
+    initialBoardState() {
+        // false to be dead, true to be alive
+        const initiallyAlive = false;
+
+        const { width, height } = this.props;
+        return Array(height).fill(null).map(() =>
+            Array(width).fill(initiallyAlive)
+        );
+    }
+
+    scrollToCentreHorizontally() {
+        const { simulatorNode } = this;
+
+        // Entire width of the app
+        const entireWidth = simulatorNode.scrollWidth
+
+        // Width of viewport
+        const viewportWidth = simulatorNode.clientWidth
+
+        if (entireWidth > viewportWidth) {
+            simulatorNode.scrollLeft = (entireWidth - viewportWidth) / 2
+        }
+    }
+
+    scrollToCentreVertically() {
+        const { simulatorNode } = this;
+
+        // Entire height of the app
+        const entireHeight = simulatorNode.scrollHeight;
+
+        // Height of viewport
+        const viewportHeight = simulatorNode.clientHeight;
+
+        if (entireHeight > viewportHeight) {
+            simulatorNode.scrollTop = (entireHeight - viewportHeight) / 2;
         }
     }
 
@@ -169,48 +175,51 @@ class GameOfLife extends React.Component {
     }
 
     handleNextIterationClick() {
-        console.log('next iteration clicked')
-
+        const { board } = this.state;
         this.setState({
-            oldBoard: this.deepCopy(this.state.board),
-            board: ComputationEngine.computeNextIteration(this.state.board)
+            oldBoard: GameOfLife.deepCopy(board),
+            board: ComputationEngine.computeNextIteration(board)
         });
     }
 
     render() {
+        const { drawing, erasing, board, oldBoard } = this.state;
+        const { cellSize, width, height } = this.props;
         return (
             <div className={[
                 "container",
-                this.state.drawing ? "drawing" : "",
-                this.state.erasing ? "erasing" : ""
+                drawing ? "drawing" : "",
+                erasing ? "erasing" : ""
             ].join(" ")}>
                 <header className="bar">
                     <h1 className="page-title">Game of Life</h1>
                     <ModeNotification
                         mode="drawing"
-                        active={this.state.drawing}
+                        active={drawing}
                     />
                     <ModeNotification
                         mode="erasing"
-                        active={this.state.erasing}
+                        active={erasing}
                     />
                 </header>
-                {/*/>*/}
+                {/* /> */}
                 <main
                     className="app"
-                    data-size={this.props.cellSize}
-                    ref={simulatorNode => this.simulatorNode = simulatorNode}
+                    data-size={cellSize}
+                    ref={simulatorNode => {
+                        this.simulatorNode = simulatorNode
+                    }}
                 >
                     <Grid
-                        board={this.state.board}
-                        oldBoard={this.state.oldBoard || this.deepCopy(this.state.board)}
+                        board={board}
+                        oldBoard={oldBoard || GameOfLife.deepCopy(board)}
                         setCellState={this.setCellState}
                         handleMouseDown={this.handleMouseDown}
                         handleMouseUp={this.handleMouseUp}
                         handleCellMouseEnter={this.handleCellMouseEnter}
-                        width={this.props.width}
-                        height={this.props.height}
-                        cellSize={this.props.cellSize}
+                        width={width}
+                        height={height}
+                        cellSize={cellSize}
                     />
                 </main>
                 <footer className="bar">
@@ -220,7 +229,7 @@ class GameOfLife extends React.Component {
                         />
                         <p className="credits">
                             by{" "}
-                            <a href="https://robbie.xyz" target="_blank">Robbie Jakob-Whitworth</a>
+                            <a href="https://robbie.xyz" target="_blank" rel="noreferrer">Robbie Jakob-Whitworth</a>
                         </p>
                     </div>
                 </footer>
