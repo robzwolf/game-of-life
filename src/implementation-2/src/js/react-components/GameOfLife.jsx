@@ -22,6 +22,14 @@ class GameOfLife extends React.Component {
     componentDidMount() {
         window.addEventListener('keydown', this.handleKeyChange);
         window.addEventListener('keyup', this.handleKeyChange);
+        this.disableRightClick()
+    }
+
+    disableRightClick() {
+        document.addEventListener(
+            'contextmenu',
+            e => e.preventDefault()
+        )
     }
 
     setCurrentlyDragging(isDragging) {
