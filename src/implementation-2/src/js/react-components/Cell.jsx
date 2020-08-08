@@ -1,5 +1,5 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
 class Cell extends React.PureComponent {
     constructor(props) {
@@ -22,7 +22,7 @@ class Cell extends React.PureComponent {
                 data-x-coord={xCoord}
                 data-y-coord={yCoord}
             />
-        )
+        );
     }
 }
 
@@ -33,5 +33,5 @@ Cell.propTypes = {
     handleCellMouseEnter: PropTypes.func.isRequired,
     xCoord: PropTypes.number.isRequired,
     yCoord: PropTypes.number.isRequired,
-    isAlive: PropTypes.bool.isRequired
-}
+    isAlive: PropTypes.bool.isRequired,
+};

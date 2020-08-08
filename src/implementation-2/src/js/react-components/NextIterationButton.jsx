@@ -1,5 +1,5 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
 const NextIterationButton = ({ handleNextIterationClick }) => (
     <button
@@ -9,10 +9,10 @@ const NextIterationButton = ({ handleNextIterationClick }) => (
     >
         Next Iteration →
     </button>
-)
+);
 
 export default NextIterationButton;
 
 NextIterationButton.propTypes = {
     handleNextIterationClick: PropTypes.func.isRequired,
-}
+};

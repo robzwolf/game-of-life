@@ -1,6 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import AirbnbPropTypes from 'airbnb-prop-types';
+import React from "react";
+import PropTypes from "prop-types";
+import AirbnbPropTypes from "airbnb-prop-types";
 import ModeNotification from "./ModeNotification";
 import NextIterationButton from "./NextIterationButton";
 import Grid from "./Grid";
@@ -8,9 +8,7 @@ import ComputationEngine from "../computation-engine";
 
 class GameOfLife extends React.Component {
     static deepCopy(board) {
-        return board.map(row =>
-            row.map(value => value)
-        )
+        return board.map((row) => row.map((value) => value));
     }
 
     constructor(props) {
@@ -24,27 +22,26 @@ class GameOfLife extends React.Component {
         this.handleCellMouseEnter = this.handleCellMouseEnter.bind(this);
         this.toggleCell = this.toggleCell.bind(this);
         this.setCellState = this.setCellState.bind(this);
-        this.handleNextIterationClick = this.handleNextIterationClick.bind(this);
+        this.handleNextIterationClick = this.handleNextIterationClick.bind(
+            this
+        );
 
         this.state = {
             currentlyDragging: false,
             drawing: false,
             erasing: false,
-            board: this.initialBoardState()
-        }
+            board: this.initialBoardState(),
+        };
 
-        document.addEventListener(
-            'contextmenu',
-            e => e.preventDefault()
-        )
+        document.addEventListener("contextmenu", (e) => e.preventDefault());
 
-        window.addEventListener('keydown', this.handleKeyChange);
-        window.addEventListener('keyup', this.handleKeyChange);
+        window.addEventListener("keydown", this.handleKeyChange);
+        window.addEventListener("keyup", this.handleKeyChange);
     }
 
     componentDidMount() {
-        this.scrollToCentreHorizontally()
-        this.scrollToCentreVertically()
+        this.scrollToCentreHorizontally();
+        this.scrollToCentreVertically();
     }
 
     setCellState(cellX, cellY, isAlive) {
@@ -55,7 +52,7 @@ class GameOfLife extends React.Component {
         newBoard[cellY][cellX] = isAlive;
         this.setState({
             oldBoard,
-            board: newBoard
+            board: newBoard,
         });
     }
 
@@ -63,13 +60,13 @@ class GameOfLife extends React.Component {
         if (flag === true) {
             this.setState({
                 drawing: true,
-                erasing: false
-            })
+                erasing: false,
+            });
         } else {
             this.setState({
                 drawing: false,
-                erasing: false
-            })
+                erasing: false,
+            });
         }
     }
 
@@ -77,26 +74,26 @@ class GameOfLife extends React.Component {
         const { drawing } = this.state;
         if (flag === true && drawing === false) {
             this.setState({
-                erasing: true
-            })
+                erasing: true,
+            });
         } else {
             this.setState({
-                erasing: false
-            })
+                erasing: false,
+            });
         }
     }
 
     handleMouseDown(event) {
-        this.setState({currentlyDragging: true});
+        this.setState({ currentlyDragging: true });
         this.toggleCell(event.target);
     }
 
     handleMouseUp() {
-        this.setState({currentlyDragging: false});
+        this.setState({ currentlyDragging: false });
     }
 
     handleCellMouseEnter(event) {
-    const { currentlyDragging } = this.state;
+        const { currentlyDragging } = this.state;
         if (currentlyDragging) {
             this.toggleCell(event.target);
         }
@@ -124,22 +121,22 @@ class GameOfLife extends React.Component {
         const initiallyAlive = false;
 
         const { width, height } = this.props;
-        return Array(height).fill(null).map(() =>
-            Array(width).fill(initiallyAlive)
-        );
+        return Array(height)
+            .fill(null)
+            .map(() => Array(width).fill(initiallyAlive));
     }
 
     scrollToCentreHorizontally() {
         const { simulatorNode } = this;
 
         // Entire width of the app
-        const entireWidth = simulatorNode.scrollWidth
+        const entireWidth = simulatorNode.scrollWidth;
 
         // Width of viewport
-        const viewportWidth = simulatorNode.clientWidth
+        const viewportWidth = simulatorNode.clientWidth;
 
         if (entireWidth > viewportWidth) {
-            simulatorNode.scrollLeft = (entireWidth - viewportWidth) / 2
+            simulatorNode.scrollLeft = (entireWidth - viewportWidth) / 2;
         }
     }
 
@@ -158,13 +155,13 @@ class GameOfLife extends React.Component {
     }
 
     handleKeyChange(event) {
-        const newFlag = (event.type === 'keydown');
+        const newFlag = event.type === "keydown";
         switch (event.key) {
-            case 'Alt': {
+            case "Alt": {
                 this.setDrawingFlag(newFlag);
                 break;
             }
-            case 'Control': {
+            case "Control": {
                 this.setErasingFlag(newFlag);
                 break;
             }
@@ -178,7 +175,7 @@ class GameOfLife extends React.Component {
         const { board } = this.state;
         this.setState({
             oldBoard: GameOfLife.deepCopy(board),
-            board: ComputationEngine.computeNextIteration(board)
+            board: ComputationEngine.computeNextIteration(board),
         });
     }
 
@@ -186,28 +183,24 @@ class GameOfLife extends React.Component {
         const { drawing, erasing, board, oldBoard } = this.state;
         const { cellSize, width, height } = this.props;
         return (
-            <div className={[
-                "container",
-                drawing ? "drawing" : "",
-                erasing ? "erasing" : ""
-            ].join(" ")}>
+            <div
+                className={[
+                    "container",
+                    drawing ? "drawing" : "",
+                    erasing ? "erasing" : "",
+                ].join(" ")}
+            >
                 <header className="bar">
                     <h1 className="page-title">Game of Life</h1>
-                    <ModeNotification
-                        mode="drawing"
-                        active={drawing}
-                    />
-                    <ModeNotification
-                        mode="erasing"
-                        active={erasing}
-                    />
+                    <ModeNotification mode="drawing" active={drawing} />
+                    <ModeNotification mode="erasing" active={erasing} />
                 </header>
                 {/* /> */}
                 <main
                     className="app"
                     data-size={cellSize}
-                    ref={simulatorNode => {
-                        this.simulatorNode = simulatorNode
+                    ref={(simulatorNode) => {
+                        this.simulatorNode = simulatorNode;
                     }}
                 >
                     <Grid
@@ -225,16 +218,24 @@ class GameOfLife extends React.Component {
                 <footer className="bar">
                     <div className="footer-contents">
                         <NextIterationButton
-                            handleNextIterationClick={this.handleNextIterationClick}
+                            handleNextIterationClick={
+                                this.handleNextIterationClick
+                            }
                         />
                         <p className="credits">
                             by{" "}
-                            <a href="https://robbie.xyz" target="_blank" rel="noreferrer">Robbie Jakob-Whitworth</a>
+                            <a
+                                href="https://robbie.xyz"
+                                target="_blank"
+                                rel="noreferrer"
+                            >
+                                Robbie Jakob-Whitworth
+                            </a>
                         </p>
                     </div>
                 </footer>
             </div>
-        )
+        );
     }
 }
 
@@ -243,11 +244,11 @@ export default GameOfLife;
 GameOfLife.defaultProps = {
     width: 100,
     height: 100,
-    cellSize: 40
-}
+    cellSize: 40,
+};
 
 GameOfLife.propTypes = {
     width: PropTypes.number,
     height: PropTypes.number,
-    cellSize: AirbnbPropTypes.range(1, 41) // between 1 and 40, inclusive
-}
+    cellSize: AirbnbPropTypes.range(1, 41), // between 1 and 40, inclusive
+};

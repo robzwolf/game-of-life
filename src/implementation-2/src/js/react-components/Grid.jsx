@@ -1,5 +1,5 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 import Row from "./Row";
 
 class Grid extends React.PureComponent {
@@ -18,7 +18,16 @@ class Grid extends React.PureComponent {
     }
 
     render() {
-        const { handleMouseDown, handleMouseUp, height, width, board, oldBoard, setCellState, handleCellMouseEnter } = this.props;
+        const {
+            handleMouseDown,
+            handleMouseUp,
+            height,
+            width,
+            board,
+            oldBoard,
+            setCellState,
+            handleCellMouseEnter,
+        } = this.props;
         return (
             <>
                 {/* ESLint rule disabled because this div contains children which are buttons */}
@@ -28,21 +37,24 @@ class Grid extends React.PureComponent {
                     onMouseDown={(e) => handleMouseDown(e)}
                     onMouseUp={(e) => handleMouseUp(e)}
                 >
-                    {[...new Array(height)].map((_, i) =>
+                    {[...new Array(height)].map((_, i) => (
                         <Row
                             width={width}
                             rowIndex={i}
-                            key={`row-${i}` /* eslint-disable-line react/no-array-index-key */}
+                            key={
+                                /* See See https://github.com/yannickcr/eslint-plugin-react/issues/1123#issuecomment-288802108 for react/no-array-index-key */
+                                /* eslint-disable-next-line react/no-array-index-key */
+                                `row-${i}`
+                            }
                             rowBoard={board[i]}
                             oldRowBoard={[...oldBoard[i]]}
                             setCellState={setCellState}
                             handleCellMouseEnter={handleCellMouseEnter}
                         />
-                    )}
+                    ))}
                 </div>
             </>
-        )
-        // See https://github.com/yannickcr/eslint-plugin-react/issues/1123#issuecomment-288802108 for react/no-array-index-key
+        );
     }
 }
 
@@ -57,4 +69,4 @@ Grid.propTypes = {
     height: PropTypes.number.isRequired,
     width: PropTypes.number.isRequired,
     oldBoard: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.bool)).isRequired,
-}
+};

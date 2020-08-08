@@ -1,5 +1,5 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 import Cell from "./Cell";
 
 class Row extends React.Component {
@@ -16,22 +16,31 @@ class Row extends React.Component {
     }
 
     render() {
-        const { width, rowIndex, rowBoard, setCellState, handleCellMouseEnter } = this.props;
+        const {
+            width,
+            rowIndex,
+            rowBoard,
+            setCellState,
+            handleCellMouseEnter,
+        } = this.props;
         return (
             <div className="row">
-                {[...new Array(width)].map((_, i) =>
+                {[...new Array(width)].map((_, i) => (
                     <Cell
                         xCoord={i}
                         yCoord={rowIndex}
-                        key={`cell-${i}-${rowIndex}` /* eslint-disable-line react/no-array-index-key */}
+                        key={
+                            /* See See https://github.com/yannickcr/eslint-plugin-react/issues/1123#issuecomment-288802108 for react/no-array-index-key */
+                            /* eslint-disable-next-line react/no-array-index-key */
+                            `cell-${i}-${rowIndex}`
+                        }
                         isAlive={rowBoard[i]}
                         setCellState={setCellState}
                         handleCellMouseEnter={handleCellMouseEnter}
                     />
-                )}
+                ))}
             </div>
-        )
-        // See https://github.com/yannickcr/eslint-plugin-react/issues/1123#issuecomment-288802108 for react/no-array-index-key
+        );
     }
 }
 
@@ -44,4 +53,4 @@ Row.propTypes = {
     rowIndex: PropTypes.number.isRequired,
     setCellState: PropTypes.func.isRequired,
     handleCellMouseEnter: PropTypes.func.isRequired,
-}
+};

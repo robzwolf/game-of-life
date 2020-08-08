@@ -4,8 +4,8 @@
   "description": "Second visualisation of Conway's Game of Life, using React to render diffs.",
   "scripts": {
     "test": "eslint --ext js,jsx ./src/js/",
-    "lint-fix": "eslint --ext js,jsx --fix src/js/",
-    "format": "prettier --write \"{,!(node_modules)/**/}*.js\"",
+    "lint-fix": "eslint --ext js,jsx --fix ./src/js/",
+    "format": "prettier --write ./src/",
     "build": "webpack",
     "watch": "webpack --watch",
     "clean": "rm -rf node_modules public/dist/",
