@@ -18,6 +18,7 @@ class GameOfLife extends React.Component {
         this.handleCellMouseEnter = this.handleCellMouseEnter.bind(this);
         this.toggleCell = this.toggleCell.bind(this);
         this.setCellState = this.setCellState.bind(this);
+        this.handleNextIterationClick = this.handleNextIterationClick.bind(this);
 
         this.engine = new ComputationEngine();
 
@@ -81,8 +82,8 @@ class GameOfLife extends React.Component {
     toggleCell(cellElement) {
         const { xCoord, yCoord } = cellElement.dataset;
         const isAlive = this.state.board[yCoord][xCoord];
-        let newAliveState;
 
+        let newAliveState;
         if (this.state.drawing) {
             newAliveState = true;
         } else if (this.state.erasing) {
@@ -110,12 +111,20 @@ class GameOfLife extends React.Component {
     }
 
     setCellState(cellX, cellY, isAlive) {
-        const newBoard = [...this.state.board];
+        const newBoard = this.deepCopy(this.state.board);
+        const oldBoard = this.deepCopy(this.state.board);
+
         newBoard[cellY][cellX] = isAlive;
         this.setState({
-            oldBoard: [...this.state.board],
+            oldBoard,
             board: newBoard
         });
+    }
+
+    deepCopy(board) {
+        return board.map(row =>
+            row.map(value => value)
+        )
     }
 
     setDrawingFlag(flag) {
@@ -164,7 +173,10 @@ class GameOfLife extends React.Component {
     handleNextIterationClick() {
         console.log('next iteration clicked')
 
-
+        this.setState({
+            oldBoard: this.deepCopy(this.state.board),
+            board: this.engine.computeNextIteration(this.state.board)
+        });
     }
 
     render() {
@@ -193,7 +205,7 @@ class GameOfLife extends React.Component {
                 >
                     <Grid
                         board={this.state.board}
-                        oldBoard={this.state.oldBoard || [...this.state.board]}
+                        oldBoard={this.state.oldBoard || this.deepCopy(this.state.board)}
                         setCellState={this.setCellState}
                         handleMouseDown={this.handleMouseDown}
                         handleMouseUp={this.handleMouseUp}

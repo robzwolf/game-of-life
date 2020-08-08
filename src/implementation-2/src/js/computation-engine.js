@@ -1,38 +1,5 @@
-import Helpers from './helpers'
-
 class ComputationEngine {
-  constructor(app, options = {}) {
-    // Initialise variables
-    this.playPauseButton = options.playPauseButton
-    this.body = options.body
-    this.app = options.app
-
-    // Bindings
-    this.handlePlayPauseButtonClick = this.handlePlayPauseButtonClick.bind(this)
-
-    // Method calls
-    this.setUpPlayPauseListener()
-  }
-
-  setUpPlayPauseListener() {
-    this.playPauseButton.addEventListener(
-      'click',
-      this.handlePlayPauseButtonClick,
-    )
-  }
-
-  handlePlayPauseButtonClick() {
-    this.computeNextIteration()
-
-    if (Helpers.isPaused(this.body)) {
-      this.body.classList.add('playing')
-    } else {
-      this.body.classList.remove('playing')
-    }
-  }
-
-  computeNextIteration() {
-    const board = this.getCurrentBoard()
+  computeNextIteration(board) {
     const newBoard = []
 
     // Sanity check to ensure we're not working on a non-existent board
@@ -40,51 +7,18 @@ class ComputationEngine {
       board.forEach((row, rowIndex) => {
         const newRow = []
         row.forEach((cell, cellIndex) => {
-          let newCell
-          const cellShouldLive = ComputationEngine.cellShouldLive(
-            rowIndex,
-            cellIndex,
-            board,
-          )
-          if (cellShouldLive) {
-            newCell = true
-          } else {
-            newCell = false
-          }
+          const newCell = ComputationEngine.cellShouldLive(
+              rowIndex,
+              cellIndex,
+              board,
+          );
           newRow.push(newCell)
         })
         newBoard.push(newRow)
       })
     }
 
-    this.renderUpdatedBoard(this.app, newBoard)
-  }
-
-  getCurrentBoard() {
-    const board = []
-    const rows = this.app.querySelectorAll('.row')
-    rows.forEach((row) => {
-      const cells = Array.from(row.childNodes)
-      const cellStatuses = cells.map((cell) => Helpers.cellIsAlive(cell))
-      board.push(cellStatuses)
-    })
-    return board
-  }
-
-  renderUpdatedBoard(app, newBoard) {
-    const rows = this.app.querySelectorAll('.row')
-    rows.forEach((row) => {
-      const cells = row.childNodes
-      cells.forEach((cell) => {
-        const { xCoord: rowIndex, yCoord: cellIndex } = cell.dataset
-        const newStatus = newBoard[rowIndex][cellIndex]
-        if (newStatus === true) {
-          cell.classList.add('alive')
-        } else {
-          cell.classList.remove('alive')
-        }
-      })
-    })
+    return newBoard;
   }
 
   /**

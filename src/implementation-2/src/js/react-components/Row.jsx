@@ -5,7 +5,7 @@ class Row extends React.Component {
     shouldComponentUpdate(nextProps, nextState, nextContext) {
         // Row only needs to update if any of the cell aliveness states have changed
         for (let i = 0; i < nextProps.rowBoard.length; i += 1) {
-            if (nextProps.rowBoard[i] !== this.props.oldRowBoard[i]) {
+            if (nextProps.rowBoard[i] !== nextProps.oldRowBoard[i]) {
                 return true;
             }
         }
