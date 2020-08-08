@@ -1,39 +1,121 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import AirbnbPropTypes from 'airbnb-prop-types';
 import ModeNotification from "./ModeNotification";
 import NextIterationButton from "./NextIterationButton";
-import Simulator from "./Simulator";
+import Grid from "./Grid";
+import ComputationEngine from "../computation-engine";
 
 class GameOfLife extends React.Component {
     constructor(props) {
         super(props);
 
-        this.setCurrentlyDragging = this.setCurrentlyDragging.bind(this);
         this.setDrawingFlag = this.setDrawingFlag.bind(this);
         this.setErasingFlag = this.setErasingFlag.bind(this);
         this.handleKeyChange = this.handleKeyChange.bind(this);
+        this.handleMouseDown = this.handleMouseDown.bind(this);
+        this.handleMouseUp = this.handleMouseUp.bind(this);
+        this.handleCellMouseEnter = this.handleCellMouseEnter.bind(this);
+        this.toggleCell = this.toggleCell.bind(this);
+        this.setCellState = this.setCellState.bind(this);
+
+        this.engine = new ComputationEngine();
 
         this.state = {
             currentlyDragging: false,
             drawing: false,
-            erasing: false
+            erasing: false,
+            board: this.initialBoardState()
         }
-    }
 
-    componentDidMount() {
-        window.addEventListener('keydown', this.handleKeyChange);
-        window.addEventListener('keyup', this.handleKeyChange);
-        this.disableRightClick()
-    }
-
-    disableRightClick() {
         document.addEventListener(
             'contextmenu',
             e => e.preventDefault()
         )
+
+        window.addEventListener('keydown', this.handleKeyChange);
+        window.addEventListener('keyup', this.handleKeyChange);
     }
 
-    setCurrentlyDragging(isDragging) {
-        this.setState({currentlyDragging: isDragging});
+    componentDidMount() {
+        this._scrollToCentreHorizontally()
+        this._scrollToCentreVertically()
+    }
+
+    _scrollToCentreVertically() {
+        const { simulatorNode } = this;
+
+        // Entire height of the app
+        const entireHeight = simulatorNode.scrollHeight;
+
+        // Height of viewport
+        const viewportHeight = simulatorNode.clientHeight;
+
+        if (entireHeight > viewportHeight) {
+            simulatorNode.scrollTop = (entireHeight - viewportHeight) / 2;
+        }
+    }
+
+    _scrollToCentreHorizontally() {
+        const { simulatorNode } = this;
+
+        // Entire width of the app
+        const entireWidth = simulatorNode.scrollWidth
+
+        // Width of viewport
+        const viewportWidth = simulatorNode.clientWidth
+
+        if (entireWidth > viewportWidth) {
+            simulatorNode.scrollLeft = (entireWidth - viewportWidth) / 2
+        }
+    }
+
+    initialBoardState() {
+        // false to be dead, true to be alive
+        const initiallyAlive = false;
+        return Array(this.props.height).fill().map(() =>
+            Array(this.props.width).fill(initiallyAlive)
+        );
+    }
+
+    toggleCell(cellElement) {
+        const { xCoord, yCoord } = cellElement.dataset;
+        const isAlive = this.state.board[yCoord][xCoord];
+        let newAliveState;
+
+        if (this.state.drawing) {
+            newAliveState = true;
+        } else if (this.state.erasing) {
+            newAliveState = false;
+        } else {
+            newAliveState = !isAlive;
+        }
+
+        this.setCellState(xCoord, yCoord, newAliveState);
+    }
+
+    handleCellMouseEnter(event) {
+        if (this.state.currentlyDragging) {
+            this.toggleCell(event.target);
+        }
+    }
+
+    handleMouseDown(event) {
+        this.setState({currentlyDragging: true});
+        this.toggleCell(event.target);
+    }
+
+    handleMouseUp() {
+        this.setState({currentlyDragging: false});
+    }
+
+    setCellState(cellX, cellY, isAlive) {
+        const newBoard = [...this.state.board];
+        newBoard[cellY][cellX] = isAlive;
+        this.setState({
+            oldBoard: [...this.state.board],
+            board: newBoard
+        });
     }
 
     setDrawingFlag(flag) {
@@ -81,6 +163,8 @@ class GameOfLife extends React.Component {
 
     handleNextIterationClick() {
         console.log('next iteration clicked')
+
+
     }
 
     render() {
@@ -101,12 +185,24 @@ class GameOfLife extends React.Component {
                         active={this.state.erasing}
                     />
                 </header>
-                <Simulator
-                    setCurrentlyDragging={this.setCurrentlyDragging}
-                    currentlyDragging={this.state.currentlyDragging}
-                    drawing={this.state.drawing}
-                    erasing={this.state.erasing}
-                />
+                {/*/>*/}
+                <main
+                    className="app"
+                    data-size={this.props.cellSize}
+                    ref={simulatorNode => this.simulatorNode = simulatorNode}
+                >
+                    <Grid
+                        board={this.state.board}
+                        oldBoard={this.state.oldBoard || [...this.state.board]}
+                        setCellState={this.setCellState}
+                        handleMouseDown={this.handleMouseDown}
+                        handleMouseUp={this.handleMouseUp}
+                        handleCellMouseEnter={this.handleCellMouseEnter}
+                        width={this.props.width}
+                        height={this.props.height}
+                        cellSize={this.props.cellSize}
+                    />
+                </main>
                 <footer className="bar">
                     <div className="footer-contents">
                         <NextIterationButton
@@ -124,3 +220,15 @@ class GameOfLife extends React.Component {
 }
 
 export default GameOfLife;
+
+GameOfLife.defaultProps = {
+    width: 100,
+    height: 100,
+    cellSize: 40
+}
+
+GameOfLife.propTypes = {
+    width: PropTypes.number,
+    height: PropTypes.number,
+    cellSize: AirbnbPropTypes.range(1, 41) // between 1 and 40, inclusive
+}
