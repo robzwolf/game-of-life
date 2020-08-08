@@ -43,7 +43,17 @@ class Simulator extends React.Component {
     toggleCell(cellElement) {
         const { xCoord, yCoord } = cellElement.dataset;
         const isAlive = this.state.board[yCoord][xCoord];
-        this.setCellState(xCoord, yCoord, !isAlive);
+        let newAliveState;
+
+        if (this.props.drawing) {
+            newAliveState = true;
+        } else if (this.props.erasing) {
+            newAliveState = false;
+        } else {
+            newAliveState = !isAlive;
+        }
+
+        this.setCellState(xCoord, yCoord, newAliveState);
     }
 
     handleCellMouseEnter(event) {

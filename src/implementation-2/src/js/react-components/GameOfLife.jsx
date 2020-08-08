@@ -92,6 +92,8 @@ class GameOfLife extends React.Component {
                 <Simulator
                     setCurrentlyDragging={this.setCurrentlyDragging}
                     currentlyDragging={this.state.currentlyDragging}
+                    drawing={this.state.drawing}
+                    erasing={this.state.erasing}
                 />
                 <footer className="bar">
                     <div className="footer-contents">
