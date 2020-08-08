@@ -1,3 +1,13 @@
 {
-  "extends": ["@imaginary-cloud/react"]
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "@imaginary-cloud/react"
+  ],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "plugins": [ "react" ]
 }
