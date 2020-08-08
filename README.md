@@ -9,6 +9,9 @@ For further details about objectives, deliverables, and the research question, s
 ### Implementation 1 (Vanilla JS)
 See [src/implementation-1/README.md](src/implementation-1/README.md).
 
+### Implementation 2 (React)
+See [src/implementation-2/README.md](src/implementation-2/README.md).
+
 ## Documents
 Relevant documents are stored in both formats in this repository:
 - An editable source
