@@ -15,7 +15,7 @@ module.exports = (env, argv) => {
       filename: 'app.js',
     },
     resolve: {
-      extensions: [".webpack.js", ".web.js", ".js", ".json", ".jsx"]
+      extensions: ['.webpack.js', '.web.js', '.js', '.json', '.jsx'],
     },
     module: {
       rules: [

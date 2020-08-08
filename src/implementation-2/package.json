@@ -52,6 +52,7 @@
     "airbnb": "0.0.2",
     "airbnb-prop-types": "^2.16.0",
     "prettier": "^2.0.5",
+    "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "static-server": "^2.2.1"

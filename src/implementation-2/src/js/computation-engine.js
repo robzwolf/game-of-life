@@ -8,17 +8,17 @@ class ComputationEngine {
         const newRow = []
         row.forEach((cell, cellIndex) => {
           const newCell = ComputationEngine.cellShouldLive(
-              rowIndex,
-              cellIndex,
-              board,
-          );
+            rowIndex,
+            cellIndex,
+            board,
+          )
           newRow.push(newCell)
         })
         newBoard.push(newRow)
       })
     }
 
-    return newBoard;
+    return newBoard
   }
 
   /**
