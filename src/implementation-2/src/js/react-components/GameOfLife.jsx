@@ -20,8 +20,6 @@ class GameOfLife extends React.Component {
         this.setCellState = this.setCellState.bind(this);
         this.handleNextIterationClick = this.handleNextIterationClick.bind(this);
 
-        this.engine = new ComputationEngine();
-
         this.state = {
             currentlyDragging: false,
             drawing: false,
@@ -175,7 +173,7 @@ class GameOfLife extends React.Component {
 
         this.setState({
             oldBoard: this.deepCopy(this.state.board),
-            board: this.engine.computeNextIteration(this.state.board)
+            board: ComputationEngine.computeNextIteration(this.state.board)
         });
     }
 

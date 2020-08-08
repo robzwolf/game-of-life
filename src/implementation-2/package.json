@@ -20,7 +20,6 @@
   "bugs": {
     "url": "https://github.com/robzwolf/game-of-life/issues"
   },
-  "prettier": "@imaginary-cloud/prettier-config",
   "homepage": "https://github.com/robzwolf/game-of-life#readme",
   "devDependencies": {
     "@babel/core": "^7.11.0",
@@ -28,12 +27,17 @@
     "@babel/preset-react": "^7.10.4",
     "@imaginary-cloud/eslint-config-react": "^1.0.1",
     "@imaginary-cloud/prettier-config": "^1.0.0",
+    "@typescript-eslint/eslint-plugin": "^2.34.0",
+    "@typescript-eslint/parser": "^2.34.0",
+    "babel-eslint": "^10.1.0",
     "babel-loader": "^8.1.0",
     "css-loader": "^3.6.0",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-config-airbnb-base": "^14.2.0",
     "eslint-config-prettier": "^6.11.0",
+    "eslint-config-react-app": "^5.2.1",
+    "eslint-plugin-flowtype": "^4.7.0",
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-jsx-a11y": "^6.3.1",
     "eslint-plugin-prettier": "^3.1.4",
@@ -43,6 +47,7 @@
     "node-sass": "^4.14.1",
     "normalize-scss": "^7.0.1",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "prettier": "^2.0.5",
     "sass-loader": "^8.0.2",
     "style-loader": "^1.2.1",
     "webpack": "^4.44.1",
@@ -51,7 +56,6 @@
   "dependencies": {
     "airbnb": "0.0.2",
     "airbnb-prop-types": "^2.16.0",
-    "prettier": "^2.0.5",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
