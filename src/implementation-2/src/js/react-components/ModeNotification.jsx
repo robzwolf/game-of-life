@@ -7,7 +7,7 @@ class ModeNotification extends React.Component {
                 <span>
                     {this.props.mode}
                     {' '}
-                    Mode
+                    mode
                 </span>
             </aside>
         )

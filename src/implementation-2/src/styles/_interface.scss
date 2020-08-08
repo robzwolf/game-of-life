@@ -48,8 +48,7 @@ MODE NOTIFICATION STYLES
   }
 }
 
-body.drawing {
-  $border: 3px solid $vibrantBlue;
+@mixin containerModeNotification($border) {
   .app {
     border: $border;
     padding: 0;
@@ -58,27 +57,25 @@ body.drawing {
   .mode-notification {
     border-bottom: $border;
     border-left: $border;
-
-    &.drawing-mode {
-      display: flex;
-    }
+    text-transform: capitalize;
   }
 }
 
-body.erasing {
-  $border: 3px solid $dangerRed;
-  .app {
-    border: $border;
-    padding: 0;
+.container.drawing {
+  $border: 3px solid $vibrantBlue;
+  @include containerModeNotification($border);
+
+  .mode-notification.drawing-mode {
+    display: flex;
   }
+}
 
-  .mode-notification {
-    border-bottom: $border;
-    border-left: $border;
+.container.erasing {
+  $border: 3px solid $dangerRed;
+  @include containerModeNotification($border);
 
-    &.erasing-mode {
-      display: flex;
-    }
+  .mode-notification.erasing-mode {
+    display: flex;
   }
 }
 
