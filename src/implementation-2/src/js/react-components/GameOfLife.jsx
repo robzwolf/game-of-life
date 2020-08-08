@@ -79,6 +79,10 @@ class GameOfLife extends React.Component {
         }
     }
 
+    handleNextIterationClick() {
+        console.log('next iteration clicked')
+    }
+
     render() {
         return (
             <div className={[
@@ -105,7 +109,9 @@ class GameOfLife extends React.Component {
                 />
                 <footer className="bar">
                     <div className="footer-contents">
-                        <NextIterationButton />
+                        <NextIterationButton
+                            handleNextIterationClick={this.handleNextIterationClick}
+                        />
                         <p className="credits">
                             by{" "}
                             <a href="https://robbie.xyz" target="_blank">Robbie Jakob-Whitworth</a>
