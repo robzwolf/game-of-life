@@ -20,6 +20,11 @@ This implementation of the Game of Life uses React to visualise the Game of Life
     npm run serve
     ```
    
+   > If you want to run on a different port, e.g. 4444, use the following format:
+   > ```
+   > npm run serve -- -p 4444
+   > ```
+   
    ...or just open `public/dist/index.html` in your browser from your local filesystem, served over `file:///`.
    
 4. Site is now running on [http://localhost:9080](http://localhost:9080)!
