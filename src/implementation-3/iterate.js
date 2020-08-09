@@ -41,7 +41,7 @@ const initialBoardState = (width, height, numIterations) => {
     return board;
 }
 
-const hrtimeToMillseconds = (hrtime) => ( hrtime[0] * 1000000 + hrtime[1] / 1000 ) / 1000;
+const hrtimeToMilliseconds = (hrtime) => ( hrtime[0] * 1000000 + hrtime[1] / 1000 ) / 1000;
 
 const width = 100;
 const height = 100;
@@ -56,5 +56,5 @@ for (let i = 0; i < numIterations; i += 1) {
     const start = process.hrtime();
     ComputationEngine.computeNextIteration(initialBoard);
     const diff = process.hrtime(start);
-    console.log(hrtimeToMillseconds(diff));
+    console.log(hrtimeToMilliseconds(diff));
 }
