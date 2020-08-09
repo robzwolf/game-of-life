@@ -15,5 +15,6 @@
   "bugs": {
     "url": "https://github.com/robzwolf/game-of-life/issues"
   },
+  "type": "module",
   "homepage": "https://github.com/robzwolf/game-of-life#readme"
 }
