@@ -1,4 +1,7 @@
 # Game of Life – Visualisation 1
+This implementation of the Game of Life uses vanilla JavaScript (i.e. no JavaScript frameworks) to visualise the Game
+of Life.
+
 ## Quick Start
 
 1. Make sure you're in the `src/implementation-1/` directory.
