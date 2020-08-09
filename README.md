@@ -12,6 +12,9 @@ See [src/implementation-1/README.md](src/implementation-1/README.md).
 ### Implementation 2 (React)
 See [src/implementation-2/README.md](src/implementation-2/README.md).
 
+### Implementation 3 (node.js)
+See [src/implementation-3/README.md](src/implementation-3/README.md).
+
 ## Documents
 Relevant documents are stored in both formats in this repository:
 - An editable source
