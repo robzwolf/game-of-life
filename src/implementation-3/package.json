@@ -1,0 +1,19 @@
+{
+  "name": "game-of-life-implementation-3",
+  "version": "1.0.0",
+  "description": "Third implementation of Conway's Game of Life, using a server to perform computation.",
+  "main": "iterate.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robzwolf/game-of-life.git"
+  },
+  "author": "Robbie Jakob-Whitworth",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/robzwolf/game-of-life/issues"
+  },
+  "homepage": "https://github.com/robzwolf/game-of-life#readme"
+}
