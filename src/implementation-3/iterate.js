@@ -6,16 +6,6 @@ const glider = [
     [ true,  true,  true]
 ]
 
-const randomCell = () => Math.random() >= 0.5;
-
-const randomRow = (width) => {
-    const row = [];
-    for (let i = 0; i < width; i += 1) {
-        row.push(randomCell());
-    }
-    return row;
-}
-
 const initialBoardState = (width, height, numIterations) => {
     const gliderArea = 3 + (numIterations / 4); // Number of cells in each direction needed to allow the glider to translate once
     const gliderX = Math.floor(Math.random() * (height - gliderArea)); // Start the glider in a random position on the board
