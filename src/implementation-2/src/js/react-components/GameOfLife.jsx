@@ -37,6 +37,8 @@ class GameOfLife extends React.Component {
 
         window.addEventListener("keydown", this.handleKeyChange);
         window.addEventListener("keyup", this.handleKeyChange);
+
+        window.nextIteration = this.handleNextIterationClick;
     }
 
     componentDidMount() {
