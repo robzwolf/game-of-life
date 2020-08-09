@@ -1,4 +1,8 @@
 # Game of Life – Visualisation 3
+This implementation is not complete. It is a testing ground for experimenting with server-side iteration computation. It
+comprises a simple node.js server which uses the `computation-engine.js` used through all three implementations to
+simulate translating a glider across the board. 
+
 ## Quick Start
 
 1. Make sure you're in the `src/implementation-3/` directory.
