@@ -1,4 +1,6 @@
 # Game of Life – Visualisation 2
+This implementation of the Game of Life uses React to visualise the Game of Life.
+
 ## Quick Start
 
 1. Make sure you're in the `src/implementation-2/` directory.
