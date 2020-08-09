@@ -53,15 +53,18 @@ const initialBoardState = (width, height, numIterations) => {
 
 const hrtimeToMillseconds = (hrtime) => ( hrtime[0] * 1000000 + hrtime[1] / 1000 ) / 1000;
 
-const width = 20;
-const height = 20;
+const width = 100;
+const height = 100;
 const numIterations = 20;
 const initialBoard = initialBoardState(width, height, numIterations);
 
-// console.log(`Running ${  numIterations  } iterations of a ${width}x${height} board. All times in milliseconds.`);
-// for (let i = 0; i < numIterations; i += 1) {
-//     const start = process.hrtime();
-//     ComputationEngine.computeNextIteration(initialBoard);
-//     const diff = process.hrtime(start);
-//     console.log(hrtimeToMillseconds(diff));
-// }
+// Dummy run to remove anomalous result
+ComputationEngine.computeNextIteration(initialBoard);
+
+console.log(`Running ${  numIterations  } iterations of a ${width}x${height} board. All times in milliseconds.`);
+for (let i = 0; i < numIterations; i += 1) {
+    const start = process.hrtime();
+    ComputationEngine.computeNextIteration(initialBoard);
+    const diff = process.hrtime(start);
+    console.log(hrtimeToMillseconds(diff));
+}
