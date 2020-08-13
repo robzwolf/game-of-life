@@ -1,0 +1,464 @@
+
+
+    Skip to main content
+    Select language
+    Skip to search
+
+    Technologies
+        Technologies Overview
+        HTML
+        CSS
+        JavaScript
+        Graphics
+        HTTP
+        APIs / DOM
+        Browser Extensions
+        MathML
+    References & Guides
+        Learn web development
+        Tutorials
+        References
+        Developer Guides
+        Accessibility
+        Game development
+        ...more docs
+    Feedback
+        Send Feedback
+        Get Firefox help 🌐
+        Get web development help 🌐
+        Join the MDN community
+        Report a content problem 🌐
+        Report an issue 🌐
+
+Search MDN
+Open search
+Sign in
+Document Object Model (DOM)
+
+    See   Web technology for developers
+    See   Web APIs
+    Document Object Model (DOM)
+
+English ▼
+
+    Deutsch
+    Español
+    Français
+    Italiano
+    日本語
+    한국어
+    Nederlands
+    Polski
+    Português (do Brasil)
+    Português (Europeu)
+    Русский
+    Türkçe
+    Tiếng Việt
+    中文 (简体)
+    正體中文 (繁體)
+    Add a translation
+
+On this Page
+Jump to section
+
+    DOM interfaces
+    HTML DOM
+    SVG interfaces
+    Specifications
+    See also
+    Related topics
+
+The Document Object Model ( DOM ) connects web pages to scripts or programming languages by representing the structure of a document—such as the HTML representing a web page—in memory. Usually, that means JavaScript, although modeling HTML, SVG, or XML documents as objects are not part of the core JavaScript language, as such.
+
+The DOM represents a document with a logical tree. Each branch of the tree ends in a node, and each node contains objects. DOM methods allow programmatic access to the tree. With them, you can change the document's structure, style, or content.
+
+Nodes can also have event handlers attached to them. Once an event is triggered, the event handlers get executed.
+
+To learn more about what the DOM is and how it represents documents, see our article Introduction to the DOM .
+DOM interfaces
+
+    Attr
+    CDATASection
+    CharacterData
+    ChildNode
+    Comment
+    CustomEvent
+    Document
+    DocumentFragment
+    DocumentType
+    DOMError
+    DOMException
+    DOMImplementation
+    DOMString
+    DOMTimeStamp
+    DOMStringList
+    DOMTokenList
+    Element
+    Event
+    EventTarget
+    HTMLCollection
+    MutationObserver
+    MutationRecord
+    NamedNodeMap
+    Node
+    NodeFilter
+    NodeIterator
+    NodeList
+    NonDocumentTypeChildNode
+    ParentNode
+    ProcessingInstruction
+    Selection
+    Range
+    Text
+    TextDecoder
+    TextEncoder
+    TimeRanges
+    TreeWalker
+    URL
+    Window
+    Worker
+    XMLDocument
+
+Obsolete DOM interfaces
+
+The Document Object Model has been highly simplified. To achieve this, the following interfaces present in the different DOM level 3 or earlier specifications have been removed. It is uncertain whether some may be reintroduced in the future or not, but for the time being they should be considered obsolete and should be avoided:
+
+    DocumentTouch
+    DOMConfiguration
+    DOMErrorHandler
+    DOMImplementationList
+    DOMImplementationRegistry
+    DOMImplementationSource
+    DOMLocator
+    DOMObject
+    DOMSettableTokenList
+    DOMUserData
+    ElementTraversal
+    Entity
+    EntityReference
+    NameList
+    Notation
+    TypeInfo
+    UserDataHandler
+
+HTML DOM
+
+A document containing HTML is described using the Document interface, which is extended by the HTML specification to include various HTML-specific features. In particular, the Element interface is enhanced to become HTMLElement and various subclasses, each representing one of (or a family of closely related) elements.
+
+The HTML DOM API provides access to various browser features such as tabs and windows, CSS styles and stylesheets, browser history, and so forth. These interfaces are discussed further in the HTML DOM API documentation.
+SVG interfaces
+SVG element interfaces
+
+    SVGAElement
+    SVGAltGlyphElement
+    SVGAltGlyphDefElement
+    SVGAltGlyphItemElement
+    SVGAnimationElement
+    SVGAnimateElement
+    SVGAnimateColorElement
+    SVGAnimateMotionElement
+    SVGAnimateTransformElement
+    SVGCircleElement
+    SVGClipPathElement
+    SVGColorProfileElement
+    SVGComponentTransferFunctionElement
+    SVGCursorElement
+    SVGDefsElement
+    SVGDescElement
+    SVGElement
+    SVGEllipseElement
+    SVGFEBlendElement
+    SVGFEColorMatrixElement
+    SVGFEComponentTransferElement
+    SVGFECompositeElement
+    SVGFEConvolveMatrixElement
+    SVGFEDiffuseLightingElement
+    SVGFEDisplacementMapElement
+    SVGFEDistantLightElement
+    SVGFEDropShadowElement
+    SVGFEFloodElement
+    SVGFEFuncAElement
+    SVGFEFuncBElement
+    SVGFEFuncGElement
+    SVGFEFuncRElement
+    SVGFEGaussianBlurElement
+    SVGFEImageElement
+    SVGFEMergeElement
+    SVGFEMergeNodeElement
+    SVGFEMorphologyElement
+    SVGFEOffsetElement
+    SVGFEPointLightElement
+    SVGFESpecularLightingElement
+    SVGFESpotLightElement
+    SVGFETileElement
+    SVGFETurbulenceElement
+    SVGFilterElement
+    SVGFilterPrimitiveStandardAttributes
+    SVGFontElement
+    SVGFontFaceElement
+    SVGFontFaceFormatElement
+    SVGFontFaceNameElement
+    SVGFontFaceSrcElement
+    SVGFontFaceUriElement
+    SVGForeignObjectElement
+    SVGGElement
+    SVGGeometryElement
+    SVGGlyphElement
+    SVGGlyphRefElement
+    SVGGradientElement
+    SVGGraphicsElement
+    SVGHatchElement
+    SVGHatchpathElement
+    SVGHKernElement
+    SVGImageElement
+    SVGLinearGradientElement
+    SVGLineElement
+    SVGMarkerElement
+    SVGMaskElement
+    SVGMeshElement
+    SVGMeshGradientElement
+    SVGMeshpatchElement
+    SVGMeshrowElement
+    SVGMetadataElement
+    SVGMissingGlyphElement
+    SVGMPathElement
+    SVGPathElement
+    SVGPatternElement
+    SVGPolylineElement
+    SVGPolygonElement
+    SVGRadialGradientElement
+    SVGRectElement
+    SVGScriptElement
+    SVGSetElement
+    SVGSolidcolorElement
+    SVGStopElement
+    SVGStyleElement
+    SVGSVGElement
+    SVGSwitchElement
+    SVGSymbolElement
+    SVGTextContentElement
+    SVGTextElement
+    SVGTextPathElement
+    SVGTextPositioningElement
+    SVGTitleElement
+    SVGTRefElement
+    SVGTSpanElement
+    SVGUseElement
+    SVGUnknownElement
+    SVGViewElement
+    SVGVKernElement
+
+SVG data type interfaces
+
+Here are the DOM APIs for data types used in the definitions of SVG properties and attributes.
+Static type
+
+    SVGAngle
+    SVGColor
+    SVGICCColor
+    SVGElementInstance
+    SVGElementInstanceList
+    SVGLength
+    SVGLengthList
+    SVGMatrix
+    SVGNameList
+    SVGNumber
+    SVGNumberList
+    SVGPaint
+    SVGPathSeg
+    SVGPathSegClosePath
+    SVGPathSegMovetoAbs
+    SVGPathSegMovetoRel
+    SVGPathSegLinetoAbs
+    SVGPathSegLinetoRel
+    SVGPathSegCurvetoCubicAbs
+    SVGPathSegCurvetoCubicRel
+    SVGPathSegCurvetoQuadraticAbs
+    SVGPathSegCurvetoQuadraticRel
+    SVGPathSegArcAbs
+    SVGPathSegArcRel
+    SVGPathSegLinetoHorizontalAbs
+    SVGPathSegLinetoHorizontalRel
+    SVGPathSegLinetoVerticalAbs
+    SVGPathSegLinetoVerticalRel
+    SVGPathSegCurvetoCubicSmoothAbs
+    SVGPathSegCurvetoCubicSmoothRel
+    SVGPathSegCurvetoQuadraticSmoothAbs
+    SVGPathSegCurvetoQuadraticSmoothRel
+    SVGPathSegList
+    SVGPoint
+    SVGPointList
+    SVGPreserveAspectRatio
+    SVGRect
+    SVGStringList
+    SVGTransform
+    SVGTransformList
+
+Animated type
+
+    SVGAnimatedAngle
+    SVGAnimatedBoolean
+    SVGAnimatedEnumeration
+    SVGAnimatedInteger
+    SVGAnimatedLength
+    SVGAnimatedLengthList
+    SVGAnimatedNumber
+    SVGAnimatedNumberList
+    SVGAnimatedPathData
+    SVGAnimatedPoints
+    SVGAnimatedPreserveAspectRatio
+    SVGAnimatedRect
+    SVGAnimatedString
+    SVGAnimatedTransformList
+
+SMIL-related interfaces
+
+    ElementTimeControl
+    TimeEvent
+
+Other SVG interfaces
+
+    GetSVGDocument
+    ShadowAnimation
+    SVGColorProfileRule
+    SVGCSSRule
+    SVGDocument
+    SVGException
+    SVGExternalResourcesRequired
+    SVGFitToViewBox
+    SVGLangSpace
+    SVGLocatable
+    SVGRenderingIntent
+    SVGStylable
+    SVGTests
+    SVGTransformable
+    SVGUnitTypes
+    SVGUseElementShadowRoot
+    SVGURIReference
+    SVGViewSpec
+    SVGZoomAndPan
+    SVGZoomEvent
+
+Specifications
+Specification 	Status 	Comment
+DOM 	Living Standard 	
+See also
+
+    DOM Examples
+    CSS Object Model (CSSOM)
+
+Metadata
+
+    Last modified: Jun 24, 2020 , by MDN contributors
+
+Related Topics
+
+    Document Object Model
+    Guides
+        Introduction to the DOM
+        Using the W3C DOM Level 1 Core
+        Traversing an HTML table with JavaScript and DOM Interfaces
+        Locating DOM elements using selectors
+        How to create a DOM tree
+        Events and the DOM
+        How whitespace is handled by HTML, CSS, and in the DOM
+        Examples of web and XML development using the DOM
+    Interfaces
+        AbortController
+        AbortSignal
+        AbstractRange
+        Attr
+        ByteString
+        CDATASection
+        CharacterData
+        ChildNode
+        CSSPrimitiveValue
+        CSSValue
+        CSSValueList
+        Comment
+        CustomEvent
+        Document
+        DocumentFragment
+        DocumentType
+        DOMConfiguration
+        DOMError
+        DOMErrorHandler
+        DOMException
+        DOMImplementation
+        DOMImplementationList
+        DOMImplementationRegistry
+        DOMImplementationSource
+        DOMLocator
+        DOMObject
+        DOMParser
+        DOMPoint
+        DOMPointInit
+        DOMPointReadOnly
+        DOMRect
+        DOMString
+        DOMTimeStamp
+        DOMTokenList
+        DOMUserData
+        Element
+        ElementTraversal
+        Entity
+        EntityReference
+        Event
+        EventTarget
+        HTMLCollection
+        MutationObserver
+        Node
+        NodeFilter
+        NodeIterator
+        NodeList
+        NonDocumentTypeChildNode
+        ProcessingInstruction
+        PromiseResolver
+        Range
+        StaticRange
+        Text
+        TextDecoder
+        TextEncoder
+        TimeRanges
+        TreeWalker
+        TypeInfo
+        UserDataHandler
+        USVString
+        XMLDocument
+
+Learn the best of web development
+
+Get the latest and greatest from MDN delivered straight to your inbox.
+
+The newsletter is offered in English only at the moment.
+E-mail
+I’m okay with Mozilla handling my info as explained in this Privacy Policy .
+Sign up now
+Hide Newsletter Sign-up
+MDN Web Docs
+
+    Web Technologies
+    Learn Web Development
+    About MDN
+    Feedback
+
+    About
+    MDN Web Docs Store
+    Contact Us
+    Firefox
+
+MDN
+
+Mozilla
+
+© 2005- 2020 Mozilla and individual contributors. Content is available under these licenses .
+
+    Terms
+    Privacy
+    Cookies
+
+Sign In
+
+Sign in to enjoy the benefits of an MDN account. If you haven’t already created an account, you will be prompted to do so after signing in.
+Sign in with Github Sign in with Google
+Close modal

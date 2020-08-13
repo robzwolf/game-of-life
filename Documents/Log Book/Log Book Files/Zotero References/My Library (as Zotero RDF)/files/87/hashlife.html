@@ -1,0 +1,249 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<title>Jenny Owen's website - Gosper's Algorithm Explained</title>
+	<meta name="Keywords" content="cosmos, swarm, swarming, robot, robotics, complex, complexity, complex systems, systems, emergence, emergent systems, research, Gosper, Gospers algorithm, hashlife">
+	<meta name="Description" content="a description of Gosper's Algorithm and how it works">
+	<meta name="Author" content="Jenny Owen">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link type="text/css" href="bootstrap.css" rel="stylesheet" media="screen">
+	<style type="text/css">
+	body {
+		padding-top: 60px;
+		padding-bottom: 40px;
+	}
+	.sidebar-nav {
+		padding: 9px 0;
+	}
+
+	@media (max-width: 980px) {
+		/* Enable use of floated navbar text */
+		.navbar-text.pull-right {
+			float: none;
+			padding-left: 5px;
+			padding-right: 5px;
+		}
+	}
+    </style>
+	<link type="text/css" href="bootstrap-responsive.css" rel="stylesheet" media="screen">
+</head>
+
+<body>
+	<div class="navbar navbar-inverse navbar-fixed-top">
+		<div class="navbar-inner">
+		<div class="container-fluid">
+			<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="brand" href="https://jennyhasahat.github.io/">Jenny Owen's Website</a>
+				<div class="nav-collapse collapse">
+					<ul class="nav">
+				<li><a href="https://jennyhasahat.github.io/index.html">Home</a></li>
+				<!--<li><a href="./reading-list.php">Stuff I've been reading</a></li>
+				<li><a href="./glossary.html">A glossary of useful words</a></li> -->
+				<li><a href="https://jennyhasahat.github.io/hashlife.html">Gosper's Algorithm</a></li>
+				<li><a href="https://jennyhasahat.github.io/playerstage-manual.html">Player/Stage Manual</a></li>
+				<li><a href="https://jennyhasahat.github.io/soundboard.html">E-Puck Extension</a></li>
+					</ul>
+				</div><!--/.nav-collapse -->
+			</div>
+		</div>
+	</div>
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span12">
+				<div class="hero-unit">
+					<h1>Gosper's Algorithm (Hashlife)</h1>
+					<p>An explanation of how the hashlife algorithm reduces processing time and effort for cellular automata evaluation.</p>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="row-fluid">
+			<div class="span12">
+				<p>For my Master's dissertation I did some research using Gosper's 
+Algorithm (also known as hashlife), which is an algorithm for hashing 
+2-dimensional cellular automata so that running the cellular automata is
+ less memory and processor intensive. Anyway, I am told that the 
+explaination I wrote in my disseration was reasonably comprehensive so 
+I've decided to put that section of my dissertation online. Hopefully it
+ is of use to any unfortunate students who need to try and understand 
+how Hashlife works and don't want to spend the best part of a week 
+stumbling through the originial paper; you can stumble through this as 
+well.</p>
+				<p>If you need it, here are the references to Gosper's original paper and for my dissertation.</p>
+				<ul>
+					<li>Gosper, R. W. (1984). Exploiting Regularities in Large Cellular Spaces. <i>Physica D: Nonlinear Phenomena</i> , 10 (1-2), 75-80.</li>
+					<li>Owen, Jennifer (2008). Complexity Measures on the Game of Life. <i>MSc Dissertation, University of York</i>.</li>
+				</ul>
+			</div>
+		</div>
+		<hr>
+		<div class="row-fluid">
+			<div class="span12">
+				<h2>Introduction</h2>
+				<p>For this project we will be using Gosper's algorithm (Gosper, 1984) to simulate the game of life. It
+				is highly efficient when compared to other simulators because it uses hashing and a
+				mechanism Gosper named "macrocells".</p>
+				<hr>
+
+				<h2>Hashing</h2>
+				<p>Hashing is a means of storing data structures in a table, called a hashtable, so that they are easily
+				accessed later. The data structure is reduced to a number somehow and this number is used to
+				reference where that data structure is stored in the hashtable. Different data may reduce to the same
+				number, so the hashtable must create a linked list at that location to store all the different entries.
+				Upon retrieval, hashing can significantly reduce the amount of time spent searching for a data
+				structure.</p>
+				<p>Ordinarily to retrieve data the entire table must be searched each time, but using hashing
+				only the data which reduces to the same number (known as a hash value) needs to be searched. With
+				large quantities of data, such as could be created by a Game of Life simulator, this gives a significant reduction
+				in search time.</p>
+
+				<h2>Macrocells</h2>
+				<p>A macrocell is a square of cellular automata 2<sup>n</sup> by 2<sup>n</sup> in size.
+				Each macrocell stores pointers to 5 smaller 2<sup>n-1</sup> by 2<sup>n-1</sup> cells.
+				Four of these cells are the four quarters of the larger macrocell, as shown in <strong>Figure 1</strong>,
+				the other cell is what Gosper referred to as the "RESULT" of the larger macrocell.
+				The RESULT square is concentric to the larger macrocell as shown in <strong>Figure 2</strong>.
+				It contains the state of the macrocell after 2<sup>n-2</sup> time steps, and it is entirely determined by the state of the macrocell.
+				The reason that the RESULT macrocell is 2<sup>n-1</sup> in size is that it will take 2<sup>n-2</sup> time steps for information outside the macrocell to penetrate the RESULT cell's border.
+				Hence, the RESULT square is the only information that can be accurately predicted from the initial macrocell after 2<sup>n-2</sup> steps.</p>
+			</div>
+		</div>
+		<div class="row-fluid">
+			<ul class="thumbnails">
+				<li class="span4 offset2">
+					<div class="thumbnail">
+						<img src="fig1.jpg">
+						<p><strong>Figure 1:</strong> The macrocell is divided into 4 equal parts, each part is an individual but smaller macrocell.</p>
+					</div>
+				</li>
+				<li class="span4">
+					<div class="thumbnail">
+						<img src="fig2.jpg">
+						<p><strong>Figure 2:</strong> Macrocell showing the dimensions of itself and the RESULT square.</p>
+					</div>
+				</li>
+			</ul>
+				<p>The most important thing to note about macrocells is that they 
+are recursive.
+				Each macrocell contains 5 smaller macrocells, these macrocells also 
+contain 5 macrocells, and so on down to a single cell size 2<sup>0</sup> x 2<sup>0</sup>; of which, for the Game of Life, there are only 2 (live and dead). </p>
+
+				<p>Each macrocell can also be reused. If a macrocell is a repeat of a
+ previously discovered one then it will behave in exactly the same way, 
+so it becomes a pointer to the previously discovered cell in storage. 
+There is no need to store another copy of it in memory. Only if a new 
+macrocell is found do we calculate its RESULT and save the macrocell 
+into memory.</p>
+		</div>
+		<hr>
+
+		<div class="row-fluid">
+			<div class="span12">
+				<h2>Calculating the RESULT</h2>
+				<p>When a macrocell is 4 by 4 in size it is easy to calculate the RESULT using brute force, the cell
+				only needs to advance one time step. However problems arise when n&gt;2. If we take a macrocell and its
+				4 quadrants we can see that the RESULTs from the quadrants do not fill the area required to calculate
+				the larger RESULT (<strong>Figure 3</strong>).
+
+				Furthermore these RESULTs are from 2<sup>n-3</sup> time steps into the future not 2<sup>n-2</sup>,
+				because the existing RESULTs are from the quadrant cells of size 2<sup>n-1</sup>, and so their
+				RESULT is at time 2<sup>(n-2)-1</sup>, or 2<sup>n-3</sup>.</p>
+			</div>
+		</div>
+		<div class="row-fluid">
+			<ul class="thumbnails">
+				<li class="span4 offset4">
+					<div class="thumbnail">
+						<img src="fig3.jpg">
+					 <p><strong>Figure 3:</strong> The RESULTs from the quadrants are not sufficient to calculate the RESULT for the whole cell (shown in blue).</p>
+					</div>
+				</li>
+			</ul>
+		</div>
+
+		<div class="row-fluid">
+			<div class="span12">
+				<p>The solution Gosper proposed is scalable for all values of n, we will explain it here using an example where n=3.</p>
+
+				<p>The first step is to find the state of the macrocell after 2<sup>n-3</sup> time steps,
+				which in this example is a 6 x 6 square after 1 time step, the corners of which are already given
+				by the RESULTs of the quadrants. The remaining area, indicated in <strong>Figure 4</strong>, is
+				calculated by making five temporary 4 x 4 macrocells overlapping the original four, so that their
+				RESULT regions end up occupying the blue area in <strong>Figure 4</strong>. This gives a 6x6 RESULT
+				square which shows the state of the macrocell after 1 (2<sup>n-3</sup>) time step. </p>
+
+				<p>The next step is much like the first. We need to reduce the 6 x 6 macrocell into a 4 x 4 macrocell
+				that represents the 6x6 macrocell after another 2<sup>n-3</sup> time steps
+				(because 2<sup>n-3</sup> + 2<sup>n-3</sup> = 2<sup>n-2</sup>, which is the time in the future that
+				we're interested in). The 6 x 6 square is converted to four overlapping 4 x 4 macrocells as illustrated
+				by <strong>Figure 5</strong>.</p>
+
+				<p>The four 4 x 4 macrocells are used to evaluate their 2 x 2 RESULT, and the four 2 x 2 RESULTs are
+				combined to make a 4 x 4 square. As the 6 x 6 RESULT is now being evaluated, the 4 x 4 macrocells are
+				predicting another step into the future to give the RESULT after 2 time steps or 2<sup>n-2</sup>.</p>
+
+				<p>For any value of n there are only two required stages for calculating the result: finding the RESULT
+				after 2<sup>n-3</sup> steps, and then using that to find the RESULT at 2<sup>n-2</sup> steps.
+				With larger values of n it is more likely we will encounter macrocells that do not have a RESULT;
+				in which case these must be evaluated separately, starting at the smallest values of n and working upwards.</p>
+			</div>
+		</div>
+		<div class="row-fluid">
+			<ul class="thumbnails">
+				<li class="span4 offset2">
+					<div class="thumbnail">
+						<img src="fig4.jpg"><br>
+						<p><strong>Figure 4:</strong> The area of the 6x6 square still left to find.
+						The grey parts are known but the blue areas still need to be found.</p>
+					</div>
+				</li>
+				<li class="span4">
+					<div class="thumbnail">
+					<img src="fig5.jpg"><br>
+					 <p><strong>Figure 5:</strong> Reducing the 6 x 6 square to a 4 x 4 square.
+					 The blue area at the top left shows how a 4 x 4 macrocell is found in order to be reduced to
+					 a 2 x 2 RESULT. This is repeated to find the other three 2 x 2 squares.</p>
+					</div>
+				</li>
+			</ul>
+		</div>
+
+		<hr>
+
+		<div class="row-fluid">
+			<div class="span12">
+				<h2>Conclusion</h2>
+				<p>The overall result of the algorithm is to consume much less memory than a naive alternative through
+				the recycling of macrocells and the recursive nature of the algorithm. The macrocells are also able to
+				predict their state 2<sup>n-2</sup> steps into the future, and if n is large this also results
+				in a significant loss of overhead. </p>
+				<p>Hashlife performs best for repetitive or periodic patterns as only a few macrocells are ever
+				needed and they are reused often. For more chaotic patterns the algorithm is less efficient as
+				macrocells are less likely to be repeated and so more are stored and the calculation of RESULTs uses
+				more overhead.</p>
+			</div>
+		</div>
+	</div> <!--end container -->
+
+	<script src="jquery.js"></script>
+	<script src="bootstrap.js"></script>
+	<script type="text/javascript">
+		var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+		document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+	</script><script src="ga.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		try {
+			var pageTracker = _gat._getTracker("UA-7390385-1");
+			pageTracker._trackPageview();
+		} catch(err) {}
+	</script>
+
+
+
+
+</body></html>

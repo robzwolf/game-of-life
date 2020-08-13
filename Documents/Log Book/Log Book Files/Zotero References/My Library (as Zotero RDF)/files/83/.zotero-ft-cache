@@ -1,0 +1,95 @@
+Skip to main content Skip to article
+Elsevier logo ScienceDirect
+
+    Journals & Books
+
+Robbie Jakob-Whitworth
+You have institutional access
+View account Sign out
+
+    Journals & Books
+
+    Help
+
+Settings
+
+    My recommendations 
+    My history  new
+    Manage alerts 
+    Purchased articles 
+
+Brought to you by
+ 
+Outline
+Get Access Get Access
+Share
+Export
+Advanced
+Outline
+
+    Abstract
+    References
+
+JavaScript is disabled on your browser. Please enable JavaScript to use all the features on this page.
+Elsevier
+Physica D: Nonlinear Phenomena
+Volume 10, Issues 1–2 , January 1984, Pages 75-80
+Physica D: Nonlinear Phenomena
+Exploiting regularities in large cellular spaces
+Author links open overlay panel R.Wm. Gosper a b
+Show more
+https://doi.org/10.1016/0167-2789(84)90251-3 Get rights and content
+Abstract
+
+We informally describe a computer algorithm for simulating deterministic cellular automata. It grows “smarter” by selectively recording intermediate computations while operating on a compressed representation of the cellular space-time. No information is lost because configurations do not actually evolve. Instead, the simulator accomodates random exploration of place-times in the future of initial configurations embedded in an effectively unbounded void.
+
+We use Conway's Life automaton as a model, but the idea extends easily to other geometries, dimensions, and number of states.
+
+    Previous article in issue
+    Next article in issue
+
+Recommended articles Citing articles (28)
+View full text
+Copyright © 1984 Published by Elsevier B.V.
+Recommended articles
+
+    Phase-oscillator computations as neural models of stimulus–response conditioning and response selection
+    Journal of Mathematical Psychology, Volume 56, Issue 2, 2012, pp. 95-117
+    Download PDF View details
+    Rule-based and object-based event structures for membrane systems
+    The Journal of Logic and Algebraic Programming, Volume 79, Issue 6, 2010, pp. 295-303
+    Download PDF View details
+    A patch that imparts unconditional stability to explicit integrators for Langevin-like equations
+    Journal of Computational Physics, Volume 231, Issue 6, 2012, pp. 2565-2580
+    Download PDF View details
+
+1 2 Next
+Citing articles (28)
+
+    Optimizing Memory Access Patterns for Cellular Automata on GPUs
+    2012, GPU Computing Gems Jade Edition
+    Purchase PDF
+    View details
+    Synchronization and predictability under rule 52, a cellular automaton reputedly of class 4
+    2007, Physics Letters, Section A: General, Atomic and Solid State Physics
+    Download PDF View details
+    Simulation of anisotropic chemical etching of crystalline silicon using a cellular automata model
+    1994, Sensors and Actuators: A. Physical
+    Download PDF View details
+
+View more articles
+Article Metrics
+View article metrics
+Elsevier
+
+    About ScienceDirect
+    Remote access
+    Shopping cart
+    Advertise
+    Contact and support
+    Terms and conditions
+    Privacy policy
+
+We use cookies to help provide and enhance our service and tailor content and ads. By continuing you agree to the use of cookies .
+
+Copyright © 2019 Elsevier B.V. or its licensors or contributors. ScienceDirect ® is a registered trademark of Elsevier B.V.

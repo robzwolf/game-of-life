@@ -1,0 +1,1474 @@
+* commit 1b8c7a93bbac5be202f71963f000d61d693e5016
+| Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| Date:   Fri Aug 14 00:17:38 2020 +0100
+| 
+|     Move meeting notes into log book
+| 
+* commit 30e9bec723e8c274f711d3f26d0896c554f30d2e
+| Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| Date:   Fri Aug 14 00:16:52 2020 +0100
+| 
+|     Add assorted log book files
+|   
+*   commit 1cf20d032354fa7586401351c07bbb3b3cfa4b58
+|\  Merge: d105f87 ce860d6
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Thu Aug 13 21:39:54 2020 +0100
+| | 
+| |     Merge pull request #41 from robzwolf/feature/meetings
+| |     
+| |     Add two more meetings to `Other Meetings.md`
+| | 
+| * commit ce860d6b3b28f7c3a2b4ff4dd7715d40df27c895
+|/  Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+|   Date:   Thu Aug 13 21:39:21 2020 +0100
+|   
+|       Add two more meetings to `Other Meetings.md`
+|   
+*   commit d105f87edff7eaa433cb9a86e41b21976e40a035
+|\  Merge: e88e29e ee97030
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Sun Aug 9 20:50:53 2020 +0100
+| | 
+| |     Merge pull request #40 from robzwolf/3rd/implementation-3
+| |     
+| |     Add 3rd implementation (node.js experimentation)
+| |   
+| *   commit ee97030b40831f7e22ae2e5beea9df173016bef4
+| |\  Merge: 89959e3 595e1ac
+| | | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | | Date:   Sun Aug 9 20:48:39 2020 +0100
+| | | 
+| | |     Merge pull request #37 from robzwolf/3rd/feature/master-readme
+| | |     
+| | |     [IM3] Update READMEs
+| | | 
+| | * commit 595e1ac8153e8ff5ae083d3d276496df89268449
+| | | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | | Date:   Sun Aug 9 20:41:54 2020 +0100
+| | | 
+| | |     Add description of implementation 3 to README
+| | | 
+| | * commit 9c588f2fe555d9603288ab7dd80ed8f91ddd0d8e
+| |/  Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| |   Date:   Sun Aug 9 20:41:44 2020 +0100
+| |   
+| |       Add link to implementation 3 to master README
+| |   
+| *   commit 89959e3e05c7b12c3ad6a35f06ef37cc9531889d
+| |\  Merge: ccc428d b238e34
+| | | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | | Date:   Sun Aug 9 17:57:34 2020 +0100
+| | | 
+| | |     Merge pull request #36 from robzwolf/3rd/feature/glider
+| | |     
+| | |     Iterate a glider 20 times
+| | | 
+| | * commit b238e34a3ddc4618542f0c6f81632194ba3b90e2
+| | | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | | Date:   Sun Aug 9 17:57:01 2020 +0100
+| | | 
+| | |     Fix typo in function name
+| | | 
+| | * commit 74d61de3525ab7f82b171093ce8c4e2c307952a7
+| | | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | | Date:   Sun Aug 9 17:56:55 2020 +0100
+| | | 
+| | |     Remove unused functions
+| | | 
+| | * commit c6a8ea9260fdba1beaa0e8c32957367e7dfc1d6e
+| | | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | | Date:   Sun Aug 9 17:55:21 2020 +0100
+| | | 
+| | |     Iterate glider board
+| | | 
+| | * commit d2ca1f79e07a34e7e059674ab7a70d5b49151256
+| |/  Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| |   Date:   Sun Aug 9 17:53:58 2020 +0100
+| |   
+| |       Create a glider on a 20x20 board
+| |   
+| *   commit ccc428d0891cd4b83bc0ccd184efed662cc6f48e
+| |\  Merge: d2a5e99 f92d449
+| | | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | | Date:   Sun Aug 9 17:38:25 2020 +0100
+| | | 
+| | |     Merge pull request #35 from robzwolf/3rd/feature/random_board
+| | |     
+| | |     Output times from 20 100x100 boards
+| | | 
+| | * commit f92d449f07b10f0b759f921d02e71e8f2fb713be
+| |/  Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| |   Date:   Sun Aug 9 17:37:54 2020 +0100
+| |   
+| |       Output times from 20 100x100 boards
+| |   
+| *   commit d2a5e99b82f84c96933b5eff397e0b1d9bf81ad3
+| |\  Merge: c14c7e1 c933aaf
+| | | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | | Date:   Sun Aug 9 17:16:08 2020 +0100
+| | | 
+| | |     Merge pull request #34 from robzwolf/3rd/feature/readme
+| | |     
+| | |     Add IM3 README
+| | | 
+| | * commit c933aaff3a0360fccf7c1a62b3d8c6a2340a45df
+| |/  Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| |   Date:   Sun Aug 9 17:15:31 2020 +0100
+| |   
+| |       Add IM3 README
+| |   
+| *   commit c14c7e111d7b148c4dbb2616c69d15e94547b695
+| |\  Merge: 44b78ed f7b6b02
+| | | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | | Date:   Sun Aug 9 17:13:49 2020 +0100
+| | | 
+| | |     Merge pull request #33 from robzwolf/3rd/feature/iterate
+| | |     
+| | |     Create basic iterate script
+| | | 
+| | * commit f7b6b027932bdab40a66ae3d88444077fee36d51
+| |/  Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| |   Date:   Sun Aug 9 17:11:40 2020 +0100
+| |   
+| |       Create basic iterate script
+| | 
+| * commit 44b78ed3a7a03177f52cfcb53fb126412b90d344
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Sun Aug 9 16:55:47 2020 +0100
+| | 
+| |     [IM3] npm init
+| |   
+* |   commit e88e29e33577eb8d2379191d6ff297b43c0b6fa9
+|\ \  Merge: a9d903c d2f5cf0
+| | | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | | Date:   Sun Aug 9 20:49:50 2020 +0100
+| | | 
+| | |     Merge pull request #38 from robzwolf/1st/feature/readme-updates
+| | |     
+| | |     [IM1] README Updates
+| | | 
+| * | commit d2f5cf05d8d2137a3256d55547216d1413dd3265
+| | | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | | Date:   Sun Aug 9 20:47:24 2020 +0100
+| | | 
+| | |     [IM1] add port instructions to READMe
+| | | 
+| * | commit 82e11bbbe362d11033bb57040e3455b821999e4f
+| |/  Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| |   Date:   Sun Aug 9 20:46:06 2020 +0100
+| |   
+| |       [IM1] add description to README
+| |   
+* |   commit a9d903c4de944bba35c23b607c1649a367d4132a
+|\ \  Merge: 401c7d9 6f82f9c
+| |/  Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+|/|   Date:   Sun Aug 9 20:49:39 2020 +0100
+| |   
+| |       Merge pull request #39 from robzwolf/2nd/feature/readme-updates
+| |       
+| |       [IM2] Update README
+| | 
+| * commit 6f82f9c9baf190d5043ddbac2f5c5b148d4058ad
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Sun Aug 9 20:45:34 2020 +0100
+| | 
+| |     Add port instructions to README
+| | 
+| * commit 5c8190ec233cd4a0d41a8e197f90a347f6fea7a8
+|/  Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+|   Date:   Sun Aug 9 20:45:29 2020 +0100
+|   
+|       [IM2] add description to README
+|   
+*   commit 401c7d91f66263a9d27c5910363e07c83cb3d56b
+|\  Merge: 29926f0 d674b39
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Sun Aug 9 16:34:39 2020 +0100
+| | 
+| |     Merge pull request #32 from robzwolf/feature/evaluation
+| |     
+| |     Add evaluation and testing functions
+| | 
+| * commit d674b39ed0a094ec49fd06c22cfb90b19e86dfaf
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Sun Aug 9 14:10:18 2020 +0100
+| | 
+| |     Update page titles
+| | 
+| * commit 1ba6fb57c879ce499d842419350a5f54c7bb083f
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Sun Aug 9 14:09:40 2020 +0100
+| | 
+| |     [IM1] Add function for running arbitrary number of evaluations
+| | 
+| * commit 0b817fe8526210c3a1f97ed705360229341732d9
+|/  Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+|   Date:   Sun Aug 9 14:06:26 2020 +0100
+|   
+|       [IM2] Add function for running arbitrary number of evaluations
+|   
+*   commit 29926f05866f8dc58ceddada8d45c7660ceba572
+|\  Merge: 31187ca e168ff5
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Sat Aug 8 16:14:03 2020 +0100
+| | 
+| |     Merge pull request #31 from robzwolf/robzwolf-patch-1
+| |     
+| |     Add link to editable final report
+| | 
+| * commit e168ff5d5c4036bb5ea1c82fa85edebfd5c8e6e8
+|/  Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+|   Date:   Sat Aug 8 16:13:52 2020 +0100
+|   
+|       Add link to editable final report
+|   
+*   commit 31187ca36d01e6d166e701ad07d17eff16fba584
+|\  Merge: 4575234 3eb4801
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Sat Aug 8 15:41:27 2020 +0100
+| | 
+| |     Merge pull request #30 from robzwolf/2nd/second-implementation
+| |     
+| |     Second Implementation
+| | 
+| * commit 3eb48011c170db18ddef1e86ee29e72557c6cfda
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Sat Aug 8 13:34:23 2020 +0100
+| | 
+| |     Prettier and ESLint all passing
+| | 
+| * commit f3c7a5633b1641c36ad883d7d0fdefee1c1d3bac
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Sat Aug 8 13:12:40 2020 +0100
+| | 
+| |     NextIterationButton.jsx passes ESLint
+| | 
+| * commit 3a0a9247b27a24e42000f526bdb535127e58282b
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Sat Aug 8 13:06:43 2020 +0100
+| | 
+| |     ModeNotification.jsx passes ESLint
+| | 
+| * commit b815d54f6ccf6f693d346b14095fa3010c35ba58
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Sat Aug 8 13:06:34 2020 +0100
+| | 
+| |     Remove unnecessary Form.jsx
+| | 
+| * commit 9dd1feeac67b754721c1e68e5c093b919cbcda2c
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Sat Aug 8 13:02:37 2020 +0100
+| | 
+| |     Cell.jsx passes ESLint
+| | 
+| * commit b8ab4c077aa886876c21b501cb187f71b3b54007
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Sat Aug 8 13:00:36 2020 +0100
+| | 
+| |     Row.jsx passes ESLint config
+| | 
+| * commit 38c46799d39a4554d7fc7ad4c0ab9aca92ac1e3c
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Sat Aug 8 12:56:40 2020 +0100
+| | 
+| |     Grid.jsx passes ESLint
+| | 
+| * commit 1ae664eebc2da47172a28381eed5131b4ec1cc6f
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Sat Aug 8 12:43:23 2020 +0100
+| | 
+| |     GameOfLife.jsx passes new ESLint config
+| | 
+| * commit c6f0836520d5e7041e3a46106de278a84a84dcd7
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Sat Aug 8 12:32:30 2020 +0100
+| | 
+| |     computation-engine.js passes new ESLint config
+| | 
+| * commit 50e79156275d9bc1881237b760b81e29b7e3bec6
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Sat Aug 8 12:01:54 2020 +0100
+| | 
+| |     Make ESLint work on JSX files
+| | 
+| * commit 2dd255f3de80c6d6323c846a5ba2bde129d8dca9
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Sat Aug 8 11:39:57 2020 +0100
+| | 
+| |     Cleanups
+| | 
+| * commit e006e12883b8c69191bee6bda2e84d5b06d16552
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Sat Aug 8 11:27:27 2020 +0100
+| | 
+| |     Add Game of Life logic
+| |     
+| |     ...and fix a rendering bug
+| | 
+| * commit 3c9974fd7d896293e796810c6f3a0a4f8d3a1f74
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Sat Aug 8 10:27:08 2020 +0100
+| | 
+| |     Absorb Simulator component into GameOfLife component
+| | 
+| * commit 9af67a3e190cfad0df9c834832291b817d912a5c
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Sat Aug 8 09:06:20 2020 +0100
+| | 
+| |     Add simple next iteration button click handler
+| | 
+| * commit 929f40a0ed3591cff88d643d61ec09d6d55e255d
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Sat Aug 8 08:22:27 2020 +0100
+| | 
+| |     Disable right-click to better support erasing
+| | 
+| * commit 42bcae4157899977f4e858f4545db37303dca4af
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Sat Aug 8 08:22:16 2020 +0100
+| | 
+| |     Drawing/erasing now works
+| | 
+| * commit a251461be8ac3cf99a8bc6b1a0b78a384cc263f1
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Sat Aug 8 08:13:20 2020 +0100
+| | 
+| |     Add drawing/erasing overlays on key down/up
+| | 
+| * commit 5d32f2244e9e75e98c911b6873db40f97d54ff39
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Fri Aug 7 22:54:03 2020 +0100
+| | 
+| |     Re-implement dragging to draw
+| | 
+| * commit f6a59bdc396d65b2cdc5846fed0c1eca80838a48
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Fri Aug 7 22:42:24 2020 +0100
+| | 
+| |     Remove console log
+| | 
+| * commit c9a05c9b2729808bd987158e0669bf83514af716
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Fri Aug 7 22:26:48 2020 +0100
+| | 
+| |     Set grid back to 100x100
+| | 
+| * commit cbb7656908f9c3e1461e716bcbbddb78d4320fd7
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Fri Aug 7 22:26:43 2020 +0100
+| | 
+| |     Store copy of old board and manually determine whether or not to update row
+| | 
+| * commit 08fa6d549a24f447520951434cf9fe7d80191566
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Fri Aug 7 22:24:41 2020 +0100
+| | 
+| |     Rename `alive` to `isAlive`
+| | 
+| * commit 970dc2a89432eac499b2d23623a5c569b9eee177
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Fri Aug 7 22:11:23 2020 +0100
+| | 
+| |     Use 3x3 grid while testing
+| | 
+| * commit e52d4cb30ba8ecb74d6c5aa90e1f0068ed8ba370
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Fri Aug 7 22:10:01 2020 +0100
+| | 
+| |     Use cell memoization to increase performance
+| | 
+| * commit 08c7b022496d63b3acf11264f5ff50316a5fadde
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Fri Aug 7 21:56:46 2020 +0100
+| | 
+| |     Move click handler to Grid
+| | 
+| * commit ce3346dc4e32a79a0b4bc40efd75105423563e63
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Fri Aug 7 21:31:21 2020 +0100
+| | 
+| |     Store coordinates on cell DOM node
+| | 
+| * commit aad5f21dde70da02500fbcd51ebba8303ed12fac
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Fri Aug 7 20:43:07 2020 +0100
+| | 
+| |     Toggle alive on cell click
+| | 
+| * commit 218bddbde5ad23a2e25bf0693522472c33f23d69
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Fri Aug 7 20:16:42 2020 +0100
+| | 
+| |     Store cell state on Simulator
+| | 
+| * commit 2d7bd7288058c12427cd35ed5ed1e015b4d8ee71
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Fri Aug 7 19:54:07 2020 +0100
+| | 
+| |     Nicer dynamic row/cell creation
+| | 
+| * commit cf753e6ba37b9aeb602eca9de6aa63c3d09b15a4
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Fri Aug 7 19:19:29 2020 +0100
+| | 
+| |     Scroll to centre middle after mount
+| | 
+| * commit a6065a7e96e17a68cc7dcaf8a2d2faf515232389
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Fri Aug 7 19:04:51 2020 +0100
+| | 
+| |     Add cell size prop support and prop types
+| | 
+| * commit 5296eaa0ed48ca8e8bfa51513c29db43dc78cf4c
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Fri Aug 7 19:00:38 2020 +0100
+| | 
+| |     Install airbnb-prop-types
+| |     
+| |     https://github.com/facebook/react/issues/2214#issuecomment-282139287
+| | 
+| * commit b3b4a071e8a9d8a2c922cdfe6e404158a343b774
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Fri Aug 7 18:54:57 2020 +0100
+| | 
+| |     Render basic grid and cells using React (yay!)
+| | 
+| * commit ab6a71cb63dc5a1ee73c8a279ba0611b06d5616e
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Fri Aug 7 18:17:44 2020 +0100
+| | 
+| |     Recreated basic interface with pure React
+| | 
+| * commit 040fb75e98d56377d8b430702cf92b2cb5912749
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Fri Aug 7 18:09:05 2020 +0100
+| | 
+| |     Start recreating interface in React
+| | 
+| * commit 34e0d197b7ce596eb932fd81fe88f44c846cd4fb
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Fri Aug 7 18:08:54 2020 +0100
+| | 
+| |     4 spaces
+| | 
+| * commit 8a014b7c1a394a0068ab7fb7b5f26a50252f12eb
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Fri Aug 7 17:56:19 2020 +0100
+| | 
+| |     Use ESLint and Prettier
+| |     
+| |     https://www.imaginarycloud.com/blog/how-to-configure-eslint-prettier-in-react/
+| | 
+| * commit 29fd35d8dd17d41c6bff3a07af8c2e46dedf1fb0
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Fri Aug 7 17:35:34 2020 +0100
+| | 
+| |     Add React support to ESLint
+| | 
+| * commit 4d2c75f3af050c271efe346730ef4c642a38cd92
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Fri Aug 7 17:25:20 2020 +0100
+| | 
+| |     Render simple 'Hello World' text using React
+| | 
+| * commit 558b035261a0c5a793028891d3b251d4b79ba5f5
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Fri Aug 7 16:20:16 2020 +0100
+| | 
+| |     Move troubleshooting info to separate section in README
+| |   
+| *   commit f30f9c5ce84a92aa86059fc98163b9812a96fb94
+| |\  Merge: 0fad0e7 8696c14
+| | | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | | Date:   Sat Aug 1 16:19:43 2020 +0200
+| | | 
+| | |     Merge pull request #28 from robzwolf/2nd/feature/install-react
+| | |     
+| | |     Install React in dependencies
+| | | 
+| | * commit 8696c143bff866ed2ad7bca5e89ea94ec899cadc
+| | | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | | Date:   Sat Aug 1 16:09:42 2020 +0200
+| | | 
+| | |     Add 'Form' example React component
+| | |     
+| | |     https://www.valentinog.com/blog/babel/
+| | | 
+| | * commit 9a4b7decea8dde40e7d8ca06f486abe558574d05
+| | | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | | Date:   Sat Aug 1 16:05:26 2020 +0200
+| | | 
+| | |     Install React
+| | | 
+| | * commit fda3231cc7be215c2f449bbf1e936ed4d1e11735
+| | | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | | Date:   Sat Aug 1 16:05:08 2020 +0200
+| | | 
+| | |     Configure babel
+| | | 
+| | * commit 96d986ff3868d194f715f5f5635b95999303be05
+| | | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | | Date:   Sat Aug 1 16:03:43 2020 +0200
+| | | 
+| | |     Install babel 7
+| | | 
+| | * commit ea4df3e319b02a539127de4994c4f6f6870a61d3
+| | | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | | Date:   Sat Aug 1 15:52:55 2020 +0200
+| | | 
+| | |     Remove babel 6 dependencies
+| | | 
+| | * commit 3bf261ab051c6021a5a1051425434ebfb9de821a
+| |/  Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| |   Date:   Sat Aug 1 15:51:28 2020 +0200
+| |   
+| |       Add babel dependencies
+| |   
+| *   commit 0fad0e79f9c54c51031f8951da298bb9ee7d112a
+| |\  Merge: 80c8453 4575234
+| |/  Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+|/|   Date:   Sat Aug 1 15:36:37 2020 +0200
+| |   
+| |       Merge branch 'master' into 2nd/second-implementation
+| | 
+* | commit 45752346b909d2907350d821a8d501bdc882a454
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Sat Aug 1 15:36:22 2020 +0200
+| | 
+| |     Set up master branch for implentation-2
+| |     
+| |     - Update netlify.toml to enable branch previews
+| |     - Add src/implementation-2/public/dist/ directory to gitignore
+| | 
+| * commit 80c84536c98ad552c26203661452f32137e81290
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Sat Aug 1 15:35:13 2020 +0200
+| | 
+| |     Add quick start instructions for implementation-2 to main README
+| | 
+| * commit 65625507215a35af1e491a49f5ba3aaf50c1eb1c
+|/  Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+|   Date:   Sat Aug 1 15:33:12 2020 +0200
+|   
+|       Copy implementation 1 into implementation 2
+| 
+* commit 00b95e23ae5573a66dd395d84fc94e05cd9032c3
+| Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| Date:   Sat Aug 1 15:27:42 2020 +0200
+| 
+|     Add quick start instructions for implementation-1 to main README
+|   
+*   commit 7ad2c37842062e21436825ed4f844ddfd7bed898
+|\  Merge: fe77243 3c03b2f
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Sat Aug 1 15:24:58 2020 +0200
+| | 
+| |     Merge pull request #27 from robzwolf/feature/first-implementation
+| |     
+| |     First Implementation
+| |   
+| *   commit 3c03b2f52abd26e06083d189d47adc73ecaba9d4
+| |\  Merge: 8e86639 83197ab
+| | | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | | Date:   Sat Aug 1 15:20:09 2020 +0200
+| | | 
+| | |     Merge pull request #26 from robzwolf/first/feature/finalise
+| | |     
+| | |     Finalise first implementation
+| | | 
+| | * commit 83197abf28cbd58f6f1f9c0ae026ed0dc9e8b349
+| | | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | | Date:   Sat Aug 1 15:18:43 2020 +0200
+| | | 
+| | |     Update port in README
+| | | 
+| | * commit 9299e9821e7bc25930631e57de2c2d98be35db52
+| |/  Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| |   Date:   Sat Aug 1 15:18:38 2020 +0200
+| |   
+| |       Make 'Play/Pause' button say 'Next Iteration'
+| |   
+| *   commit 8e86639874687ec352314235305ab3eb883680c6
+| |\  Merge: 17ca1b7 bb3568f
+| | | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | | Date:   Sat Aug 1 15:12:49 2020 +0200
+| | | 
+| | |     Merge pull request #25 from robzwolf/feature/package_update
+| | |     
+| | |     Update packages and use node.js static-server
+| | | 
+| | * commit bb3568f12178c546d8a9cb535cb1f1838ea2bd56
+| | | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | | Date:   Sat Aug 1 15:10:44 2020 +0200
+| | | 
+| | |     Include node static-server module
+| | | 
+| | * commit 4f3bee76cee7292661a4355006ba20b4ec69587c
+| | | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | | Date:   Sat Aug 1 15:08:55 2020 +0200
+| | | 
+| | |     Update README with node.js v14.7.0 and troubleshooting info
+| | | 
+| | * commit 1aeb093c0de9ccdeb86ae43ba048bdf74c9b2102
+| | | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | | Date:   Sat Aug 1 14:55:43 2020 +0200
+| | | 
+| | |     npm update (requires node v14.7.0)
+| | | 
+| | * commit 7b5d90c5e6571e3aa858f0775903d94e57c56b4c
+| |/  Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| |   Date:   Sat Aug 1 14:53:54 2020 +0200
+| |   
+| |       npm audit fix
+| |   
+| *   commit 17ca1b7e70002d89ba36e31638180cfc87e6785b
+| |\  Merge: 43ad376 fe77243
+| |/  Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+|/|   Date:   Sat Aug 1 14:46:48 2020 +0200
+| |   
+| |       Merge branch 'master' into feature/first-implementation
+| |   
+* |   commit fe772432cbf65a77650246ee57395c2219114292
+|\ \  Merge: c73392d 4ee3c74
+| | | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | | Date:   Sat Aug 1 14:45:51 2020 +0200
+| | | 
+| | |     Merge pull request #24 from robzwolf/feature/easter_term_meetings
+| | |     
+| | |     Add Easter term meetings
+| | | 
+| * | commit 4ee3c747d7b2b7af85e9f3cd3478377d61534fd5
+|/ /  Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| |   Date:   Sat Aug 1 14:45:28 2020 +0200
+| |   
+| |       Add Easter term meetings
+| | 
+| * commit 43ad376d0c0cbd4bc9e37decc710adf238bbb6cb
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Mon Apr 20 15:16:54 2020 +0100
+| | 
+| |     Improve performance by disabling transitions
+| | 
+| * commit 93c50acedaaa28be2f178cd408e2906596850725
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Mon Apr 20 15:16:46 2020 +0100
+| | 
+| |     Increase cell size to 40
+| |   
+| *   commit 9085515d8f73c2812534913c0bc9d1cc608c7f22
+| |\  Merge: ed860d4 3021f25
+| | | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | | Date:   Mon Apr 20 15:14:43 2020 +0100
+| | | 
+| | |     Merge pull request #23 from robzwolf/feature/dependencies
+| | |     
+| | |     Update dependencies
+| | | 
+| | * commit 3021f253ad8043158634f20a20a821ca27155fa7
+| | | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | | Date:   Mon Apr 20 14:00:29 2020 +0100
+| | | 
+| | |     npm update
+| | | 
+| | * commit 51e081b4a8df6577c0064a2264693e706622ac78
+| |/  Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| |   Date:   Mon Apr 20 13:57:46 2020 +0100
+| |   
+| |       Fix most vulnerabilities
+| |   
+| *   commit ed860d4f2e483b00986ca233ba5a24c7de384cfa
+| |\  Merge: fd53d7a c73392d
+| |/  Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+|/|   Date:   Mon Apr 20 13:49:37 2020 +0100
+| |   
+| |       Merge branch 'master' into feature/first-implementation
+| |   
+* |   commit c73392d36aca587eb79cbf0e1defe5b15143f758
+|\ \  Merge: 7ca3183 6ca6f9a
+| | | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | | Date:   Mon Apr 20 13:46:22 2020 +0100
+| | | 
+| | |     Merge pull request #22 from robzwolf/robzwolf-patch-1
+| | |     
+| | |     Add additional meetings
+| | | 
+| * | commit 6ca6f9a50b1256745d9f86b21bc676075cd4c7c1
+|/ /  Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| |   Date:   Mon Apr 20 13:45:59 2020 +0100
+| |   
+| |       Add additional meetings
+| | 
+* | commit 7ca318399ca20adce8165a825525274b084ef350
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Thu Feb 27 14:31:32 2020 +0000
+| | 
+| |     Record meeting on 27th Feb
+| | 
+* | commit 33504e8f4fc7105c7071e1cefa355de3e09e19a1
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Wed Feb 26 18:40:28 2020 +0000
+| | 
+| |     Record other meetings
+| | 
+* | commit 1a5416674a728be05eae060c57ff18723e77707c
+| | Author: stevenaeola <s.p.bradleydurham.ac.uk>
+| | Date:   Fri Jan 24 13:56:38 2020 +0000
+| | 
+| |     meeting notes
+| | 
+| * commit fd53d7aa4d16b9e6cd11a0064ca3f8fe4aa715ea
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Mon Jan 13 12:20:12 2020 +0000
+| | 
+| |     Clean up README
+| |   
+| *   commit e42bbb6514ab4af3a7750efa571fb8139c2dcdd9
+| |\  Merge: d91d58e e1c804c
+| |/  Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+|/|   Date:   Mon Jan 13 12:12:41 2020 +0000
+| |   
+| |       Merge branch 'master' into feature/first-implementation
+| | 
+* | commit e1c804c0cdf46bb68c1929b348ea9bd5db2062bf
+| | Author: stevenaeola <s.p.bradleydurham.ac.uk>
+| | Date:   Thu Dec 12 11:34:04 2019 +0000
+| | 
+| |     Meeting 20191212
+| | 
+* | commit 1f926c93941fc13670052c3ee1ce344e8832d717
+| | Author: stevenaeola <s.p.bradleydurham.ac.uk>
+| | Date:   Fri Dec 6 13:02:19 2019 +0000
+| | 
+| |     Meeting 20191206
+| |   
+| *   commit d91d58e94fa91831440faa83531122d2e0745bf9
+| |\  Merge: de5273d f8acbdd
+| |/  Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+|/|   Date:   Fri Dec 6 12:52:55 2019 +0000
+| |   
+| |       Merge branch 'refs/heads/master' into feature/first-implementation
+| |   
+* |   commit f8acbdd4d38c5d404d014c5f7c935e125c29002e
+|\ \  Merge: 94fddcd 73ee2c6
+| | | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | | Date:   Fri Dec 6 12:41:22 2019 +0000
+| | | 
+| | |     Merge pull request #21 from robzwolf/feature/meeting-notes-2019-12-06-new
+| | |     
+| | |     Rename date of 2019-12-05 meeting notes and add new question
+| | | 
+| * | commit 73ee2c6a07bdadcd3e8ef411294ef5127f581e2b
+|/ /  Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| |   Date:   Fri Dec 6 11:40:57 2019 +0000
+| |   
+| |       Rename date of 2019-12-05 meeting notes and add new question
+| |   
+| *   commit de5273d722f7e5373eb8650bbe1563419888f027
+| |\  Merge: 478b287 94fddcd
+| |/  Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+|/|   Date:   Thu Dec 5 11:47:24 2019 +0000
+| |   
+| |       Merge branch 'refs/heads/master' into feature/first-implementation
+| |   
+* |   commit 94fddcd087dabac3987d541c12989267782fb6ff
+|\ \  Merge: 388b9b2 70c13d9
+| | | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | | Date:   Thu Dec 5 11:47:05 2019 +0000
+| | | 
+| | |     Merge pull request #19 from robzwolf/feature/meeting-notes-2019-12-05
+| | |     
+| | |     Add template meeting notes 2019-12-05
+| | | 
+| * | commit 70c13d9a9e6f5d6c5b6174f741fd151a5bed08f1
+|/ /  Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| |   Date:   Thu Dec 5 11:46:40 2019 +0000
+| |   
+| |       Add template meeting notes 2019-12-05
+| | 
+* | commit 388b9b240a4be9cbd6ea7072779559b98e96c823
+| | Author: stevenaeola <s.p.bradleydurham.ac.uk>
+| | Date:   Thu Nov 28 13:45:38 2019 +0000
+| | 
+| |     Meeting 20191128
+| | 
+| * commit 478b28771ee1692e66a462265dbac9b4bb4640b3
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Sat Nov 30 13:57:58 2019 +0000
+| | 
+| |     Make board more aesthetically pleasing
+| | 
+| * commit 7ab8b4a0a21f9c93661d42af9e5804bfb93e79b6
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Sat Nov 30 13:56:21 2019 +0000
+| | 
+| |     Render newBoard onto page
+| | 
+| * commit ff2a6177f6eed8a5d1ed43831d13eb6730bbb952
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Sat Nov 30 13:42:48 2019 +0000
+| | 
+| |     Implement rules
+| | 
+| * commit 0f6a2358426192d2d65dc6f18014ec580491d168
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Sat Nov 30 13:04:12 2019 +0000
+| | 
+| |     Fix broken erasing mode
+| | 
+| * commit 9558e40e9b2ad3e49d8b6cacd49e6b94f5c6f35b
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Sat Nov 30 13:02:35 2019 +0000
+| | 
+| |     Add play/pause class toggle
+| | 
+| * commit a33991243f2af142a36861eb123c0eb35d927570
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Sat Nov 30 12:51:55 2019 +0000
+| | 
+| |     Add temporary padding to .app to prevent jumping when in drawing/erasing mode
+| | 
+| * commit b7d0b2923422e62e326bf88815bf1055dcd84a03
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Sat Nov 30 12:47:27 2019 +0000
+| | 
+| |     Add overlay notifications for drawing/erasing mode
+| | 
+| * commit e2a7b4c6f1bc0b9c98b18eda822cfff3fd0ee3d8
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Sat Nov 30 12:18:13 2019 +0000
+| | 
+| |     Move method to Helpers class
+| | 
+| * commit 1d00fba073c91e9310954cb875082c852b05b770
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Sat Nov 30 12:15:13 2019 +0000
+| | 
+| |     Add drawing/cleaning modes
+| | 
+| * commit 2dd1b9339ce4070877242e78b58866a2c3ee4744
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Sat Nov 30 12:01:10 2019 +0000
+| | 
+| |     Add boilerplate ComputationEngine
+| | 
+| * commit 544b7332025f1a8024b25b1a2c0158989c39f621
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Sat Nov 30 11:58:06 2019 +0000
+| | 
+| |     Disable user-select highlighting
+| | 
+| * commit 482d5a087f436d67d714c922a1f77f810e9c142e
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Fri Nov 29 20:06:26 2019 +0000
+| | 
+| |     Click and drag to draw alive cells
+| | 
+| * commit 6081c8c83525b68cc0e409da0fa5332693a4a2fb
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Fri Nov 29 19:30:09 2019 +0000
+| | 
+| |     Pretty hover trail
+| | 
+| * commit 2fb11fe605b3a2fe74d18f5986fb9d284043359f
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Fri Nov 29 19:30:04 2019 +0000
+| | 
+| |     Toggle alive/dead on cell click
+| | 
+| * commit 915b029072b4d1ca3879d1a34e31076de213db79
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Fri Nov 29 19:29:35 2019 +0000
+| | 
+| |     Cleanups
+| | 
+| * commit 5580dd39810b7d942de71370dad4383f5e296868
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Fri Nov 29 19:28:51 2019 +0000
+| | 
+| |     Use grid coordinatest starting at (1,1) rather than (0,0)
+| | 
+| * commit 055e5a0c1af88899954bea7a7b3532d3596dd145
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Fri Nov 29 19:01:17 2019 +0000
+| | 
+| |     Add colours to cells
+| | 
+| * commit b48cfecc0dacf7eea3fe90bad8cc302243dcfcb7
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Fri Nov 29 19:01:11 2019 +0000
+| | 
+| |     Increase cell size and add CSS rule existence checker
+| | 
+| * commit 76081c4d51420135e64bf8a18fcb303670fe7c4d
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Fri Nov 29 18:36:38 2019 +0000
+| | 
+| |     DRY
+| | 
+| * commit b85f6a176ca26973d172ebdc24e7a3cc5c2a7213
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Fri Nov 29 18:32:01 2019 +0000
+| | 
+| |     Auto scroll to middle and centre of app on page load
+| | 
+| * commit 210559509b8ffebc87da951e668f40494a3d7c74
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Fri Nov 29 18:31:51 2019 +0000
+| | 
+| |     Allow passing of cell size as option
+| | 
+| * commit 792461e78fd50ef516046108ac92c4cc72369308
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Fri Nov 29 18:03:58 2019 +0000
+| | 
+| |     Display very basic grid
+| | 
+| * commit 736ca70052f4cb031e75ddc01bffb41ecb5417e3
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Fri Nov 29 17:36:53 2019 +0000
+| | 
+| |     Build render.js
+| |   
+| *   commit 6337fff5c2581fe03edd556c60d86df0deb9186e
+| |\  Merge: 0a3c5fa 65dc2d5
+| |/  Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+|/|   Date:   Thu Nov 28 11:14:53 2019 +0000
+| |   
+| |       Merge branch 'refs/heads/master' into feature/first-implementation
+| |   
+* |   commit 65dc2d5b0fb27845485e97542cccbb4655ae4ba4
+|\ \  Merge: b153c7c 7b1f7c4
+| | | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | | Date:   Thu Nov 28 11:14:30 2019 +0000
+| | | 
+| | |     Merge pull request #18 from robzwolf/feature/meeting-notes-20191128
+| | |     
+| | |     Add question to 2019-11-28 meeting notes
+| | | 
+| * | commit 7b1f7c49f3b3b847de64a8e26244ea7de79ac35e
+|/ /  Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| |   Date:   Thu Nov 28 11:14:02 2019 +0000
+| |   
+| |       Add question
+| |   
+| *   commit 0a3c5fa5ee46ab465585da73fbcd39e32eb9b7a3
+| |\  Merge: 3228b41 b153c7c
+| |/  Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+|/|   Date:   Thu Nov 28 11:12:44 2019 +0000
+| |   
+| |       Merge branch 'refs/heads/master' into feature/first-implementation
+| |   
+* |   commit b153c7cf111d5029234d19f0bd1e0a6110d3cad2
+|\ \  Merge: 111ff90 10cb4db
+| | | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | | Date:   Thu Nov 28 11:12:25 2019 +0000
+| | | 
+| | |     Merge pull request #17 from robzwolf/feature/meetingnotes-20191111-20191118-20191128
+| | |     
+| | |     Add meeting notes for 2019-11-11, 2019-11-20, 2019-11-28
+| | | 
+| * | commit 10cb4dbbda22dcb228803daf46b3e7b27095ec3f
+| | | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | | Date:   Thu Nov 28 11:11:30 2019 +0000
+| | | 
+| | |     Add questions for meeting 2019-11-28
+| | | 
+| * | commit 0b89ea227fefbb928f2c706a895d918d77712d02
+| | | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | | Date:   Thu Nov 28 11:11:16 2019 +0000
+| | | 
+| | |     Add "next meeting" retrospectively
+| | | 
+| * | commit c9047e4176cdb14568571f3c082e8b6a23883e17
+| | | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | | Date:   Thu Nov 28 11:11:02 2019 +0000
+| | | 
+| | |     Correct date of meeting
+| | | 
+| * | commit 0545a88a49e28a7be68509547aed91951d75736a
+| | | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | | Date:   Thu Nov 28 11:08:36 2019 +0000
+| | | 
+| | |     Add meeting notes 2019-11-18
+| | | 
+| * | commit 47681df5f26bd912a856e9d7ceaaa540159d02da
+|/ /  Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| |   Date:   Thu Nov 28 11:08:30 2019 +0000
+| |   
+| |       Add meeting notes 2019-11-11
+| |   
+| *   commit 3228b41d7cdbde6a0206c1b4268902681b1630f6
+| |\  Merge: 46fe912 111ff90
+| |/  Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+|/|   Date:   Wed Nov 13 19:13:36 2019 +0000
+| |   
+| |       Merge branch 'master' into feature/first-implementation
+| |   
+* |   commit 111ff90a1032377718da9c9ac8a162def3a25eaf
+|\ \  Merge: 261d746 99d6033
+| | | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | | Date:   Wed Nov 13 19:12:51 2019 +0000
+| | | 
+| | |     Merge pull request #16 from robzwolf/feature/readme-netlify
+| | |     
+| | |     Add Netlify instructions to README
+| | | 
+| * | commit 99d6033bd52e45972ebe74b75fbbfc1f657e8c44
+|/ /  Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| |   Date:   Wed Nov 13 19:12:17 2019 +0000
+| |   
+| |       Add Netlify instructions to README
+| | 
+| * commit 46fe9120fcccdf5dbb4b9b06197339bb00bed538
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Wed Nov 13 19:10:18 2019 +0000
+| | 
+| |     Remove unnecessary testing code
+| | 
+| * commit 57c4f8dad5463267ea0bb5cf6afe7c584e87586f
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Wed Nov 13 19:02:39 2019 +0000
+| | 
+| |     Test 2
+| | 
+| * commit e961f85967ead9f9c2250ae394af07a4d426a6d9
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Wed Nov 13 19:00:54 2019 +0000
+| | 
+| |     Test deploy preview
+| | 
+| * commit 6534614dc132a1d6eaa5f7af5fcde24693b137c7
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Wed Nov 13 18:37:12 2019 +0000
+| | 
+| |     Attempt fix publish directory
+| | 
+| * commit 39c823ce3254f18666a3c5b29657bebe0d2b8d40
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Wed Nov 13 18:34:37 2019 +0000
+| | 
+| |     Add netlify.toml
+| | 
+| * commit e4917d3120e13b692a6898f1094f715d0f14e9c4
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Wed Nov 13 18:21:56 2019 +0000
+| | 
+| |     Add `npm run test` instructions for linter
+| | 
+| * commit d2ea66da2016bb2325af0f724e22bd5c4caa69e5
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Wed Nov 13 18:16:45 2019 +0000
+| | 
+| |     Set up ESLint
+| | 
+| * commit 6a6e86f3d229c5a0ac073059428250816187be2c
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Wed Nov 13 18:10:34 2019 +0000
+| | 
+| |     Build out basic page interface with normalize
+| | 
+| * commit 7df96e5b743b707cd7ac690b94bcb58240b29469
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Wed Nov 13 18:07:26 2019 +0000
+| | 
+| |     Add asset watching instructions
+| | 
+| * commit 989c8482b6d2afa88b639eeb1ae0553626715699
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Wed Nov 13 17:07:51 2019 +0000
+| | 
+| |     Add README and helper scripts
+| | 
+| * commit 8e9aa2c9dc33ded084a30a31c9b6731fb28dac08
+|/  Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+|   Date:   Wed Nov 13 16:50:59 2019 +0000
+|   
+|       Set up build process using Webpack
+| 
+* commit 261d746b19d319125c6d5dad3adebfe73050839c
+| Author: stevenaeola <s.p.bradleydurham.ac.uk>
+| Date:   Mon Nov 4 13:57:20 2019 +0000
+| 
+|     Meeting 20191104
+| 
+* commit f0375e200f8ef767f8c1f1368326af5a05579228
+| Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| Date:   Mon Nov 4 12:58:49 2019 +0000
+| 
+|     Add meeting notes question for 2019-11-04
+| 
+* commit 7af42dc4a7aea8b1856b7ec526b9b3df826e40b0
+| Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| Date:   Fri Nov 1 11:40:41 2019 +0000
+| 
+|     Add literature survey to README
+|   
+*   commit 86b13968cf578e795761a06d9aa36fd6139ad42a
+|\  Merge: b64636e 3723e8b
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Thu Oct 31 22:03:23 2019 +0000
+| | 
+| |     Merge pull request #12 from robzwolf/feature/literature-survey
+| |     
+| |     Add final literature survey
+| | 
+| * commit 3723e8b6001da86ee49ab0da98a9edb46b366c9d
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Thu Oct 31 22:02:12 2019 +0000
+| | 
+| |     Add final literature survey
+| | 
+| * commit aaeed572e834a3101a40d3f024c4f0f4a5822e0a
+|/  Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+|   Date:   Thu Oct 31 22:02:06 2019 +0000
+|   
+|       Add link to new (editable) literature survey
+| 
+* commit b64636e388044a08fde09553043f906206cd53f7
+| Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| Date:   Thu Oct 31 15:40:00 2019 +0000
+| 
+|     Fix another typo in README.md
+| 
+* commit 790a435407c67c09d13fb10f06cf0c02c562c16a
+| Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| Date:   Thu Oct 31 15:38:34 2019 +0000
+| 
+|     Fix typo in README.md
+|   
+*   commit 47c6a18f8a031f24d616d9a8862e69f5384b50cd
+|\  Merge: dad254f f456b53
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Thu Oct 31 15:37:24 2019 +0000
+| | 
+| |     Merge pull request #11 from robzwolf/feature/project-plan
+| |     
+| |     Publish project plan
+| | 
+| * commit f456b53c1fa2047e1f11ad83fd6070ab09ef5080
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Thu Oct 31 15:36:30 2019 +0000
+| | 
+| |     Move meeting notes to Documents directory
+| | 
+| * commit fce46250f1ce366caec48fc0e3e857125ca9bc34
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Thu Oct 31 15:36:06 2019 +0000
+| | 
+| |     Update README.md
+| | 
+| * commit c860beafb3fd94d0b1fe6fdec23d69e0db563c06
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Thu Oct 31 15:23:50 2019 +0000
+| | 
+| |     Add final project plan
+| | 
+| * commit 06d019bb886e975fac84a1edd71a719288c2da30
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Thu Oct 31 15:22:42 2019 +0000
+| | 
+| |     Clean up project plan
+| | 
+| * commit 9ae0aeb2d6e9771e8ce110508bb5c21826544c5a
+|/  Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+|   Date:   Thu Oct 31 15:19:35 2019 +0000
+|   
+|       Move markdown files to separate directory
+| 
+* commit dad254f26521acfcc5b539e87ef078d951d73b5f
+| Author: stevenaeola <s.p.bradleydurham.ac.uk>
+| Date:   Tue Oct 29 16:19:33 2019 +0000
+| 
+|     Meeting 20191029
+|   
+*   commit 4a2c99e39cb46d673fa66dfb96805bdbd1cae94c
+|\  Merge: d9f3e19 12db5a6
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Tue Oct 29 12:00:30 2019 +0000
+| | 
+| |     Merge pull request #9 from robzwolf/feature/meeting-notes
+| |     
+| |     Add meeting notes questions for 2019-10-29
+| | 
+| * commit 12db5a6154c0b1ab9046912d43551460ad67b0aa
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Tue Oct 29 12:00:12 2019 +0000
+| | 
+| |     Add project plan questions to meeting note questions
+| | 
+| * commit e3b7ab5ff898b51b639beb2ca12a69af15ff0314
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Tue Oct 29 11:38:17 2019 +0000
+| | 
+| |     Add meeting notes questions for 2019-10-29
+| |   
+* |   commit d9f3e19cc7ec0a713226734ac19ba3b21fa7f1e6
+|\ \  Merge: a5a664a 4b153d5
+| |/  Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+|/|   Date:   Tue Oct 29 11:59:30 2019 +0000
+| |   
+| |       Merge pull request #10 from robzwolf/feature/project-plan
+| |       
+| |       Update project plan with clearer deliverables
+| | 
+| * commit 4b153d59f94970b258d36c35b9b418b82415fae2
+|/  Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+|   Date:   Tue Oct 29 11:58:08 2019 +0000
+|   
+|       Clean up project plan with new deliverables
+| 
+* commit a5a664a7f805ae4a935c092f85c1d83405952406
+| Author: stevenaeola <s.p.bradleydurham.ac.uk>
+| Date:   Mon Oct 21 17:00:08 2019 +0100
+| 
+|     Meeting 20191021
+| 
+* commit 153d66428295298d8a3ecb88892e79f37a68b1a8
+| Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| Date:   Mon Oct 21 15:47:39 2019 +0100
+| 
+|     Fix typo
+|   
+*   commit 923b1c25f37c30948292deadde355038703e9005
+|\  Merge: 461c8e9 d7029cd
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Mon Oct 21 15:21:51 2019 +0100
+| | 
+| |     Merge pull request #8 from robzwolf/feature/literature-survey
+| |     
+| |     Add Scientific American references to lit review
+| | 
+| * commit d7029cdb97ca7f9f5ee4f9b8d89b8ddeeb5fa718
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Mon Oct 21 10:53:02 2019 +0100
+| | 
+| |     Add second Scientific American article (Feb 1971)
+| | 
+| * commit ead5fe47d45322603d5004e48ffda1ab7c584f3e
+|/  Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+|   Date:   Mon Oct 21 10:26:48 2019 +0100
+|   
+|       Add original Scientific American article
+|   
+*   commit 461c8e9928fbd3576f749f8107e109ec8ce23b7d
+|\  Merge: 5039def da2393e
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Mon Oct 21 09:57:15 2019 +0100
+| | 
+| |     Merge pull request #7 from robzwolf/feature/literature-review
+| |     
+| |     Add very beginning of literature review
+| | 
+| * commit da2393e877c0926392b7ce540d29a4e43017fad3
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Sun Oct 20 20:36:34 2019 +0100
+| | 
+| |     Add descriptions to each reference
+| | 
+| * commit c6ab31f772dcb6abbce9628f63851dc6d9ea94d3
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Sun Oct 20 20:30:10 2019 +0100
+| | 
+| |     Add reference to lit review
+| | 
+| * commit 723f5d32c969441ef1174bd1d17aa16cf63b23d8
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Sun Oct 20 20:24:48 2019 +0100
+| | 
+| |     Fix title formatting error
+| | 
+| * commit 5eaf9da40257ebbc34e9f15af193bce247b4c5cf
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Sun Oct 20 20:23:31 2019 +0100
+| | 
+| |     Rename literature survey file
+| | 
+| * commit 3f706ae9206cf5621700881b4c5b95faf5745dfa
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Sun Oct 20 20:23:13 2019 +0100
+| | 
+| |     Add Springer link to references
+| | 
+| * commit 0ca901182d216d79ff47b9bfcea93416594c9e1e
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Sun Oct 20 20:04:14 2019 +0100
+| | 
+| |     Add lit review draft message
+| | 
+| * commit dd7fee557f4d6e9d2440592e1a46480ca3e24226
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Sun Oct 20 20:03:22 2019 +0100
+| | 
+| |     Flesh out literature review outline
+| | 
+| * commit c72859ee4ae2dbf7553ddaf300a033fc09ef263e
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Sun Oct 20 19:57:37 2019 +0100
+| | 
+| |     Add existing implementations section
+| | 
+| * commit 7643bbe6af0687b6fca7d13d16f5d8ba0c1e5c1f
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Sun Oct 20 19:56:37 2019 +0100
+| | 
+| |     Begin lit review with definitions
+| |   
+| *   commit c1aa33713825af2ba9f25aae21f19e0ae4312320
+| |\  Merge: e48fac1 13ec3ec
+| | | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | | Date:   Sun Oct 20 19:49:27 2019 +0100
+| | | 
+| | |     Merge branch 'master' into feature/literature-review
+| | |   
+* | |   commit 5039def2c881bd5d0473ae72174ad70d35a63dfa
+|\ \ \  Merge: 13ec3ec d02857c
+| |_|/  Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+|/| |   Date:   Mon Oct 21 09:56:33 2019 +0100
+| | |   
+| | |       Merge pull request #6 from robzwolf/feature/meeting-notes-2019-10-21
+| | |       
+| | |       Add meeting notes template for 2019-10-21
+| | |   
+| * |   commit d02857c78a9241d84989c6cd13a70126a7620aac
+| |\ \  Merge: 23a7483 13ec3ec
+| |/ /  Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+|/| |   Date:   Sun Oct 20 19:49:34 2019 +0100
+| | |   
+| | |       Merge branch 'master' into feature/meeting-notes-2019-10-21
+| | |   
+* | |   commit 13ec3ec243e7e669db49d0edf3b08eb5b6d67879
+|\ \ \  Merge: e48fac1 e5c75af
+| |_|/  Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+|/| |   Date:   Sun Oct 20 19:45:52 2019 +0100
+| | |   
+| | |       Merge pull request #5 from robzwolf/feature/project-plan
+| | |       
+| | |       Draft project plan
+| | | 
+| * | commit e5c75af1c75326c6115eeaf42480d5ceb712a3de
+| | | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | | Date:   Sun Oct 20 19:24:41 2019 +0100
+| | | 
+| | |     Add 'draft' heading
+| | | 
+| * | commit 7065779294845ee2767648c0fa8e5c5c0eed1975
+| | | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | | Date:   Sun Oct 20 19:22:12 2019 +0100
+| | | 
+| | |     Typos and cleanups
+| | | 
+| * | commit 57642006db3c6db04440c515dda6f3ac4e4f7941
+|/ /  Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| |   Date:   Sun Oct 20 19:18:35 2019 +0100
+| |   
+| |       Write first draft of project plan
+| | 
+| * commit 23a7483f033f777f1297b90b30bdad882b44e907
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Sun Oct 20 19:19:19 2019 +0100
+| | 
+| |     Add questions
+| |   
+| *   commit eff7c87106ebf12dadea6e7f7bc21f61ce5e3faf
+| |\  Merge: f9872da e48fac1
+| |/  Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+|/|   Date:   Sun Oct 20 18:32:29 2019 +0100
+| |   
+| |       Merge branch 'master' into feature/meeting-notes-2019-10-21
+| |   
+* |   commit e48fac14a4ec4d696ec962345e74e7faf6de92e3
+|\ \  Merge: c156596 f5dd92d
+| | | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | | Date:   Sun Oct 20 18:32:10 2019 +0100
+| | | 
+| | |     Merge pull request #4 from robzwolf/feature/template-meeting-notes
+| | |     
+| | |     feature/template-meeting-notes
+| | | 
+| * | commit f5dd92db7809ad95619310d83601e06df270e7ad
+|/ /  Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| |   Date:   Sun Oct 20 18:31:29 2019 +0100
+| |   
+| |       Add meeting notes template
+| | 
+| * commit f9872da1790967a04bb882f4f32c37137692ee87
+|/  Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+|   Date:   Sun Oct 20 18:31:47 2019 +0100
+|   
+|       Add basic meeting notes template
+| 
+* commit c1565960a8f13ec092b781d675055e46e50084ca
+| Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| Date:   Sun Oct 20 18:12:33 2019 +0100
+| 
+|     Update 2019-10-14.md
+|   
+*   commit e7a13c52e7ae48025e3c6a8803669b96b6a91354
+|\  Merge: bbf9d76 a6b3470
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Sun Oct 20 17:30:04 2019 +0100
+| | 
+| |     Merge pull request #3 from robzwolf/feature/restructure-directories
+| |     
+| |     feature/restructure-directories
+| | 
+| * commit a6b34706d6110c1c84a085258a6d0884567038c8
+|/  Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+|   Date:   Sun Oct 20 17:29:22 2019 +0100
+|   
+|       Move meeting notes to subdirectory
+|   
+*   commit bbf9d76e1d3e7d638de4178e7969fcf307d83cca
+|\  Merge: 57dfb0a d300e38
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Mon Oct 14 21:01:11 2019 +0100
+| | 
+| |     Merge pull request #2 from robzwolf/robzwolf-patch-1
+| |     
+| |     Update README.md
+| | 
+| * commit d300e3806b172611848d4c6c04c4c14d1e08ef80
+|/  Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+|   Date:   Mon Oct 14 21:00:58 2019 +0100
+|   
+|       Update README.md
+|   
+*   commit 57dfb0a364c908b2c441bcae9a2c89d9001a8594
+|\  Merge: 77bdab2 2fc8576
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Mon Oct 14 20:23:55 2019 +0100
+| | 
+| |     Merge pull request #1 from robzwolf/feature/meeting-notes-2019-10-14
+| |     
+| |     Meeting Notes 2019-10-14
+| | 
+| * commit 2fc857618986e91f15b4993e4d62cb5f7c52163c
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Mon Oct 14 20:23:12 2019 +0100
+| | 
+| |     Add questions
+| | 
+| * commit 96c6785812e9319a822ff566f6e198aac71e3bc5
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Mon Oct 14 20:18:16 2019 +0100
+| | 
+| |     Fix GitHub formatting
+| | 
+| * commit b75d6feeba61aaa0b37117264840f62ce57f6ecc
+| | Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+| | Date:   Mon Oct 14 20:10:31 2019 +0100
+| | 
+| |     gitignore .DS_Store
+| | 
+| * commit 30272cdabced7056c8537b4f6ace831a09b820d5
+|/  Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+|   Date:   Mon Oct 14 20:10:24 2019 +0100
+|   
+|       Add meeting notes from 2019-10-14
+| 
+* commit 77bdab2495192d2d718a5a8ef60e36909ff2e638
+  Author: Robbie Jakob-Whitworth <mail@rjwhitworth.co.uk>
+  Date:   Mon Oct 14 11:39:05 2019 +0100
+  
+      Initial commit

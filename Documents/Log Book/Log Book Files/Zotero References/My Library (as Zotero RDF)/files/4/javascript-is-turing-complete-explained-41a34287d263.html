@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>JavaScript Is Turing Complete— Explained</title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="prism.css">
+    <link rel="stylesheet" type="text/css" href="prism-unescaped-markup.css">
+
+    <link href="css.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="screen.css">
+    <link rel="stylesheet" type="text/css" href="algolia-search.css">
+    
+    <script type="text/javascript" async="" src="analytics.js"></script><script async="" src="gtm.js"></script><script src="algoliasearch.js"></script>
+    <script src="autocomplete.js"></script>
+
+    <script src="a"></script>
+
+    <link rel="shortcut icon" href="https://www.freecodecamp.org/news/favicon.png" type="image/png">
+    <link rel="canonical" href="https://www.freecodecamp.org/news/javascript-is-turing-complete-explained-41a34287d263/">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="https://www.freecodecamp.org/news/javascript-is-turing-complete-explained-41a34287d263/amp/">
+    
+    <meta property="og:site_name" content="freeCodeCamp.org">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="JavaScript Is Turing Complete— Explained">
+    <meta property="og:description" content="by rajaraodv
+
+JavaScript Is Turing Complete— Explained
+If you start learning functional programming in JavaScript, you’ll probably hear
+about lambda calculus [https://en.wikipedia.org/wiki/Lambda_calculus], Turing
+machine [https://en.wikipedia.org/wiki/Turing_machine], Turing complete
+[https://en.wikipedia.org/wiki/Turing_completeness]  and somehow “JavaScript is
+Turing complete”.
+
+But, no one seem to explain, in simple terms, what it actually means. What’s the
+relation b/w a Turing “machine” an">
+    <meta property="og:url" content="https://www.freecodecamp.org/news/javascript-is-turing-complete-explained-41a34287d263/">
+    <meta property="og:image" content="https://cdn-media-1.freecodecamp.org/images/1*u__iwCIORZT5-m_zdiucgA.png">
+    <meta property="article:published_time" content="2016-05-19T07:35:59.000Z">
+    <meta property="article:modified_time" content="2016-05-18T16:39:04.000Z">
+    <meta property="article:tag" content="JavaScript">
+    <meta property="article:tag" content="Programming">
+    <meta property="article:tag" content="Computer Science">
+    <meta property="article:tag" content="Technology">
+    <meta property="article:tag" content="Tech">
+    
+    <meta property="article:publisher" content="https://www.facebook.com/freecodecamp">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="JavaScript Is Turing Complete— Explained">
+    <meta name="twitter:description" content="by rajaraodv
+
+JavaScript Is Turing Complete— Explained
+If you start learning functional programming in JavaScript, you’ll probably hear
+about lambda calculus [https://en.wikipedia.org/wiki/Lambda_calculus], Turing
+machine [https://en.wikipedia.org/wiki/Turing_machine], Turing complete
+[https://en.wikipedia.org/wiki/Turing_completeness]  and somehow “JavaScript is
+Turing complete”.
+
+But, no one seem to explain, in simple terms, what it actually means. What’s the
+relation b/w a Turing “machine” an">
+    <meta name="twitter:url" content="https://www.freecodecamp.org/news/javascript-is-turing-complete-explained-41a34287d263/">
+    <meta name="twitter:image" content="https://cdn-media-1.freecodecamp.org/images/1*u__iwCIORZT5-m_zdiucgA.png">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="freeCodeCamp.org">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="JavaScript, Programming, Computer Science, Technology, Tech">
+    <meta name="twitter:site" content="@freecodecamp">
+    <meta property="og:image:width" content="800">
+    <meta property="og:image:height" content="401">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "freeCodeCamp.org",
+        "logo": "https://cdn-media-1.freecodecamp.org/ghost/2018/12/FCC-logo-white.png"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "freeCodeCamp.org",
+        "image": {
+            "@type": "ImageObject",
+            "url": "//www.gravatar.com/avatar/fcda43852608626fe46d7fd43145766e?s=250&d=mm&r=x",
+            "width": 250,
+            "height": 250
+        },
+        "url": "https://www.freecodecamp.org/news/author/freecodecamp/",
+        "sameAs": []
+    },
+    "headline": "JavaScript Is Turing Complete— Explained",
+    "url": "https://www.freecodecamp.org/news/javascript-is-turing-complete-explained-41a34287d263/",
+    "datePublished": "2016-05-19T07:35:59.000Z",
+    "dateModified": "2016-05-18T16:39:04.000Z",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://cdn-media-1.freecodecamp.org/images/1*u__iwCIORZT5-m_zdiucgA.png",
+        "width": 800,
+        "height": 401
+    },
+    "keywords": "JavaScript, Programming, Computer Science, Technology, Tech",
+    "description": "by rajaraodv\n\nJavaScript Is Turing Complete— Explained\nIf you start learning functional programming in JavaScript, you’ll probably hear\nabout lambda calculus [https://en.wikipedia.org/wiki/Lambda_calculus], Turing\nmachine [https://en.wikipedia.org/wiki/Turing_machine], Turing complete\n[https://en.wikipedia.org/wiki/Turing_completeness]  and somehow “JavaScript is\nTuring complete”.\n\nBut, no one seem to explain, in simple terms, what it actually means. What’s the\nrelation b/w a Turing “machine” an",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.freecodecamp.org/news/"
+    }
+}
+    </script>
+
+    <meta name="generator" content="Ghost 2.25">
+    <link rel="alternate" type="application/rss+xml" title="freeCodeCamp.org" href="https://www.freecodecamp.org/news/rss/">
+    <script>
+  // Set up dataLayer with data if provided
+  window.dataLayer = window.dataLayer || [{ gaPropertyId: 'UA-55446531-20' }];
+
+  // Initialized GTM via gtag
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-55446531-20');
+
+  // Configure and initialize GTM
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl+'&gtm_cookies_win=x';f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer', 'GTM-5D6RKKP');
+</script>
+
+<script>
+// For Runkit embeds
+document.addEventListener('DOMContentLoaded', function() {
+  (function() {
+    const runkitElements = document.querySelectorAll('.runkit-element');
+	  runkitElements.forEach(function(element) {
+      const source = element.innerHTML.replace(/&amp;/g, '&');
+      element.innerHTML = '';
+      RunKit.createNotebook({element, source});
+	  });
+  })();
+});
+</script>
+
+<style id="fit-vids-style">.fluid-width-video-container{flex-grow: 1;width:100%;}.fluid-width-video-wrapper{width:100%;position:relative;padding:0;}.fluid-width-video-wrapper iframe,.fluid-width-video-wrapper object,.fluid-width-video-wrapper embed {position:absolute;top:0;left:0;width:100%;height:100%;}</style></head>
+
+<body class="post-template tag-javascript tag-programming tag-computer-science tag-technology tag-tech">
+
+    <div class="site-wrapper">
+        <nav class="site-nav nav-padding">
+    <div class="site-nav-left">
+        <form onsubmit="event.preventDefault();">
+  <span class="algolia-autocomplete" style="position: relative; display: inline-block; direction: ltr;"><input placeholder="Search 5,000+ tutorials" id="search-input" class="aa-input" autocomplete="off" spellcheck="false" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-owns="algolia-autocomplete-listbox-0" style="position: relative; vertical-align: top;" dir="auto" type="search"><pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; font-family: Lato,sans-serif; font-size: 18px; font-style: normal; font-variant: normal; font-weight: 400; word-spacing: 0px; letter-spacing: normal; text-indent: 0px; text-rendering: optimizelegibility; text-transform: none;"></pre><span class="aa-dropdown-menu" style="position: absolute; top: 100%; z-index: 100; display: none; left: 0px; right: auto;" role="listbox" id="algolia-autocomplete-listbox-0"><div class="aa-dataset-1"></div></span></span>
+</form>
+
+<script>
+  const client = algoliasearch('QMJYL5WYTI', '4318af87aa3ce128708f1153556c6108');
+  const index = client.initIndex('news');
+  autocomplete('#search-input', { hint: false }, [
+    {
+      source: autocomplete.sources.hits(index, { hitsPerPage: 8 }),
+      debounce: 250,
+      templates: {
+        suggestion: (suggestion, result) => {
+          return `
+            <a href="${suggestion.url}">
+              <div class="algolia-result">
+                <span>${suggestion._highlightResult.title.value}</span>
+              </div>
+            </a>
+          `;
+        },
+        empty: (options) => {
+          return `
+            <div class="algolia-result">
+              No tutorials found
+            </div>
+          `;
+        },
+        footer: (query, result) => {
+          if (!query.isEmpty) {
+            return `
+              <hr/>
+              <a href="https://freecodecamp.org/news/search?query=${result.query}">
+                <div class="algolia-result algolia-footer">
+                  <span>See all results for ${result.query}</span>
+                </div>
+              </a>
+            `;
+          }
+        }
+      }
+    }
+  ]).on('autocomplete:selected', (event, suggestion, dataset, context) => {
+    // Set to true if hit is selected by mouse or enter key
+    hitSelected = true;
+    // Do nothing on click, as the browser will already do it
+    if (context.selectionMethod === 'click') {
+      return;
+    }
+    // Change the page, for example, on other events
+    window.location.assign(suggestion.url);
+  });
+
+  // If no hits in the Autocomplete dropdown are highlighted,
+  // treat input like normal search bar
+  const input = document.getElementById("search-input");
+  let searchQuery;
+  let hitSelected;
+
+  // Get the value of the search bar after each key event
+  input.addEventListener('input', e => {
+    searchQuery = input.value;
+  });
+
+  input.addEventListener('keydown', e => {
+    if (event.key === "Enter" && !hitSelected && searchQuery) {
+      window.location.assign(`https://freecodecamp.org/news/search?query=${searchQuery}`);
+    }
+  });
+</script>    </div>
+    <div class="site-nav-middle">
+        <a class="site-nav-logo" href="https://www.freecodecamp.org/news"><img src="FCC-logo-white.png" alt="freeCodeCamp.org"></a>
+    </div>
+    <div class="site-nav-right main-nav">
+        <div class="main-nav-group">
+            <ul class="nav" role="menu">
+    <li class="nav-learn" role="menuitem"><a href="https://learn.freecodecamp.org/">Learn</a></li>
+    <li class="nav-forum" role="menuitem"><a href="https://www.freecodecamp.org/forum/">Forum</a></li>
+    <li class="nav-news" role="menuitem"><a href="https://www.freecodecamp.org/news/">News</a></li>
+</ul>
+
+        </div>
+    </div>
+    <button class="site-nav-right toggle-button-nav">
+        Menu
+    </button>
+</nav>
+
+
+        
+
+
+
+
+<main id="site-main" class="site-main outer">
+    <div class="inner">
+
+        <article class="post-full post tag-javascript tag-programming tag-computer-science tag-technology tag-tech ">
+
+            <header class="post-full-header">
+                <section class="post-full-meta">
+                    <time class="post-full-meta-date" datetime="2016-05-19">19 May 2016</time>
+                    <span class="date-divider">/</span>
+                    <a href="https://www.freecodecamp.org/news/tag/javascript/">
+                        #JavaScript
+                    </a>
+                </section>
+                <h1 class="post-full-title">JavaScript Is Turing Complete— Explained</h1>
+            </header>
+
+            <div class="post-full-author-header">
+
+
+            </div>
+
+            <figure class="post-full-image">
+                <img srcset="https://cdn-media-1.freecodecamp.org/images/1*u__iwCIORZT5-m_zdiucgA.png 300w,
+                            https://cdn-media-1.freecodecamp.org/images/1*u__iwCIORZT5-m_zdiucgA.png 600w,
+                            https://cdn-media-1.freecodecamp.org/images/1*u__iwCIORZT5-m_zdiucgA.png 1000w,
+                            https://cdn-media-1.freecodecamp.org/images/1*u__iwCIORZT5-m_zdiucgA.png 2000w" sizes="(max-width: 800px) 400px,
+                            (max-width: 1170px) 700px,
+                            1400px" src="1u__iwCIORZT5-m_zdiucgA.png" alt="JavaScript Is Turing Complete— Explained" onerror="this.style.display='none'" style="display: none;">
+            </figure>
+
+            <section class=" post-full-content">
+                <div class="post-content medium-migrated-article">
+                    <p>by rajaraodv</p><!--kg-card-begin: image--><figure class="kg-card kg-image-card"><img src="1u__iwCIORZT5-m_zdiucgA.png" class="kg-image"></figure><!--kg-card-end: image--><h1 id="javascript-is-turing-complete-explained">JavaScript Is Turing Complete— Explained</h1><p>If you start learning functional programming in JavaScript, you’ll probably hear about <a href="https://en.wikipedia.org/wiki/Lambda_calculus" rel="noopener">lambda calculus</a>, <a href="https://en.wikipedia.org/wiki/Turing_machine" rel="noopener">Turing machine</a>, <a href="https://en.wikipedia.org/wiki/Turing_completeness" rel="noopener">Turing complete</a> and somehow “JavaScript is Turing complete”.</p><p>But,
+ no one seem to explain, in simple terms, what it actually means. What’s
+ the relation b/w a Turing “machine” and JavaScript “language”? Also, 
+most people use jargon to explain jargon like so:</p><blockquote>In <a href="https://en.wikipedia.org/wiki/Computability_theory" rel="noopener">computability theory</a>, a system of data-manipulation rules (such as a computer’s <a href="https://en.wikipedia.org/wiki/Instruction_set" rel="noopener">instruction set</a>, a <a href="https://en.wikipedia.org/wiki/Programming_language" rel="noopener">programming language</a>, or a <a href="https://en.wikipedia.org/wiki/Cellular_automaton" rel="noopener">cellular automaton</a>) is said to be <strong>Turing complete</strong> or <strong>computationally universal</strong> if it can be used to simulate any single-taped <a href="https://en.wikipedia.org/wiki/Turing_machine" rel="noopener">Turing machine</a>. The concept is named after English mathematician <a href="https://en.wikipedia.org/wiki/Alan_Turing" rel="noopener">Alan Turing</a>. A classic example is <a href="https://en.wikipedia.org/wiki/Lambda_calculus" rel="noopener">lambda calculus</a>.</blockquote><p>So this is my attempt at explaining these comcepts simply.</p><h3 id="turing-machines">Turing Machines</h3><p>Back
+ in the day, people wanted to know how to create a machine that could do
+ all the calculations they were doing by hand. They wanted to know how 
+to build such a machine and how it might work.</p><p><a href="https://en.wikipedia.org/wiki/Alan_Turing" rel="noopener">Alan Turing</a>
+ came up with a hypothetical machine that could take any program of any 
+complexity and run it. It could be implemented using a simple tape, a 
+head that moves left and right, could store data by reading, writing, 
+and erasing the contents of square cells. Given long enough tape and 
+enough time, it could compute any program.</p><p>In other words, he explained how someone can build a computer. And called the computer a “Turing machine”</p><blockquote><strong>Trivia:</strong> Back in Alan Turing’s days, the word “Computer” meant the person who manually computes programs (not the machines) :)</blockquote><h4 id="so-powerful-yet-so-simple">So powerful yet so simple</h4><p>Turing
+ machines soon became very popular, and eventually a standard because 
+while they provided a powerful mechanism to calculate anything, they 
+were also easy to understand. As described in the video below, Turing 
+machines use a tape to keep track of states and run computations.</p><h4 id="-single-vs-multi-tape-turing-machines">“Single” Vs “Multi” Tape Turing Machines</h4><p>One other jargon you’ll hear about Turing machines is the concept of “single” tape.</p><!--kg-card-begin: image--><figure class="kg-card kg-image-card"><img src="1YcmJ5nJ_XNXK5PoIjFULTQ.jpg" class="kg-image"></figure><!--kg-card-end: image--><p>The
+ initial version of the Turing machine had just a long single tape. 
+Later on, people came up with the concept of “multiple” tape Turing 
+machines that used two to five tapes. <strong>Multi-tape Turing machines were not any more powerful than single-tape ones, but they helped to simplify programs.</strong></p><p><strong>So explicitly saying “single” tape isn’t necessary.</strong></p><h3 id="turing-complete">Turing Complete</h3><p>If a physical machine (like a computer) or virtual machine, which is a software, (like JavaVM) can take <strong>any</strong> program and run it just like a Turing machine, then that machine is called “Turing Complete”. PS: It’s kind of a certification.</p><h4 id="examples-turing-complete-vs-turing-incomplete-machine">Examples: Turing complete Vs Turing incomplete machine</h4><!--kg-card-begin: image--><figure class="kg-card kg-image-card kg-card-hascaption"><img src="15KRGqyU6zKHJ7CUIpZ8QRA.jpg" class="kg-image"><figcaption>Not Turing Complete</figcaption></figure><!--kg-card-end: image--><p>A calculator is a good example of a <strong>Turing incomplete machine </strong>because it can only perform a small pre-defined subset of calculations.</p><p>However
+ a home computer (Mac or a PC) is a Turing complete machine because it 
+can do any calculation that a Turing machine can do if we give it enough
+ memory and time.</p><h3 id="-javascript-is-turing-complete-">“JavaScript Is Turing Complete”</h3><p>If you think about it, a Turing machine is just a concept — it means that any “<em>thing</em>”(physical
+ or virtual) that takes any program and run it is essentially a Turing 
+Machine. And if that “thing” can run every program that a “Turing 
+Machine” can run, then it is called “Turing Complete”.</p><p>Now if you 
+think about any modern programming language, they also take 
+programs(written by us) as input and run them. Further, any program that
+ can be theoretically written to run for a Turing machine can also be 
+written in JavaScript. <strong>Thus, JavaScript is Turing complete.</strong></p><p><strong>That’s it!</strong></p><p><em>??? If <strong>you like this post, please 1. ❤❤❤</strong></em> it<em> <strong>below on Medium and 2. please share it on Twitter. You may retweet the below card???</strong></em></p><h3 id="my-other-posts"><em>My Other Posts</em></h3><p><em><strong>LATEST: </strong><a href="https://medium.com/@rajaraodv/functional-programming-in-js-with-practical-examples-part-1-87c2b0dbc276#.fbgrmoa7g" rel="noopener">Functional Programming In JS — With Practical Examples (Part 1)</a></em></p><h4 id="functional-programming"><em>Functional Programming</em></h4><ol><li><em><a href="https://medium.com/@rajaraodv/javascript-is-turing-complete-explained-41a34287d263#.6t0b2w66p" rel="noopener"><em>JavaScript Is Turing Complete — Explained</em></a></em></li><li><em><a href="https://medium.com/@rajaraodv/functional-programming-in-js-with-practical-examples-part-1-87c2b0dbc276#.fbgrmoa7g" rel="noopener">Functional Programming In JS — With Practical Examples (Part 1)</a></em></li></ol><h4 id="es6"><em>ES6</em></h4><ol><li><em><a href="https://medium.com/@rajaraodv/5-javascript-bad-parts-that-are-fixed-in-es6-c7c45d44fd81#.7e2s6cghy" rel="noopener"><em>5 JavaScript “Bad” Parts That Are Fixed In ES6</em></a></em></li><li><em><a href="https://medium.com/@rajaraodv/is-class-in-es6-the-new-bad-part-6c4e6fe1ee65#.4hqgpj2uv" rel="noopener"><em>Is “Class” In ES6 The New “Bad” Part?</em></a></em></li></ol><h4 id="webpack"><em>WebPack</em></h4><ol><li><em><a href="https://medium.com/@rajaraodv/webpack-the-confusing-parts-58712f8fcad9#.6ot6deo2b" rel="noopener"><em>Webpack — The Confusing Parts</em></a></em></li><li><em><a href="https://medium.com/@rajaraodv/webpack-hot-module-replacement-hmr-e756a726a07#.y667mx4lg" rel="noopener"><em>Webpack &amp; Hot Module Replacement [HMR]</em></a><em> (under-the-hood)</em></em></li><li><em><a href="https://medium.com/@rajaraodv/webpacks-hmr-react-hot-loader-the-missing-manual-232336dc0d96#.fbb1e7ehl" rel="noopener"><em>Webpack’s HMR And React-Hot-Loader — The Missing Manual</em></a></em></li></ol><h4 id="draft-js"><em>Draft.js</em></h4><ol><li><em><a href="https://medium.com/@rajaraodv/why-draft-js-and-why-you-should-contribute-460c4a69e6c8#.jp1tsvsqc" rel="noopener"><em>Why Draft.js And Why You Should Contribute</em></a></em></li><li><em><a href="https://medium.com/@rajaraodv/how-draft-js-represents-rich-text-data-eeabb5f25cf2#.hh0ue85lo" rel="noopener"><em>How Draft.js Represents Rich Text Data</em></a></em></li></ol><h4 id="react-and-redux-"><em>React And Redux :</em></h4><ol><li><em><a href="https://medium.com/@rajaraodv/step-by-step-guide-to-building-react-redux-apps-using-mocks-48ca0f47f9a#.s7zsgq3u1" rel="noopener"><em>Step by Step Guide To Building React Redux Apps</em></a></em></li><li><em><a href="https://medium.com/@rajaraodv/a-guide-for-building-a-react-redux-crud-app-7fe0b8943d0f#.g99gruhdz" rel="noopener"><em>A Guide For Building A React Redux CRUD App</em></a><em> (3-page app)</em></em></li><li><em><a href="https://medium.com/@rajaraodv/using-middlewares-in-react-redux-apps-f7c9652610c6#.oentrjqpj" rel="noopener"><em>Using Middlewares In React Redux Apps</em></a></em></li><li><em><a href="https://medium.com/@rajaraodv/adding-a-robust-form-validation-to-react-redux-apps-616ca240c124#.jq013tkr1" rel="noopener"><em>Adding A Robust Form Validation To React Redux Apps</em></a></em></li><li><em><a href="https://medium.com/@rajaraodv/securing-react-redux-apps-with-jwt-tokens-fcfe81356ea0#.xci6o9s6w" rel="noopener"><em>Securing React Redux Apps With JWT Tokens</em></a></em></li><li><em><a href="https://medium.com/@rajaraodv/handling-transactional-emails-in-react-redux-apps-8b1134748f76#.a24nenmnt" rel="noopener"><em>Handling Transactional Emails In React Redux Apps</em></a></em></li><li><em><a href="https://medium.com/@rajaraodv/the-anatomy-of-a-react-redux-app-759282368c5a#.7wwjs8eqo" rel="noopener"><em>The Anatomy Of A React Redux App</em></a></em></li></ol><h4 id="salesforce"><em>Salesforce</em></h4><ol><li><em><a href="https://medium.com/@rajaraodv/developing-react-redux-apps-in-salesforce-s-visualforce-3ad7be560d1c#.f6bao6mtu" rel="noopener"><em>Developing React Redux Apps In Salesforce’s Visualforce</em></a></em></li></ol><p><em><strong>Thanks for reading!</strong></em></p>
+                </div>
+                <hr>
+                <p>
+    If this article was helpful,
+
+    <a onclick="window.open(`https://twitter.com/share?text=JavaScript%20Is%20Turing%20Complete%E2%80%94%20Explained&amp;url=https://www.freecodecamp.org/news/javascript-is-turing-complete-explained-41a34287d263/`, 'share-twitter', 'width=550,height=235');return false;">
+        tweet it</a>
+    or
+    <a onclick="window.open(`https://www.facebook.com/sharer/sharer.php?u=https://www.freecodecamp.org/news/javascript-is-turing-complete-explained-41a34287d263/`, 'share-facebook','width=580,height=296');return false;">
+        share it</a>.
+</p>                <p>
+    <a href="https://freecodecamp.org/donate">
+        Donate if you can</a>.
+</p>            </section>
+
+
+
+        </article>
+    </div>
+</main>
+
+
+
+
+
+<aside class="read-next outer">
+    <div class="inner">
+        <div class="read-next-feed">
+            <article class="read-next-card" style="background-image: url(/news/content/images/size/w600/2019/06/background.png)">
+                <header class="read-next-card-header">
+                    <p class="read-next-card-header-sitetitle">Countinue reading about</p>
+                    <h3 class="read-next-card-header-title"><a href="https://www.freecodecamp.org/news/tag/javascript/">JavaScript</a></h3>
+                </header>
+                <div class="read-next-card-content">
+                    <ul>
+                        <li><a href="https://www.freecodecamp.org/news/how-i-made-a-2d-prototype-in-different-game-engines/">I attempted to make the same 2D game prototype in React, Unity, Godot, Construct, Game Maker, and Phaser. Here's what I found.</a></li>
+                        <li><a href="https://www.freecodecamp.org/news/test-react-apps-with-react-testing-library/">How to test your React apps with the React Testing Library</a></li>
+                        <li><a href="https://www.freecodecamp.org/news/what-is-linting-and-how-can-it-save-you-time/">What is linting and how can it save you time?</a></li>
+                    </ul>
+                </div>
+                <footer class="read-next-card-footer">
+                    <a href="https://www.freecodecamp.org/news/tag/javascript/">See all 1495 posts
+                        →</a>
+                </footer>
+            </article>
+
+            <article class="post-card post tag-programming tag-technology tag-philosophy tag-history tag-language ">
+
+    <a class="post-card-image-link" href="https://www.freecodecamp.org/news/what-is-programming-22a72ef4fd02/">
+        <img class="post-card-image" srcset="https://cdn-media-1.freecodecamp.org/images/1*baG6RijcVa8LysywkCpN8g.jpeg 300w,
+                    https://cdn-media-1.freecodecamp.org/images/1*baG6RijcVa8LysywkCpN8g.jpeg 600w,
+                    https://cdn-media-1.freecodecamp.org/images/1*baG6RijcVa8LysywkCpN8g.jpeg 1000w,
+                    https://cdn-media-1.freecodecamp.org/images/1*baG6RijcVa8LysywkCpN8g.jpeg 2000w" sizes="(max-width: 1000px) 400px, 700px" onerror="this.style.display='none'" src="1baG6RijcVa8LysywkCpN8g.jpg" alt="We have been programming for thousands of years" style="display: none;">
+    </a>
+
+    <div class="post-card-content">
+
+        <div class="post-card-content-link">
+
+            <header class="post-card-header">
+                <span class="post-card-tags">
+                    <a href="https://www.freecodecamp.org/news/tag/programming/">
+                        #Programming
+                    </a>
+                </span>
+                <h2 class="post-card-title">
+                    <a href="https://www.freecodecamp.org/news/what-is-programming-22a72ef4fd02/">
+                        We have been programming for thousands of years
+                    </a>
+                </h2>
+            </header>
+
+        </div>
+
+
+        <footer class="post-card-meta">
+
+            <time class="meta-item-single">3 years ago</time>
+
+
+        </footer>
+
+    </div>
+
+</article>
+            <article class="post-card post tag-web-development tag-front-end-development tag-web-design tag-technology tag-design ">
+
+    <a class="post-card-image-link" href="https://www.freecodecamp.org/news/6-absurd-ideas-for-building-your-first-web-application-24afca35e519/">
+        <img class="post-card-image" srcset="https://cdn-media-1.freecodecamp.org/images/1*lRWsjJFXlX7UDSeP0GiduQ.png 300w,
+                    https://cdn-media-1.freecodecamp.org/images/1*lRWsjJFXlX7UDSeP0GiduQ.png 600w,
+                    https://cdn-media-1.freecodecamp.org/images/1*lRWsjJFXlX7UDSeP0GiduQ.png 1000w,
+                    https://cdn-media-1.freecodecamp.org/images/1*lRWsjJFXlX7UDSeP0GiduQ.png 2000w" sizes="(max-width: 1000px) 400px, 700px" onerror="this.style.display='none'" src="1lRWsjJFXlX7UDSeP0GiduQ.png" alt="6 Absurd Ideas For Building Your First Web App" style="display: none;">
+    </a>
+
+    <div class="post-card-content">
+
+        <div class="post-card-content-link">
+
+            <header class="post-card-header">
+                <span class="post-card-tags">
+                    <a href="https://www.freecodecamp.org/news/tag/web-development/">
+                        #Web Development
+                    </a>
+                </span>
+                <h2 class="post-card-title">
+                    <a href="https://www.freecodecamp.org/news/6-absurd-ideas-for-building-your-first-web-application-24afca35e519/">
+                        6 Absurd Ideas For Building Your First Web App
+                    </a>
+                </h2>
+            </header>
+
+        </div>
+
+
+        <footer class="post-card-meta">
+
+            <time class="meta-item-single">3 years ago</time>
+
+
+        </footer>
+
+    </div>
+
+</article>
+        </div>
+    </div>
+</aside>
+
+
+
+
+        <footer class="site-footer">
+    <div class="footer-container">
+        <div class="footer-row">
+            <div class="footer-desc-col">
+                <p>freeCodeCamp is a donor-supported tax-exempt 501(c)(3) nonprofit organization (United States Federal
+                    Tax Identification Number: 82-0779546)
+                </p>
+                <p>
+                    Our mission: to help people learn to code for free. We accomplish this by creating thousands of
+                    videos, articles, and interactive coding lessons - all freely available to the public. We also have
+                    thousands of freeCodeCamp study groups around the world.
+                </p>
+                <p>
+                    Donations to freeCodeCamp go toward our education initiatives, and help pay for servers, services,
+                    and staff. You can&nbsp;<a href="https://freecodecamp.org/donate" class="inline" rel="noopener noreferrer" target="_blank">make a tax-deductible donation here</a>.
+                </p>
+            </div>
+            <div class="footer-col-1">
+                <div class="col-header">Our Nonprofit</div>
+                <a href="https://www.freecodecamp.org/news/about/">About</a>
+                <a href="https://freecodecamp.org/donate">Donate</a>
+                <a href="https://www.freecodecamp.org/shop/" rel="noopener noreferrer" target="_blank">Shop</a>
+                <a href="https://www.linkedin.com/school/free-code-camp/people/" rel="noopener noreferrer" target="_blank">Alumni Network</a>
+                <a href="https://github.com/freeCodeCamp/">Open Source</a>
+                <a href="https://www.freecodecamp.org/news/support/">Support</a>
+                <a href="https://www.freecodecamp.org/news/sponsors/">Sponsors</a>
+                <a href="https://www.freecodecamp.org/news/academic-honesty-policy/">Academic Honesty</a>
+                <a href="https://www.freecodecamp.org/news/code-of-conduct/">Code of Conduct</a>
+                <a href="https://www.freecodecamp.org/news/privacy-policy/">Privacy Policy</a>
+                <a href="https://www.freecodecamp.org/news/terms-of-service/">Terms of Service</a>
+                <a href="https://www.freecodecamp.org/news/copyright-policy/">Copyright Policy</a>
+            </div>
+            <div class="footer-col-2">
+                <div class="col-header">Best Tutorials</div>
+                <a href="https://www.freecodecamp.org/news/best-python-tutorial/">Python Tutorial</a>
+                <a href="https://www.freecodecamp.org/news/best-git-tutorial/">Git Tutorial</a>
+                <a href="https://www.freecodecamp.org/news/the-best-linux-tutorials/">Linux Tutorial</a>
+                <a href="https://www.freecodecamp.org/news/best-javascript-tutorial/">JavaScript Tutorial</a>
+                <a href="https://www.freecodecamp.org/news/best-react-javascript-tutorial/">React Tutorial</a>
+                <a href="https://www.freecodecamp.org/news/best-html-html5-tutorial/">HTML Tutorial</a>
+                <a href="https://www.freecodecamp.org/news/best-css-and-css3-tutorial/">CSS Tutorial</a>
+                <a href="https://www.freecodecamp.org/news/best-sql-database-tutorial/">SQL Tutorial</a>
+                <a href="https://www.freecodecamp.org/news/best-java-8-tutorial/">Java Tutorial</a>
+                <a href="https://www.freecodecamp.org/news/best-angular-tutorial-angularjs/">Angular Tutorial</a>
+                <a href="https://www.freecodecamp.org/news/best-wordpress-tutorial/">WordPress Tutorial</a>
+                <a href="https://www.freecodecamp.org/news/best-bootstrap-tutorial-responsive-web-design/">Bootstrap
+                    Tutorial</a>
+
+            </div>
+            <div class="footer-col-3">
+                <div class="col-header">Best Examples</div>
+                <a href="https://www.freecodecamp.org/news/python-example/">Python Example </a>
+                <a href="https://www.freecodecamp.org/news/javascript-example/">JavaScript Example</a>
+                <a href="https://www.freecodecamp.org/news/react-examples-reactjs/">React Example</a>
+                <a href="https://www.freecodecamp.org/news/linux-example-bash-command-line/">Linux Example</a>
+                <a href="https://www.freecodecamp.org/news/html-and-html5-example/">HTML Example</a>
+                <a href="https://www.freecodecamp.org/news/css-example-css3/">CSS Example</a>
+                <a href="https://www.freecodecamp.org/news/sql-example/">SQL Example</a>
+                <a href="https://www.freecodecamp.org/news/java-example/">Java Example</a>
+                <a href="https://www.freecodecamp.org/news/the-best-angular-examples/">Angular Example</a>
+                <a href="https://www.freecodecamp.org/news/the-best-jquery-examples/">jQuery Example</a>
+                <a href="https://www.freecodecamp.org/news/the-best-bootstrap-examples/">Bootstrap Example</a>
+                <a href="https://www.freecodecamp.org/news/the-best-php-examples/">PHP Example</a>
+            </div>
+            <div class="footer-col-4">
+                <div class="col-header">Trending Reference</div>
+                <a href="https://www.freecodecamp.org/news/2019-web-developer-roadmap/">2019 Web Developer Roadmap</a>
+                <a href="https://www.freecodecamp.org/news/linux-command-line-bash-tutorial/">Linux Command Line
+                    Guide</a>
+                <a href="https://www.freecodecamp.org/news/the-ultimate-guide-to-git-reset-and-git-revert/">Git Reset
+                    and Git Revert</a>
+                <a href="https://www.freecodecamp.org/news/the-ultimate-guide-to-git-merge-and-git-rebase/">Git Merge
+                    and Git Rebase</a>
+                <a href="https://www.freecodecamp.org/news/the-ultimate-guide-to-javascript-array-methods-map/">JavaScript
+                    Array Map</a>
+                <a href="https://www.freecodecamp.org/news/the-ultimate-guide-to-javascript-array-methods-reduce/">JavaScript
+                    Array Reduce</a>
+                <a href="https://www.freecodecamp.org/news/the-ultimate-guide-to-javascript-date-and-moment-js/">JavaScript
+                    Date</a>
+                <a href="https://www.freecodecamp.org/news/the-ultimate-guide-to-javascript-string-methods-split/">JavaScript
+                    String Split</a>
+                <a href="https://www.freecodecamp.org/news/understanding-flexbox-everything-you-need-to-know-b4013d4dc9af/">CSS
+                    Flexbox Guide</a>
+                <a href="https://www.freecodecamp.org/news/11-things-i-learned-reading-the-css-grid-specification-fb3983aa5e0/">CSS
+                    Grid Guide</a>
+                <a href="https://www.freecodecamp.org/news/the-ultimate-guide-to-linux-creating-a-sudo-user/">Create a
+                    Linux Sudo User</a>
+                <a href="https://www.freecodecamp.org/news/the-ultimate-guide-to-ssh-setting-up-ssh-keys/">How to Set Up
+                    SSH Keys</a>
+            </div>
+        </div>
+    </div>
+</footer>
+    </div>
+
+
+    <script>
+        var images = document.querySelectorAll('.kg-gallery-image img');
+        images.forEach(function (image) {
+            var container = image.closest('.kg-gallery-image');
+            var width = image.attributes.width.value;
+            var height = image.attributes.height.value;
+            var ratio = width / height;
+            container.style.flex = ratio + ' 1 0%';
+        })
+    </script>
+
+
+    <script src="jquery-3.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
+        </script>
+    <script type="text/javascript" src="jquery.js"></script>
+
+    <script type="text/javascript" src="prism.js"></script>
+    <script type="text/javascript" src="prism-unescaped-markup.js"></script>
+    <script type="text/javascript" src="prism-markup-templating.js"></script>
+    <script type="text/javascript" src="prism-bash.js"></script>
+    <script type="text/javascript" src="prism-c.js"></script>
+    <script type="text/javascript" src="prism-clojure.js"></script>
+    <script type="text/javascript" src="prism-cpp.js"></script>
+    <script type="text/javascript" src="prism-csharp.js"></script>
+    <script type="text/javascript" src="prism-css.js"></script>
+    <script type="text/javascript" src="prism-docker.js"></script>
+    <script type="text/javascript" src="prism-elixir.js"></script>
+    <script type="text/javascript" src="prism-erlang.js"></script>
+    <script type="text/javascript" src="prism-git.js"></script>
+    <script type="text/javascript" src="prism-go.js"></script>
+    <script type="text/javascript" src="prism-graphql.js"></script>
+    <script type="text/javascript" src="prism-haskell.js"></script>
+    <script type="text/javascript" src="prism-java.js"></script>
+    <script type="text/javascript" src="prism-javascript.js"></script>
+    <script type="text/javascript" src="prism-json.js"></script>
+    <script type="text/javascript" src="prism-jsx.js"></script>
+    <script type="text/javascript" src="prism-kotlin.js"></script>
+    <script type="text/javascript" src="prism-lua.js"></script>
+    <script type="text/javascript" src="prism-markup.js"></script>
+    <script type="text/javascript" src="prism-php.js"></script>
+    <script type="text/javascript" src="prism-python.js"></script>
+    <script type="text/javascript" src="prism-r.js"></script>
+    <script type="text/javascript" src="prism-ruby.js"></script>
+    <script type="text/javascript" src="prism-rust.js"></script>
+    <script type="text/javascript" src="prism-scala.js"></script>
+    <script type="text/javascript" src="prism-sql.js"></script>
+    <script type="text/javascript" src="prism-swift.js"></script>
+    <script type="text/javascript" src="prism-typescript.js"></script>
+    <script type="text/javascript" src="prism-yaml.js"></script>
+
+    <script>
+    $(document).ready(function () {
+        // Start fitVids
+        var $postContent = $(".post-full-content");
+        $postContent.fitVids();
+        // End fitVids
+    });
+</script>
+
+<script>
+    $(document).ready(function () {
+        $(".toggle-button-nav").click(function () {
+            $(".nav").toggleClass("show-main-nav-items");
+            $(".site-nav").toggleClass("expand-nav");
+            $(".toggle-button-nav").toggleClass("reverse-toggle-color");
+            $(".site-nav-left").toggleClass("display-search");
+        });
+    });
+</script>
+
+
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5D6RKKP"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+
+</body></html>
