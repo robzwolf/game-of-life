@@ -26,7 +26,9 @@ following dates and times:
 - 13th July 2020, 14:30
 - 21st July 2020, 13:00
 - 3rd August 2020, 13:00
+- 11th August 2020, 16:30
+- 13th August 2020, 16:00
 
 
-The topics discussed included the L3 project, Computer Science into Schools,
+The topics discussed include the L3 project, Computer Science into Schools,
 amongst other academic and personal matters.
