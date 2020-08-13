@@ -1,0 +1,581 @@
+
+Jump to
+Sections of this page
+Other pages on Facebook
+Accessibility help
+Press opt + / to open this menu
+Facebook
+Robbie
+Home
+Create
+0 Friend requests
+
+    Friend Requests
+    Find Friends · Settings
+    Friend Requests
+    View all
+
+0 Messages
+Messages
+New group
+· New Message
+Recent Message requests
+
+    420 edgy court
+    Luke: Oh ffs aha
+    17:28
+    MLH EU Tea Party
+    You sent an attachment.
+    15:51
+    Aaron Osher
+    https://www.raymondcamden.com/2017/02/24/an-example-of-a-static-site-with-a-dynamic-calendar#
+    14:22
+    Hamish Sams Active
+    I've been told £50 but i'm seeing if I can up it
+    14:15
+    Weston Sleeman
+    I may well take you up on that 👍 😁
+    11:49
+    CSI (S) &engineering
+    I’m in favour of seeing what happens on Tuesday and then staying back to discuss further if necessary
+    11:35
+    HHEU Organisers: Return Of The Subtitle
+    Weston: Moving to a DM thread for everyone else's sake. 🙂
+    11:28
+    WackOverflow
+    Komputer for Accelerated Reasoning and Logic : Unfortunately 'the proof is trivial' is too well used 😕 it's in all the textbooks/papers etc. (EVEN WHEN IT'S NOT TRIVIAL 😠 )
+    10:55
+    4th Year Comp
+    Tomi: oh no.
+    10:53
+    Sam Robbins Active
+    Come down to the hall and say hi!! 😁 😁
+    Wed
+
+Show Older
+See all in Messenger Mark All as Read
+0 Notifications
+Notifications
+Mark all as read · Settings
+Notifications
+
+    NEW
+        Melissa Saibi asked to join Hackathon Hackers EU .
+        1h
+    EARLIER
+        Amelia Spencer commented on a post in Van Mildert College Students .
+        1h
+        Amy Hudspith , Venla Kamppari and 4 other people reacted to DurHack 's photo.
+        4h
+        Nikita Fedorov posted in Overheard at Durham Uni .
+        5h
+        Mohammed Anees sent a message to DurHack : "secondly, is everyone eligible for travel reimbursements? or there is a separate application for it?"
+        7h
+        Katie Jakob-Whitworth mentioned you in her comments.
+        9h
+        Katie Jakob-Whitworth likes your comment: "Katie Jakob-Whitworth Wow this is..."
+        9h
+        Jemma Graham SU posted in SG Execs 2019/20 .
+        9h
+        NatSci at Durham has new posts from James Blowey and Alice Blackman .
+        10h
+        Hackathon Hackers EU has a new photo from Ian McCready on Wednesday: "Finland, the land of a thousand lakes, but did...".
+        11h
+        Venla Kamppari , Karina Talibzhanova and 5 other people reacted to DurHack 's link.
+        11h
+        Reminder: You have an event coming up this weekend: hackSheffield 5 .
+        13h
+        Katherine Strachan posted in Overheard at Durham Uni .
+        16h
+        Katie Jakob-Whitworth mentioned you in a comment.
+        21h
+        Durfess added an event that might interest you.
+        1d
+
+See All
+Account Settings
+Facebook Chat
+14 May 2008 at 06:56
+
+One of the things I like most about working at Facebook is the ability to launch products that are (almost) immediately used by millions of people. Unlike a three-guys-in-a-garage startup, we don't have the luxury of scaling out infrastructure to keep pace with user growth; when your feature's userbase will go from 0 to 70 million practically overnight, scalability has to be baked in from the start. The project I'm currently working on, Facebook Chat, offered a nice set of software engineering challenges:
+
+Real-time presence notification:
+
+The most resource-intensive operation performed in a chat system is not sending messages. It is rather keeping each online user aware of the online-idle-offline states of their friends, so that conversations can begin.
+
+The naive implementation of sending a notification to all friends whenever a user comes online or goes offline has a worst case cost of O(average friendlist size * peak users * churn rate) messages/second, where churn rate is the frequency with which users come online and go offline, in events/second. This is wildly inefficient to the point of being untenable, given that the average number of friends per user is measured in the hundreds, and the number of concurrent users during peak site usage is on the order of several millions.
+
+Surfacing connected users' idleness greatly enhances the chat user experience but further compounds the problem of keeping presence information up-to-date. Each Facebook Chat user now needs to be notified whenever one of his/her friends
+(a) takes an action such as sending a chat message or loads a Facebook page (if tracking idleness via a last-active timestamp) or
+(b) transitions between idleness states (if representing idleness as a state machine with states like "idle-for-1-minute", "idle-for-2-minutes", "idle-for-5-minutes", "idle-for-10-minutes", etc.).
+Note that approach (a) changes the sending a chat message / loading a Facebook page from a one-to-one communication into a multicast to all online friends, while approach (b) ensures that users who are neither chatting nor browsing Facebook are nonetheless generating server load.
+
+Real-time messaging:
+
+Another challenge is ensuring the timely delivery of the messages themselves. The method we chose to get text from one user to another involves loading an iframe on each Facebook page, and having that iframe's Javascript make an HTTP GET request over a persistent connection that doesn't return until the server has data for the client. The request gets reestablished if it's interrupted or times out. This isn't by any means a new technique: it's a variation of Comet , specifically XHR long polling , and/or BOSH .
+
+Having a large-number of long-running concurrent requests makes the A pache part of the standard LAMP stack a dubious implementation choice. Even without accounting for the sizeable overhead of spawning an OS process that, on average, twiddles its thumbs for a minute before reporting that no one has sent the user a message, the waiting time could be spent servicing 60-some requests for regular Facebook pages. The result of running out of Apache processes over the entire Facebook web tier is not pretty, nor is the dynamic configuration of the Apache process limits enjoyable.
+
+Distribution, Isolation, and Failover:
+
+Fault tolerance is a desirable characteristic of any big system: if an error happens, the system should try its best to recover without human intervention before giving up and informing the user. The results of inevitable programming bugs, hardware failures, et al., should be hidden from the user as much as possible and isolated from the rest of the system.
+
+The way this is typically accomplished in a web application is by separating the model and the view: data is persisted in a database (perhaps with a separate in-memory cache), with each short-lived request retrieving only the parts relevant to that request. Because the data is persisted, a failed read request can be re-attempted. Cache misses and database failure can be detected by the non-database layers and either reported to the user or worked around using replication.
+
+While this architecture works pretty well in general, it isn't as successful in a chat application due to the high volume of long-lived requests, the non-relational nature of the data involved, and the statefulness of each request.
+
+For Facebook Chat, we rolled our own subsystem for logging chat messages (in C++) as well as an epoll-driven web server (in Erlang) that holds online users' conversations in-memory and serves the long-polled HTTP requests. Both subsystems are clustered and partitioned for reliability and efficient failover. Why Erlang? In short, because the problem domain fits Erlang like a glove. Erlang is a functional concurrency-oriented language with extremely low-weight user-space "processes", share-nothing message-passing semantics, built-in distribution, and a "crash and recover" philosophy proven by two decades of deployment on large soft-realtime production systems.
+
+Glueing with Thrift:
+
+Despite those advantages, using Erlang for a component of Facebook Chat had a downside: that component needed to communicate with the other parts of the system. Glueing together PHP, Javascript, Erlang, and C++ is not a trivial matter. Fortunately, we have Thrift . Thrift translates a service description into the RPC glue code necessary for making cross-language calls (marshalling arguments and responses over the wire) and has templates for servers and clients. Since going open source a year ago (we had the gall to release it on April Fool's Day, 2007), the Thrift project has steadily grown and improved (with multiple iterations on the Erlang binding). Having Thrift available freed us to split up the problem of building a chat system and use the best available tool to approach each sub-problem.
+
+Ramping up:
+
+The secret for going from zero to seventy million users overnight is to avoid doing it all in one fell swoop. We chose to simulate the impact of many real users hitting many machines by means of a "dark launch" period in which Facebook pages would make connections to the chat servers, query for presence information and simulate message sends without a single UI element drawn on the page. With the "dark launch" bugs fixed, we hope that you enjoy Facebook Chat now that the UI lights have been turned on.
+
+Eugene is a Facebook Engineer
+5.1K 5.1K
+11K comments 744 shares
+Robbie Jakob-Whitworth
+Like
+Comment Share
+Comments
+View previous comments
+50 of 11,097
+
+    Robert Heads
+    Robert Heads I have this dose not work or let you list into it or cancel it how can you cancel
+    Hide or report this
+         · 
+        Like
+         ·  Reply
+         ·  6w
+    Robert Heads
+    Robert Heads The picture's at the show well still looking on my reception
+    Hide or report this
+         · 
+        Like
+         ·  Reply
+         ·  6w
+    Osei Boakye Gabriel
+    Osei Boakye Gabriel Am highly on favoured dear and you
+    Hide or report this
+         · 
+        Like
+         ·  Reply
+         ·  6w
+    Daniel Nunes Lopes
+    Daniel Nunes Lopes Minha conta foi invadida por hackers, e roubaram minha página monetizada.
+    Invadiram o meu gerenciador de negócios e roubaram minha página monetizada. Alguém pode me ajudar por favor. Roubaram minha página monetizada.
+    Hide or report this
+         · 
+        Like
+         ·  Reply
+         ·  See translation
+         ·  5w
+    Raymond Smith
+    Raymond Smith Just trying to figure out people and commity I violation
+    Hide or report this
+         · 
+        Like
+         ·  Reply
+         ·  5w
+    Thanh Pham
+    Thanh Pham Rất được ưa chuộng
+    Hide or report this
+         · 
+        Like
+         ·  Reply
+         ·  See translation
+         ·  5w
+    Amir Abu Foul
+    Amir Abu Foul Hi
+    1
+    Hide or report this
+         · 
+        Like
+         ·  Reply
+         ·  5w
+    Ivan-eddy Mendoza Gutierrez
+    Ivan-eddy Mendoza Gutierrez o.0
+    Hide or report this
+         · 
+        Like
+         ·  Reply
+         ·  5w
+    Reginah Boom
+    Reginah Boom oh
+    Hide or report this
+         · 
+        Like
+         ·  Reply
+         ·  5w
+    Reginah Boom
+    Reginah Boom
+    Hide or report this
+         · 
+        Like
+         ·  Reply
+         ·  5w
+    Kamlesh Kapoor
+    Kamlesh Kapoor Nice
+    Hide or report this
+         · 
+        Like
+         ·  Reply
+         ·  5w
+    Terry SolidasaRocc
+    Terry SolidasaRocc L
+    1
+    Hide or report this
+         · 
+        Like
+         ·  Reply
+         ·  5w
+    Hasan
+    Hasan firend tanks
+    1
+    Hide or report this
+         · 
+        Like
+         ·  Reply
+         ·  See translation
+         ·  4w
+    Ian Gale
+    Ian Gale Hiya
+    1
+    Hide or report this
+         · 
+        Like
+         ·  Reply
+         ·  See translation
+         ·  4w
+    Vittorio Ferrara
+    Vittorio Ferrara Buongiorno
+    Hide or report this
+         · 
+        Like
+         ·  Reply
+         ·  See translation
+         ·  4w
+    Ajay Kaushik
+    Ajay Kaushik HI I WANT TO ADD MORE ADD ACCOUNT
+    1
+    Hide or report this
+         · 
+        Like
+         ·  Reply
+         ·  4w
+    Kim Weinstein
+    Kim Weinstein hi
+    Hide or report this
+         · 
+        Like
+         ·  Reply
+         ·  4w
+    Pawan Gangawar
+    Pawan Gangawar Hello
+    Hide or report this
+         · 
+        Like
+         ·  Reply
+         ·  4w
+    Danilo Del Valle
+    Danilo Del Valle Hola
+    Hide or report this
+         · 
+        Like
+         ·  Reply
+         ·  See translation
+         ·  4w
+    Gopi Chandu Thanniru
+    Gopi Chandu Thanniru Hai
+    Hide or report this
+         · 
+        Like
+         ·  Reply
+         ·  3w
+    Nora Hutchinson
+    Nora Hutchinson My latest chat !message
+    Hide or report this
+         · 
+        Like
+         ·  Reply
+         ·  3w
+    Dilip Gupta Sunil Prsad
+    Dilip Gupta Sunil Prsad Saw my Facebook account was disabled please able date
+    1
+    Hide or report this
+         · 
+        Like
+         ·  Reply
+         ·  3w
+    Lacroix Obed
+    Lacroix Obed Jessi
+    Hide or report this
+         · 
+        Like
+         ·  Reply
+         ·  3w
+    Murshid Sk
+    Murshid Sk K
+    Hide or report this
+         · 
+        Like
+         ·  Reply
+         ·  3w
+    Bugoy Skie
+    Bugoy Skie Help
+    1
+    Hide or report this
+         · 
+        Like
+         ·  Reply
+         ·  3w
+    Bugoy Skie
+    Bugoy Skie I cant log in my account
+    Hide or report this
+         · 
+        Like
+         ·  Reply
+         ·  3w
+    Bugoy Skie
+    Bugoy Skie I lost my phone
+    Hide or report this
+         · 
+        Like
+         ·  Reply
+         ·  3w
+    Jose Rosso
+    Jose Rosso K
+    Hide or report this
+         · 
+        Like
+         ·  Reply
+         ·  3w
+    Jose Rosso
+    Jose Rosso K
+    Hide or report this
+         · 
+        Like
+         ·  Reply
+         ·  3w
+    Tony Woods
+    Tony Woods This is not my name I need something new I sound lame
+    Hide or report this
+         · 
+        Like
+         ·  Reply
+         ·  2w
+    Rafael Baquero
+    Rafael Baquero Hola
+    Hide or report this
+         · 
+        Like
+         ·  Reply
+         ·  See translation
+         ·  2w
+    Abbas Qasim
+    Abbas Qasim helo moring please i am very in big trouble someone hack my brother facebook account please he change everything password.emai and number as well he from Indonesia he told me send me money first then I will give you this account I already send 60 dollar he want more please help me
+    1
+    Hide or report this
+         · 
+        Like
+         ·  Reply
+         ·  2w
+    Graham Burgess
+    Graham Burgess I came across this as I was prepping for an on-site interview. I have frequently talked about the FB chat rollout and in particular the "dark launch" as examples of how to successfully "test in production"
+    1
+    Hide or report this
+         · 
+        Like
+         ·  Reply
+         ·  2w
+    Ule Sulaeman
+    Ule Sulaeman abn
+    Hide or report this
+         · 
+        Like
+         ·  Reply
+         ·  2w
+    Sandip Uikey
+    Sandip Uikey Osam
+    Hide or report this
+         · 
+        Like
+         ·  Reply
+         ·  2w
+    Vishaad Singh
+    Vishaad Singh how to connect with faceboom support
+    Hide or report this
+         · 
+        Like
+         ·  Reply
+         ·  2w
+    Azhar Mohammad
+    Azhar Mohammad hai iam using facebook
+    1
+    Hide or report this
+         · 
+        Like
+         ·  Reply
+         ·  2w
+    Azhar Mohammad
+    Azhar Mohammad make freind with me bro
+    1
+    Hide or report this
+         · 
+        Like
+         ·  Reply
+         ·  2w
+    Karam Khan
+    Karam Khan 7045972182
+    Hide or report this
+         · 
+        Like
+         ·  Reply
+         ·  1w
+    Cappo Don
+    Cappo Don Why do you have me blocked from unfriending people?
+    Hide or report this
+    Tenor
+         · 
+        Like
+         ·  Reply
+         ·  1w
+    Ellsa Nrf
+    Ellsa Nrf Nice
+    Hide or report this
+         · 
+        Like
+         ·  Reply
+         ·  1w
+    Bilal Barloww
+    Bilal Barloww god
+    Hide or report this
+         · 
+        Like
+         ·  Reply
+         ·  1w
+    Bilal Barloww
+    Bilal Barloww
+    Hide or report this
+    Tenor
+         · 
+        Like
+         ·  Reply
+         ·  1w
+    Sudipta Ktm
+    Sudipta Ktm Super
+    Hide or report this
+         · 
+        Like
+         ·  Reply
+         ·  1w
+    Greg Brown
+    Greg Brown Anyone home??
+    Hide or report this
+         · 
+        Like
+         ·  Reply
+         ·  1w
+    Josué García
+    Josué García jj
+    Hide or report this
+         · 
+        Like
+         ·  Reply
+         ·  1w
+    exhive
+    exhive me urge asistencia con facebook ads
+    Hide or report this
+         · 
+        Like
+         ·  Reply
+         ·  See translation
+         ·  1w
+    Artigos Low Cost
+    Artigos Low Cost Bom dia, gostaria de saber porquê que não tenho acesso ao marketplace. Obrigado
+    Hide or report this
+         · 
+        Like
+         ·  Reply
+         ·  See translation
+         ·  6d
+    Hanif Maje
+    Hanif Maje Hi
+    Hide or report this
+         · 
+        Like
+         ·  Reply
+         ·  4d
+    Valeria Veliz
+    Valeria Veliz Oc
+    Hide or report this
+         · 
+        Like
+         ·  Reply
+         ·  1d
+
+Robbie Jakob-Whitworth
+Write a comment...
+
+Facebook Engineering's photo.
+Facebook Engineering
+
+    All Notes
+
+    Embed Post
+    Report
+
+    About
+    Create ad
+    Create Page
+    Developers
+    Careers
+    Privacy
+    Cookies
+    AdChoices
+    Terms
+    Help
+    Settings
+    Activity log
+
+Facebook © 2019
+
+    English (UK)
+    English (US)
+    Polski
+    Español
+    Français (France)
+    Italiano
+    Lietuvių
+    Română
+    中文(简体)
+    Português (Brasil)
+    Deutsch
+
+Chat with friends
+Keyboard shortcut help Keyboard shortcut help
+Close
+Keyboard shortcut help
+MLH EU Tea Party
+Chat (44)
+Chat
+44 online
+
+New notification from Melissa Saibi
+Close pop-up and return
+
+    All
+    Posts
+    People
+    Photos
+    Videos
+    Pages
+    Places
+    Groups
+    Apps
+    Events
+

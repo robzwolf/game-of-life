@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>An intro to Webpack: what it is and how to use it</title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="prism.css">
+    <link rel="stylesheet" type="text/css" href="prism-unescaped-markup.css">
+
+    <link href="css.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="screen.css">
+    <link rel="stylesheet" type="text/css" href="algolia-search.css">
+
+    <script type="text/javascript" async="" src="analytics.js"></script><script async="" src="Z3RtLmpz"></script><script src="algoliasearch.js"></script>
+    <script src="autocomplete.js"></script>
+
+    <script src="a"></script>
+
+    <link rel="shortcut icon" href="https://www.freecodecamp.org/news/favicon.png" type="image/png">
+    <link rel="canonical" href="https://www.freecodecamp.org/news/an-intro-to-webpack-what-it-is-and-how-to-use-it-8304ecdc3c60/">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="https://www.freecodecamp.org/news/an-intro-to-webpack-what-it-is-and-how-to-use-it-8304ecdc3c60/amp/">
+    
+    <meta property="og:site_name" content="freeCodeCamp.org">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="An intro to Webpack: what it is and how to use it">
+    <meta property="og:description" content="by Ashish Nandan Singh
+
+Introduction
+Okay, so I assume you have heard of webpack — that’s why you are here, right?
+The real question is what do you know about it? You might know a few things
+about it, like how it works, or you might have absolutely no clue. Either way, I
+can assure you that after reading this article, you’ll likely feel comfortable
+enough with the whole webpack situation.
+
+After all — necessity is the mother of invention…
+
+A perfect way to say why webpack exists is the above quo">
+    <meta property="og:url" content="https://www.freecodecamp.org/news/an-intro-to-webpack-what-it-is-and-how-to-use-it-8304ecdc3c60/">
+    <meta property="og:image" content="https://cdn-media-1.freecodecamp.org/images/1*6ItHoU8x6M-m7-Pt2UG7cw.png">
+    <meta property="article:published_time" content="2019-01-15T17:37:32.000Z">
+    <meta property="article:modified_time" content="2020-03-31T18:19:48.000Z">
+    <meta property="article:tag" content="JavaScript">
+    <meta property="article:tag" content="Reactjs">
+    <meta property="article:tag" content="Webpack">
+    <meta property="article:tag" content="Web Development">
+    <meta property="article:tag" content="Tech">
+    
+    <meta property="article:publisher" content="https://www.facebook.com/freecodecamp">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="An intro to Webpack: what it is and how to use it">
+    <meta name="twitter:description" content="by Ashish Nandan Singh
+
+Introduction
+Okay, so I assume you have heard of webpack — that’s why you are here, right?
+The real question is what do you know about it? You might know a few things
+about it, like how it works, or you might have absolutely no clue. Either way, I
+can assure you that after reading this article, you’ll likely feel comfortable
+enough with the whole webpack situation.
+
+After all — necessity is the mother of invention…
+
+A perfect way to say why webpack exists is the above quo">
+    <meta name="twitter:url" content="https://www.freecodecamp.org/news/an-intro-to-webpack-what-it-is-and-how-to-use-it-8304ecdc3c60/">
+    <meta name="twitter:image" content="https://cdn-media-1.freecodecamp.org/images/1*6ItHoU8x6M-m7-Pt2UG7cw.png">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="freeCodeCamp.org">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="JavaScript, Reactjs, Webpack, Web Development, Tech">
+    <meta name="twitter:site" content="@freecodecamp">
+    <meta property="og:image:width" content="800">
+    <meta property="og:image:height" content="267">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "freeCodeCamp.org",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.freecodecamp.org/news/content/images/2019/11/fcc_primary_large_24X210.svg",
+            "width": 210,
+            "height": 24
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "freeCodeCamp.org",
+        "image": {
+            "@type": "ImageObject",
+            "url": "//www.gravatar.com/avatar/fcda43852608626fe46d7fd43145766e?s=250&d=mm&r=x",
+            "width": 250,
+            "height": 250
+        },
+        "url": "https://www.freecodecamp.org/news/author/freecodecamp/",
+        "sameAs": []
+    },
+    "headline": "An intro to Webpack: what it is and how to use it",
+    "url": "https://www.freecodecamp.org/news/an-intro-to-webpack-what-it-is-and-how-to-use-it-8304ecdc3c60/",
+    "datePublished": "2019-01-15T17:37:32.000Z",
+    "dateModified": "2020-03-31T18:19:48.000Z",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://cdn-media-1.freecodecamp.org/images/1*6ItHoU8x6M-m7-Pt2UG7cw.png",
+        "width": 800,
+        "height": 267
+    },
+    "keywords": "JavaScript, Reactjs, Webpack, Web Development, Tech",
+    "description": "by Ashish Nandan Singh\n\nIntroduction\nOkay, so I assume you have heard of webpack — that’s why you are here, right?\nThe real question is what do you know about it? You might know a few things\nabout it, like how it works, or you might have absolutely no clue. Either way, I\ncan assure you that after reading this article, you’ll likely feel comfortable\nenough with the whole webpack situation.\n\nAfter all — necessity is the mother of invention…\n\nA perfect way to say why webpack exists is the above quo",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.freecodecamp.org/news/"
+    }
+}
+    </script>
+
+    <meta name="generator" content="Ghost 2.37">
+    <link rel="alternate" type="application/rss+xml" title="freeCodeCamp.org" href="https://www.freecodecamp.org/news/rss/">
+    <!-- This is related to https://webmonetization.org/ -->
+<meta name="monetization" content="$ilp.uphold.com/LJmbPn7WD4JB">
+<!-- end Web Monetization tag -->
+<!-- Google Tag Manager -->
+<script>
+  // Set up dataLayer with data if provided
+  window.dataLayer = window.dataLayer || [{ gaPropertyId: 'UA-55446531-20' }];
+
+  // Initialized GTM via gtag
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-55446531-20');
+
+  // Configure and initialize GTM
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://v20200617-gap.freecodecamp.org/*(d3d3Lmdvb2dsZXRhZ21hbmFnZXIuY29t)*/*(Z3RtLmpz)*?id='+i+dl+'&gtm_cookies_win=x';f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer', 'GTM-5D6RKKP');
+</script>
+<!-- End Google Tag Manager -->
+
+<style id="fit-vids-style">.fluid-width-video-container{flex-grow: 1;width:100%;}.fluid-width-video-wrapper{width:100%;position:relative;padding:0;}.fluid-width-video-wrapper iframe,.fluid-width-video-wrapper object,.fluid-width-video-wrapper embed {position:absolute;top:0;left:0;width:100%;height:100%;}</style></head>
+
+<body class="post-template tag-javascript tag-reactjs tag-webpack tag-web-development tag-tech">
+
+    <div class="site-wrapper">
+        <nav class="site-nav nav-padding">
+    <div class="site-nav-left">
+        <form id="search-form" onsubmit="submitSearch()">
+  <div role="search" class="searchbox__wrapper">
+    <span class="algolia-autocomplete" style="position: relative; display: inline-block; direction: ltr;"><input placeholder="Search 6,000+ tutorials" id="search-input" class="aa-input" autocomplete="off" spellcheck="false" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-owns="algolia-autocomplete-listbox-0" style="position: relative; vertical-align: top;" dir="auto" type="search"><pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; font-family: Lato,sans-serif; font-size: 18px; font-style: normal; font-variant: normal; font-weight: 400; word-spacing: 0px; letter-spacing: normal; text-indent: 0px; text-rendering: optimizelegibility; text-transform: none;"></pre><span class="aa-dropdown-menu" style="position: absolute; top: 100%; z-index: 100; display: none; left: 0px; right: auto;" role="listbox" id="algolia-autocomplete-listbox-0"><div class="aa-dataset-1"></div></span></span>
+    <button type="submit" title="Submit your search query." class="ais-SearchBox-submit">
+      <svg class="ais-SearchBox-submitIcon" xmlns="https://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 40 40">
+        <path d="M26.804 29.01c-2.832 2.34-6.465 3.746-10.426 3.746C7.333 32.756 0 25.424 0 16.378 0 7.333 7.333 0 16.378 0c9.046 0 16.378 7.333 16.378 16.378 0 3.96-1.406 7.594-3.746 10.426l10.534 10.534c.607.607.61 1.59-.004 2.202-.61.61-1.597.61-2.202.004L26.804 29.01zm-10.426.627c7.323 0 13.26-5.936 13.26-13.26 0-7.32-5.937-13.257-13.26-13.257C9.056 3.12 3.12 9.056 3.12 16.378c0 7.323 5.936 13.26 13.258 13.26z"></path>
+      </svg>
+    </button>
+  </div>
+</form>
+
+<script>
+  const client = algoliasearch('QMJYL5WYTI', '4318af87aa3ce128708f1153556c6108');
+  const index = client.initIndex('news');
+  const screenWidth = window.screen.width;
+  const screenHeight = window.screen.height;
+  const hitsToRender = (screenWidth >= 767 && screenHeight >= 768) ? 8 : 5;
+  autocomplete('#search-input', { 
+      hint: false,
+      keyboardShortcuts: ['s', 191]
+    }, [
+    {
+      source: autocomplete.sources.hits(index, { hitsPerPage: hitsToRender }),
+      debounce: 250,
+      templates: {
+        suggestion: (suggestion, result) => {
+          hits = true;
+          return `
+            <a href="${suggestion.url}">
+              <div class="algolia-result">
+                <span>${suggestion._highlightResult.title.value}</span>
+              </div>
+            </a>
+          `;
+        },
+        empty: (options) => {
+          hits = false;
+          return `
+            <div class="aa-suggestion footer-suggestion no-hits-footer">
+              <div class="algolia-result">
+                <span>
+                  No tutorials found
+                </span>
+              </div>
+            </div>
+          `;
+        },
+        footer: (query, result) => {
+          if (!query.isEmpty) {
+            return `
+              <div class="aa-suggestion footer-suggestion">
+                <a id="algolia-footer-selector" href="https://www.freecodecamp.org/news/search?query=${result.query}">
+                  <div class="algolia-result algolia-footer">
+                    <span>See all results for ${result.query}</span>
+                  </div>
+                </a>
+              </div>
+            `;
+          }
+        }
+      }
+    }
+  ]).on('autocomplete:closed', () => {
+    // Clicked off dropdown or pressed Esc key
+    hits = false;
+  }).on('autocomplete:selected', (event, suggestion, dataset, context) => {
+    // Set to hit URL if hit is selected by mouse click or enter key
+    hitSelected = suggestion.url;
+    // Do nothing on click, as the browser will already do it
+    if (context.selectionMethod === 'click') {
+      return;
+    }
+    // Change the page, for example, on other events
+    window.location.assign(suggestion.url);
+  });
+
+  /* 
+    If no hits in the Autocomplete dropdown are highlighted,
+    treat input like normal search bar
+  */
+  const searchForm = document.getElementById('search-form');
+  const input = document.getElementById('search-input');
+  let searchQuery, hitSelected, hits;
+
+  input.addEventListener('keyup', e => {
+    searchQuery = input.value;
+  });
+
+  /*
+    Prevent form from being submitted when magnifying
+    glass is clicked or enter pressed with no query
+    or hits
+  */
+  searchForm.addEventListener('submit', e => {
+    e.preventDefault();
+  });
+
+  /*
+    Search for highlighted hit or search query
+    when search button or enter is pressed
+  */
+  function submitSearch() {
+    hitSelected = document.getElementsByClassName('aa-cursor')[0];
+
+    if (hitSelected && searchQuery) {
+      const articleUrl = hitSelected.querySelector('a').href;
+      window.location.assign(articleUrl);
+    } else if (!hitSelected && searchQuery && hits) {
+      window.location.assign(`https://www.freecodecamp.org/news/search?query=${searchQuery}`);
+    }
+  }
+</script>
+    </div>
+    <div class="site-nav-middle">
+        <a class="site-nav-logo" href="https://www.freecodecamp.org/news"><img src="fcc_primary_large_24X210.svg" alt="freeCodeCamp.org"></a>
+    </div>
+    <div class="site-nav-right">
+        <a class="toggle-button-nav" href="https://www.freecodecamp.org/donate/">
+            Donate
+        </a>
+    </div>
+
+</nav>
+        <div class="under-header-content jumbotron">
+    <h2 class="donation-banner">
+        Stay safe, friends. Learn to code from home. <a href="https://www.freecodecamp.org/">Use our free 2,000 hour
+            curriculum.</a>
+    </h2>
+</div>
+        <div id="error-message"></div>
+
+        
+
+
+
+
+<main id="site-main" class="site-main outer">
+    <div class="inner">
+
+        <article class="post-full post tag-javascript tag-reactjs tag-webpack tag-web-development tag-tech ">
+
+            <header class="post-full-header">
+                <section class="post-full-meta">
+                    <time class="post-full-meta-date" datetime="2019-01-15">15 January 2019</time>
+                    <span class="date-divider">/</span>
+                    <a href="https://www.freecodecamp.org/news/tag/javascript/">
+                        #JavaScript
+                    </a>
+                </section>
+                <h1 class="post-full-title">An intro to Webpack: what it is and how to use it</h1>
+            </header>
+
+            <div class="post-full-author-header">
+
+
+            </div>
+
+            <figure class="post-full-image">
+                <img srcset="https://cdn-media-1.freecodecamp.org/images/1*6ItHoU8x6M-m7-Pt2UG7cw.png 300w,
+                            https://cdn-media-1.freecodecamp.org/images/1*6ItHoU8x6M-m7-Pt2UG7cw.png 600w,
+                            https://cdn-media-1.freecodecamp.org/images/1*6ItHoU8x6M-m7-Pt2UG7cw.png 1000w,
+                            https://cdn-media-1.freecodecamp.org/images/1*6ItHoU8x6M-m7-Pt2UG7cw.png 2000w" sizes="(max-width: 800px) 400px,
+                            (max-width: 1170px) 700px,
+                            1400px" src="16ItHoU8x6M-m7-Pt2UG7cw.png" alt="An intro to Webpack: what it is and how to use it" onerror="this.style.display='none'" style="display: none;">
+            </figure>
+
+            <section class=" post-full-content">
+                <div class="post-content medium-migrated-article">
+                    <p>by Ashish Nandan Singh</p><h3 id="introduction">Introduction</h3><p>Okay,
+ so I assume you have heard of webpack — that’s why you are here, right?
+ The real question is what do you know about it? You might know a few 
+things about it, like how it works, or you might have absolutely no 
+clue. Either way, I can assure you that after reading this article, 
+you’ll likely feel comfortable enough with the whole <strong>webpack situation</strong>.</p><p>After all — <strong>necessity</strong> is the mother of <strong>invention…</strong></p><p>A
+ perfect way to say why webpack exists is the above quote. But to 
+understand it better we need to go back, way back, to when JavaScript 
+was not the new sexy thing, in those old timey ages when a website was 
+just a small bundle of good old <em>.</em>html, CSS, and probably one or a few JavaScript files in some cases. But very soon all of this was going to change.</p><h4 id="what-was-the-problem">What was the problem?</h4><p>The
+ entire dev community was involved in a constant quest of improving the 
+overall user and developer experience around using and building 
+javascript/web applications. Therefore, we saw a lot of new <strong>libraries and frameworks<em> </em></strong>introduced.</p><p>A few <strong>design patterns</strong>
+ also evolved over time to give developers a better, more powerful yet 
+very simple way of writing complex JavaScript applications. Websites 
+before were no more just a small package with an odd number of files in 
+them. They stated getting bulky, with the introduction of <strong>JavaScript modules</strong>,
+ as writing encapsulated small chunks of code was the new trend. 
+Eventually all of this lead to a situation where we had 4x or 5x he of 
+files in the overall application package.</p><p><strong>Not only was the overall size of the application a challenge,</strong>
+ but also there was a huge gap in the kind of code developers were 
+writing and the kind of code browsers could understand. Developers had 
+to use a lot of helper code called <strong>polyfills</strong> to make sure that the browsers were able to interpret the code in their packages.</p><p>To answer these issues, webpack was created. <strong>Webpack is a static module bundler.</strong></p><h4 id="so-how-was-webpack-the-answer">So how was Webpack the answer?</h4><p>In brief, Webpack goes through your package and creates what it calls a <strong>dependency graph</strong> which consists of various <strong>modules</strong>
+ which your webapp would require to function as expected. Then, 
+depending on this graph, it creates a new package which consists of the 
+very bare minimum number of files required, often just a single 
+bundle.js file which can be plugged in to the html file easily and used 
+for the application.</p><p>Over the next part part of this article I 
+will take you through the step by step setup of webpack. By the end of 
+it, I hope you understand the basics of Webpack. So lets get this 
+rolling…</p><h3 id="what-are-we-building">What are we building ?</h3><p>You have probably heard of <strong>ReactJS.</strong> If you know reactJS, you likely know what <strong>create-react-app</strong> is. For those of you who have no idea what either of those two things are, <strong>ReactJS is a UI library</strong> which is very helpful in building intelligent complex UIs, and <strong>create-react-app is a CLI tool<em> </em></strong>for setting up or bootstrapping a boilerplate dev setup to make React applications.</p><p>Today
+ we will be creating a simple React application but without using the 
+create-react-app CLI. I hope this sounds fun enough to you. :)</p><h3 id="installation-phase">Installation Phase</h3><h4 id="npm-int">npm int</h4><p>Thats
+ right, thats how almost all good things start: plain old npm init. I 
+will be using VS Code, but feel free to use any code editor you like to 
+get things started.</p><p>Before you can do any of this, thought, make sure you have the latest <a href="https://nodejs.org/en/download/" rel="noopener">nodeJS</a> and the <a href="https://www.npmjs.com/get-npm" rel="noopener">npm</a> version installed locally on your machine. Click on each of those links to know more about the process.</p><!--kg-card-begin: code--><pre><code>$ npm init</code></pre><!--kg-card-end: code--><p>This
+ will create a starter package and add a package.json file for us. This 
+is where all the dependencies required to build this application will be
+ mentioned.</p><p>Now for creating a simple React application, we need 
+two main libraries: React and ReactDOM. So let’s get them added as 
+dependencies into our application using npm.</p><!--kg-card-begin: code--><pre><code>$ npm i react react-dom --save</code></pre><!--kg-card-end: code--><p>Next
+ up we need to add webpack, so we can bundle our app together. Not only 
+bundle, but we will also require hot reloading which is possible using 
+the webpack dev server.</p><!--kg-card-begin: code--><pre><code>$ npm i webpack webpack-dev-server webpack-cli --save--dev</code></pre><!--kg-card-end: code--><p>The <code>--save--dev</code>
+ is to specify that these modules are just dev dependencies. Now since 
+we are working with React, we must keep in mind that React uses ES6 
+classes and import statements, something that all the browsers may not 
+be able to understand. To make sure that the code is readable by all 
+browsers, we need a tool like babel to transpile our code to normal 
+readable code for browsers.</p><!--kg-card-begin: code--><pre><code>$ npm i babel-core babel-loader @babel/preset-react     @babel/preset-env html-webpack-plugin --save-dev</code></pre><!--kg-card-end: code--><p>Well
+ what can I say, that was the maximum number of installs I promise. In 
+the case of babel, we have loaded the core babel library first, then the
+ loader, and finally 2 plugins or presets to work specifically with 
+React and all the new ES2015 and ES6 onwards code.</p><p>Moving on, let’s add some code and let’s get the webpack configuration started.</p><p>This
+ is how the package.json file should look after all the installations so
+ far. You might have a different version number depending on when you 
+are following this article.</p><h3 id="the-code">The Code</h3><p>Let’s start by adding a <strong>webpack.config.js</strong> file in the root of our application structure. Add the following code in your webpack.config file.</p><!--kg-card-begin: code--><pre><code>const path = require('path');const HtmlWebpackPlugin = require('html-webpack-plugin');</code></pre><!--kg-card-end: code--><!--kg-card-begin: code--><pre><code>module.exports = {  //This property defines where the application starts  entry:'./src/index.js',</code></pre><!--kg-card-end: code--><!--kg-card-begin: code--><pre><code>  //This property defines the file path and the file name which will be used for deploying the bundled file  output:{    path: path.join(__dirname, '/dist'),    filename: 'bundle.js'  },</code></pre><!--kg-card-end: code--><!--kg-card-begin: code--><pre><code>  //Setup loaders  module: {    rules: [      {        test: /\.js$/,         exclude: /node_modules/,        use: {          loader: 'babel-loader'        }      }    ]  },</code></pre><!--kg-card-end: code--><!--kg-card-begin: code--><pre><code>// Setup plugin to use a HTML file for serving bundled js files plugins: [    new HtmlWebpackPlugin({      template: './src/index.html'    })  ]}</code></pre><!--kg-card-end: code--><p>Okay so let’s understand the lines above.</p><p>First we start by requiring the default path module to access the file location and make changes to the file location.</p><p>Next
+ we require the HTMLWebpackPlugin to generate an HTML file to be used 
+for serving bundled JavaScript file/files. Read more about <a href="https://github.com/jantimon/html-webpack-plugin" rel="noopener">HTMLWebpackPlugin</a> by clicking the link.</p><p>Then we have the export.module object with some properties in them. The first one is the <strong>entry property,<em> </em></strong>which is used to specify which file webpack should start with to get the internal dependency graph created.</p><!--kg-card-begin: code--><pre><code>module.exports = {</code></pre><!--kg-card-end: code--><!--kg-card-begin: code--><pre><code>  entry:'./src/index.js'</code></pre><!--kg-card-end: code--><!--kg-card-begin: code--><pre><code>}</code></pre><!--kg-card-end: code--><p>Next
+ up is the output property specifying where the bundled file should be 
+generated and what the name of the bundled file would be. This is done 
+by the <strong>output.path</strong> and <strong>output.filename</strong> properties.</p><!--kg-card-begin: code--><pre><code>module.exports = {</code></pre><!--kg-card-end: code--><!--kg-card-begin: code--><pre><code>//This property defines the file path and the file name which will be used for deploying the bundled file  output:{    path: path.join(__dirname, '/dist'),    filename: 'bundle.js'  },</code></pre><!--kg-card-end: code--><!--kg-card-begin: code--><pre><code>}</code></pre><!--kg-card-end: code--><p>Next
+ up are the loaders. This is to specify what webpack should do for a 
+specific type for file. Remember that webpack out of box only 
+understands JavaScript and JSON, but if your project has any other 
+language used, this would be the place to specify what to do with that 
+new language.</p><!--kg-card-begin: code--><pre><code>module.exports = {</code></pre><!--kg-card-end: code--><!--kg-card-begin: code--><pre><code>//Setup loaders  module: {    rules: [      {        test: /\.js$/,         exclude: /node_modules/,        use: {          loader: 'babel-loader'        }      }    ]  }</code></pre><!--kg-card-end: code--><!--kg-card-begin: code--><pre><code>}</code></pre><!--kg-card-end: code--><p>The
+ information should be specified in an object for each module property, 
+which further has an array of rules. There will be an object for every 
+case. I have also specified to exclude everything in my node_modules 
+folder.</p><p>Next up is the plugin property. This is used to extend the
+ capabilities of webpack. Before a plugin can be used in the plugin 
+array inside the module exports object, we need to require the same.</p><!--kg-card-begin: code--><pre><code>module.exports = {</code></pre><!--kg-card-end: code--><!--kg-card-begin: code--><pre><code>// Setup plugin to use a HTML file for serving bundled js files plugins: [    new HtmlWebpackPlugin({      template: './src/index.html'    })  ]</code></pre><!--kg-card-end: code--><!--kg-card-begin: code--><pre><code>}</code></pre><!--kg-card-end: code--><p>This
+ particular plugin, as explained earlier, will use the specified file in
+ our src folder. It’ll then use that as a template for our HTML file 
+where all the bundled files will be automatically injected. There are a 
+lot of other out of the box plugins that we could use — checkout the <a href="https://webpack.js.org/plugins/" rel="noopener">official page</a> for more information.</p><p>The
+ last thing we need to do is create a .babelrc file to use the babel 
+preset we installed and take care of the ES6 classes and import 
+statements in our code. Add the following lines of code to the .babelrc 
+file.</p><!--kg-card-begin: code--><pre><code>{  "presets": ["env", "react"]}</code></pre><!--kg-card-end: code--><p>And
+ just like that, now babel will be able to use those presets. Okay so 
+enough of the setup — let’s add some React code to see how this works.</p><h3 id="react-code">React Code</h3><p>Since
+ the starting point for the application is the index.js file in src 
+folder, let’s start with that. We will start by requiring both <strong>React</strong> and <strong>ReactDOM</strong> for our use in this case. Add the below code in your index.js file.</p><!--kg-card-begin: code--><pre><code>import React from 'react';import ReactDOM from 'react-dom';import App from './Components/App';</code></pre><!--kg-card-end: code--><!--kg-card-begin: code--><pre><code>ReactDOM.render(&lt;App /&gt;, document.getElementById('app'));</code></pre><!--kg-card-end: code--><p>So
+ we simply import another file from our components folder, which you 
+will create, and add another file in the folder called App.js. So let’s 
+see what’s inside the App.js file:</p><!--kg-card-begin: code--><pre><code>import React, { Component } from 'react'</code></pre><!--kg-card-end: code--><!--kg-card-begin: code--><pre><code>class App extends Component {  render() {    return (      &lt;div&gt;        &lt;h1&gt;Webpack + React setup&lt;/h1&gt;      &lt;/div&gt;    )  }}</code></pre><!--kg-card-end: code--><!--kg-card-begin: code--><pre><code>export default App;</code></pre><!--kg-card-end: code--><p>We
+ are almost done. The only thing left now is to enable hot reloading. 
+This means that every time a change is detected, the browser auto 
+reloads the page and has the ability to build and bundle the entire 
+application when the time comes.</p><p>We can do this by adding script 
+values in the package.json file. Remove the test property in the scripts
+ object of your package.json file and add these two scripts:</p><!--kg-card-begin: code--><pre><code>"start": "webpack-dev-server --mode development --open --hot",</code></pre><!--kg-card-end: code--><!--kg-card-begin: code--><pre><code>"build": "webpack --mode production"</code></pre><!--kg-card-end: code--><p>You are all set! Go to your terminal, navigate to the root folder, and run <strong>npm start. </strong>It
+ should start a dev server on your computer and serve the HTML file in 
+your browser. If you make any minor/major changes and save the code, 
+your browser will be automatically refreshed to show the latest set of 
+changes.</p><p>Once you think you are ready to get the app bundled, you just need to hit the command, <strong>npm build, </strong>and webpack will create an optimised bundle in your project folder which can be deployed on any web server.</p><h3 id="conclusion">Conclusion</h3><p>This
+ is just a small application or use case of webpack and babel, but the 
+applications are limitless. I hope you are excited enough to explore 
+more options and ways of doing things with webpack and babel. Please 
+refer to their official websites to know more and read in depth.</p><p>I have created a Github repo with all the code in it, so please refer to it incase of any questions.</p><p><a href="https://github.com/ashishcodes4/webpack-react-setup" rel="noopener"><strong>ashishcodes4/webpack-react-setup</strong></a><br><a href="https://github.com/ashishcodes4/webpack-react-setup" rel="noopener"><em>Setting a react application from scratch without using CLI - ashishcodes4/webpack-react-setup</em>github.com</a></p><p>My
+ two cents about webpack? Well, at times you may think that it’s nothing
+ more than a tool, and why should you bother too much for a tool? But 
+trust me when I say this: the initial struggle while learning your way 
+around webpack will save you an enormous number of hours you would 
+otherwise invest developing without webpack.</p><p>That’s all for now, hope to be back with yet another interesting article very soon. I hope you have enjoyed reading this one!</p><p>In
+ case you face any difficulty or issues while following any of the above
+ mentioned steps/processes, please feel free to get in touch and leave 
+comments.</p><p>LinkedIn: <a href="https://www.linkedin.com/in/ashish-nandan-singh-490987130/" rel="noopener">https://www.linkedin.com/in/ashish-nandan-singh-490987130/</a></p><p>Twitter: <a href="https://twitter.com/ashishnandansin" rel="noopener">https://twitter.com/ashishnandansin</a></p>
+                </div>
+                <hr>
+
+
+                <p class="social-row">
+
+    If this article was helpful,
+    <a class="cta-button" onclick="window.open(`https://twitter.com/intent/tweet?text=An%20intro%20to%20Webpack%3A%20what%20it%20is%20and%20how%20to%20use%20it%0A%0Ahttps%3A%2F%2Fwww.freecodecamp.org%2Fnews%2Fan-intro-to-webpack-what-it-is-and-how-to-use-it-8304ecdc3c60%2F`, 'share-twitter', 'width=550,height=235' ); return false;">
+        tweet it.</a>
+</p>                
+<div class="learn-cta-row">
+    <p>
+        Learn to code for free. freeCodeCamp's open source curriculum has helped more than 40,000 people get jobs as
+        developers. <a class="cta-button" href="https://www.freecodecamp.org/learn">Get started</a>
+    </p>
+</div>            </section>
+
+
+
+
+
+        </article>
+    </div>
+</main>
+
+
+
+
+        <footer class="site-footer">
+    <div class="footer-container">
+        <div class="footer-top">
+            <div class="footer-desc-col">
+                <p>freeCodeCamp is a donor-supported tax-exempt 501(c)(3) nonprofit organization (United States Federal
+                    Tax Identification Number: 82-0779546)
+                </p>
+                <p>
+                    Our mission: to help people learn to code for free. We accomplish this by creating thousands of
+                    videos, articles, and interactive coding lessons - all freely available to the public. We also have
+                    thousands of freeCodeCamp study groups around the world.
+                </p>
+                <p>
+                    Donations to freeCodeCamp go toward our education initiatives, and help pay for servers, services,
+                    and staff.
+                </p>
+                <p class="footer-donation">
+                    You can&nbsp;<a href="https://freecodecamp.org/donate" class="inline" rel="noopener noreferrer" target="_blank">make a tax-deductible donation here</a>.
+                </p>
+            </div>
+            <div class="trending-guides">
+                <div class="col-header">Trending Guides</div>
+                <div class="trending-guides-row">
+                    <div class="footer-col footer-col-1">
+                        <a href="https://www.freecodecamp.org/news/javascript-closure-tutorial-with-js-closure-example-code/">JavaScript
+                            Closure</a>
+                        <a href="https://www.freecodecamp.org/news/css-tutorial-drop-shadow/">CSS Box Shadow</a>
+                        <a href="https://www.freecodecamp.org/news/python-list-append-how-to-add-an-element-to-an-array-explained-with-examples/">Python
+                            List Append</a>
+                        <a href="https://www.freecodecamp.org/news/javascript-array-sort-tutorial-how-to-use-js-sort-methods-with-code-examples/">JavaScript
+                            Array Sort</a>
+                        <a href="https://www.freecodecamp.org/news/symlink-tutorial-in-linux-how-to-create-and-remove-a-symbolic-link/">Symlink
+                            in Linux</a>
+                        <a href="https://www.freecodecamp.org/news/grep-command-tutorial-how-to-search-for-a-file-in-linux-and-unix/">Linux
+                            Grep Command</a>
+                        <a href="https://www.freecodecamp.org/news/what-is-dns/">What is DNS?</a>
+                        <a href="https://www.freecodecamp.org/news/primary-key-sql-tutorial-how-to-define-a-primary-key-in-a-database/">Primary
+                            Key SQL</a>
+                        <a href="https://www.freecodecamp.org/news/sql-update-statement-example-queries-for-updating-table-values/">SQL
+                            Update Statement</a>
+                        <a href="https://www.freecodecamp.org/news/how-to-screenshot-on-windows/">Screenshot on PC</a>
+                    </div>
+                    <div class="footer-col footer-col-2">
+                        <a href="https://www.freecodecamp.org/news/javascript-es6-promises-for-beginners-resolve-reject-and-chaining-explained/">JavaScript
+                            Promise</a>
+                        <a href="https://www.freecodecamp.org/news/what-is-github-what-is-git-and-how-to-use-these-developer-tools/">What
+                            is GitHub?</a>
+                        <a href="https://www.freecodecamp.org/news/the-python-sort-list-array-method-ascending-and-descending-explained-with-examples/">Python
+                            Sort List</a>
+                        <a href="https://www.freecodecamp.org/news/json-comment-example-how-to-comment-in-json-files/">Comments
+                            in JSON</a>
+                        <a href="https://www.freecodecamp.org/news/what-is-kanban-the-agile-methodology-defined-and-how-to-use-it-for-your-software-development-team-2/">What
+                            is Kanban?</a>
+                        <a href="https://www.freecodecamp.org/news/python-write-to-file-open-read-append-and-other-file-handling-functions-explained/">Python
+                            Write to File</a>
+                        <a href="https://www.freecodecamp.org/news/css-media-queries-breakpoints-media-types-standard-resolutions-and-more/">CSS
+                            Media Queries</a>
+                        <a href="https://www.freecodecamp.org/news/html-entities-symbols-special-character-codes-list/">HTML
+                            Entities</a>
+                        <a href="https://www.freecodecamp.org/news/excel-vba-tutorial/">Excel VBA</a>
+                        <a href="https://www.freecodecamp.org/news/vlookup-in-excel/">LOOKUP in Excel</a>
+                    </div>
+                    <div class="footer-col footer-col-3">
+                        <div class="footer-left">
+                            <a href="https://www.freecodecamp.org/news/what-is-a-proxy-server-in-english-please/">What
+                                is a Proxy Server?</a>
+                            <a href="https://www.freecodecamp.org/news/the-cat-command-in-linux-concatenation-explained-with-bash-examples/">Cat
+                                Command in Linux</a>
+                            <a href="https://www.freecodecamp.org/news/how-to-add-an-image-url-to-your-div/">CSS
+                                Background Image</a>
+                            <a href="https://www.freecodecamp.org/news/html-background-color-tutorial-how-to-change-a-div-background-color-explained-with-code-examples/">HTML
+                                Background Color</a>
+                            <a href="https://www.freecodecamp.org/news/comments-in-css/">CSS Comment Example</a>
+                        </div>
+
+                        <div class="footer-right">
+                            <a href="https://www.freecodecamp.org/news/arrow-function-javascript-tutorial-how-to-declare-a-js-function-with-the-new-es6-syntax/">Arrow
+                                Function JavaScript</a>
+                            <a href="https://www.freecodecamp.org/news/how-to-remove-duplicates-in-excel-delete-duplicate-rows-with-a-few-clicks/">Remove
+                                Duplicates in Excel</a>
+                            <a href="https://www.freecodecamp.org/news/what-is-dllhost-exe-and-com-surrogate-in-windows-task-manager-solved/">dllhost.exe
+                                COM Surrogate</a>
+                            <a href="https://www.freecodecamp.org/news/boolean-algebra/">Boolean Algebra Truth Table</a>
+                            <a href="https://www.freecodecamp.org/news/can-you-facetime-on-android-no-but-here-are-some-alternative-video-conferencing-apps/">Video
+                                Chat for Android</a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-buttom">
+            <div class="col-header">Our Nonprofit</div>
+            <div class="footer-divder"></div>
+            <div class="our-nonprofit">
+                <a href="https://www.freecodecamp.org/news/about/">About</a>
+                <a href="https://www.linkedin.com/school/free-code-camp/people/" rel="noopener noreferrer" target="_blank">Alumni Network</a>
+                <a href="https://github.com/freeCodeCamp/">Open Source</a>
+                <a href="https://www.freecodecamp.org/shop/" rel="noopener noreferrer" target="_blank">Shop</a>
+                <a href="https://www.freecodecamp.org/news/support/">Support</a>
+                <a href="https://www.freecodecamp.org/news/sponsors/">Sponsors</a>
+                <a href="https://www.freecodecamp.org/news/academic-honesty-policy/">Academic Honesty</a>
+                <a href="https://www.freecodecamp.org/news/code-of-conduct/">Code of Conduct</a>
+                <a href="https://www.freecodecamp.org/news/privacy-policy/">Privacy Policy</a>
+                <a href="https://www.freecodecamp.org/news/terms-of-service/">Terms of Service</a>
+                <a href="https://www.freecodecamp.org/news/copyright-policy/">Copyright Policy</a>
+            </div>
+        </div>
+    </div>
+</footer>
+    </div>
+
+
+    <script>
+        var images = document.querySelectorAll('.kg-gallery-image img');
+        images.forEach(function (image) {
+            var container = image.closest('.kg-gallery-image');
+            var width = image.attributes.width.value;
+            var height = image.attributes.height.value;
+            var ratio = width / height;
+            container.style.flex = ratio + ' 1 0%';
+        })
+    </script>
+
+
+    <script src="jquery-3.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
+        </script>
+    <script type="text/javascript" src="jquery.js"></script>
+
+    <script type="text/javascript" src="prism.js"></script>
+    <script type="text/javascript" src="prism-unescaped-markup.js"></script>
+    <script type="text/javascript" src="prism-markup-templating.js"></script>
+    <script type="text/javascript" src="prism-bash.js"></script>
+    <script type="text/javascript" src="prism-c.js"></script>
+    <script type="text/javascript" src="prism-clojure.js"></script>
+    <script type="text/javascript" src="prism-cpp.js"></script>
+    <script type="text/javascript" src="prism-csharp.js"></script>
+    <script type="text/javascript" src="prism-css.js"></script>
+    <script type="text/javascript" src="prism-docker.js"></script>
+    <script type="text/javascript" src="prism-elixir.js"></script>
+    <script type="text/javascript" src="prism-erlang.js"></script>
+    <script type="text/javascript" src="prism-git.js"></script>
+    <script type="text/javascript" src="prism-go.js"></script>
+    <script type="text/javascript" src="prism-graphql.js"></script>
+    <script type="text/javascript" src="prism-haskell.js"></script>
+    <script type="text/javascript" src="prism-java.js"></script>
+    <script type="text/javascript" src="prism-javascript.js"></script>
+    <script type="text/javascript" src="prism-json.js"></script>
+    <script type="text/javascript" src="prism-jsx.js"></script>
+    <script type="text/javascript" src="prism-kotlin.js"></script>
+    <script type="text/javascript" src="prism-lua.js"></script>
+    <script type="text/javascript" src="prism-markup.js"></script>
+    <script type="text/javascript" src="prism-php.js"></script>
+    <script type="text/javascript" src="prism-python.js"></script>
+    <script type="text/javascript" src="prism-r.js"></script>
+    <script type="text/javascript" src="prism-ruby.js"></script>
+    <script type="text/javascript" src="prism-rust.js"></script>
+    <script type="text/javascript" src="prism-scala.js"></script>
+    <script type="text/javascript" src="prism-sql.js"></script>
+    <script type="text/javascript" src="prism-swift.js"></script>
+    <script type="text/javascript" src="prism-typescript.js"></script>
+    <script type="text/javascript" src="prism-yaml.js"></script>
+
+    <script>
+    $(document).ready(function () {
+        // Start fitVids
+        var $postContent = $(".post-full-content");
+        $postContent.fitVids();
+        // End fitVids
+    });
+</script>
+
+
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://v20200617-gap.freecodecamp.org/*(d3d3Lmdvb2dsZXRhZ21hbmFnZXIuY29t)*/*(bnMuaHRtbD9pZD1HVE0tNUQ2UktLUA)*"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+
+<div style="width: 0px; height: 0px; position: fixed; left: 0px; top: 0px; overflow: hidden;"><iframe src="https://runkit.com/e/application-sha256-1a55da645cc6ddd84bd2ed1086da462d8e5b47e4aa9a6e028bb2be41c9e1e7ec#https%3A%2F%2Fwww.freecodecamp.org" name="runkit-application" style="padding: 0px; margin: 0px; border: 0px none; height: 100vh; width: 0px; background: transparent none repeat scroll 0% 0%;" frameborder="0"></iframe></div></body></html>

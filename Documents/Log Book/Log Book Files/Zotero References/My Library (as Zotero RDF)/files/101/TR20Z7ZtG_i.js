@@ -1,0 +1,3 @@
+if (self.CavalryLogger) { CavalryLogger.start_js(["aMUtP"]); }
+
+__d("WorkFeatureAccessControl",["WorkCompanyEnabledFeatures"],(function(a,b,c,d,e,f){"use strict";e.exports={isFeatureAllowed:function(a){return b("WorkCompanyEnabledFeatures").features.includes(a)},arePaidFeaturesAllowed:function(){return b("WorkCompanyEnabledFeatures").features.includes("paid_base")},accessResponse:function(a){if(b("WorkCompanyEnabledFeatures").features.includes(a))return"allowed";else return"feature_not_available"},allowedFeatures:b("WorkCompanyEnabledFeatures").features}}),null);

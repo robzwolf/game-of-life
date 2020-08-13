@@ -1,0 +1,79 @@
+Skip to main content Skip to article
+Elsevier logo ScienceDirect
+
+    Journals & Books
+
+Robbie Jakob-Whitworth
+You have institutional access
+View account Sign out
+
+    Journals & Books
+
+    Help
+
+Settings
+
+    My recommendations 
+    My history  new
+    Manage alerts 
+    Purchased articles 
+
+Brought to you by
+ 
+Download PDF Download
+Share
+Export
+Advanced
+JavaScript is disabled on your browser. Please enable JavaScript to use all the features on this page.
+Elsevier
+Journal of Systems and Software
+Volume 81, Issue 12 , December 2008, Pages 2194-2209
+Journal of Systems and Software
+A component- and push-based architectural style for ajax applications ☆
+Author links open overlay panel Ali Mesbah a Arie van Deursen b
+Show more
+https://doi.org/10.1016/j.jss.2008.04.005 Get rights and content
+Abstract
+
+A new breed of web application, dubbed ajax , is emerging in response to a limited degree of interactivity in large-grain stateless Web interactions. At the heart of this new approach lies a single page interaction model that facilitates rich interactivity. Also push-based solutions from the distributed systems are being adopted on the web for ajax applications. The field is, however, characterized by the lack of a coherent and precisely described set of architectural concepts. As a consequence, it is rather difficult to understand, assess, and compare the existing approaches. We have studied and experimented with several ajax frameworks trying to understand their architectural properties. In this paper, we summarize four of these frameworks and examine their properties and introduce the spiar architectural style which captures the essence of ajax applications. We describe the guiding software engineering principles and the constraints chosen to induce the desired properties. The style emphasizes user interface component development, intermediary delta-communication between client/server components, and push-based event notification of state changes through the components, to improve a number of properties such as user interactivity, user-perceived latency, data coherence, and ease of development. In addition, we use the concepts and principles to discuss various open issues in ajax frameworks and application development.
+
+    Previous article in issue
+    Next article in issue
+
+Keywords
+ajax
+Web architectural style
+Web engineering
+Single page interface
+Rich internet application
+Loading...
+Recommended articles Citing articles (0)
+
+Ali Mesbah received the MSc degree in computer science from Delft University of Technology in 2003. Since 2001, he has worked as a software engineer on different Web-based projects at West Consulting. Currently, he is working as a PhD candidate at the Software Engineering Research Group, Delft University of Technology. His research interests include Ajax-driven web engineering, reverse engineering, and software architecture.
+
+Arie van Deursen is a full professor at Delft University of Technology, where he is heading the Software Engineering Research Group. He obtained his MSc degree in computer science in 1990 from the Vrije Universiteit, Amsterdam, and his PhD degree from the University of Amsterdam in 1994. From 1996 until 2006 he was a research leader at CWI, the Dutch National Institute for Research in Mathematics in Computer Science. His research interests include reverse engineering, program comprehension, and software architecture. He was program chair of the Working Conference on Reverse Engineering (WCRE) in 2002 and 2003, and served on numerous program committees in the areas of software evolution, maintenance, and software engineering in general. He is a member of the editorial board of the Empirical Software Engineering journal.
+
+☆
+
+    This is a substantially revised and extended version of our paper ‘An Architectural Style for ajax ’ which appeared in the Proceedings of the 6th Working IEEE/IFIP Conference on Software Architecture (WICSA), 2007 ( Mesbah and van Deursen, 2007 ).
+
+Copyright © 2008 Elsevier Inc. All rights reserved.
+Recommended articles
+No articles found.
+Citing articles
+Loading…
+Article Metrics
+View article metrics
+Elsevier
+
+    About ScienceDirect
+    Remote access
+    Shopping cart
+    Advertise
+    Contact and support
+    Terms and conditions
+    Privacy policy
+
+We use cookies to help provide and enhance our service and tailor content and ads. By continuing you agree to the use of cookies .
+
+Copyright © 2019 Elsevier B.V. or its licensors or contributors. ScienceDirect ® is a registered trademark of Elsevier B.V.

@@ -1,0 +1,92 @@
+
+Home   •   LifeWiki   •   Forums   •   Download Golly
+Golly
+From LifeWiki
+Jump to navigation Jump to search
+Golly
+Golly image
+Homepage 	Click here
+Purpose 	Life simulation
+Created by 	Andrew Trevorrow and Tomas Rokicki
+Platform 	Cross-platform
+
+Golly is an open-source, cross-platform tool for simulating Conway's Game of Life that was written by Andrew Trevorrow and Tomas Rokicki , with contributions by Dave Greene , Jason Summers , Tim Hutton, Maks Verver, Robert Munafo and Chris Rowett . It contains support for many different types of cellular automaton rules and provides implementations of many different algorithms for evolving those rules. It is fast enough to implement many small patterns via unit cells quickly on current hardware.
+
+In addition to simulating cellular automata, Golly contains libraries that allows it to interact with Lua and Python scripts, allowing it to perform various other tasks as well. For example, some of the scripts included with it allow it to produce simple animated GIFs of patterns, display population graphs, and calculate the density of the current pattern.
+
+Golly is also one of the few Life simulation programs that supports a visual Hashlife mode, allowing for the simulation of huge patterns in very little time. As a result, it is one of the only programs (if not the only program) capable of simulating meta-patterns via the OTCA metapixel efficiently. Several such meta-patterns come packaged with Golly.
+
+Its logo is Kok's galaxy .
+External links
+
+    Golly homepage
+    Golly Scripts Database
+
+    Golly scripts (discussion thread) at the ConwayLife.com forums
+    Golly at Wikipedia
+
+    Golly at the Life Lexicon
+
+Retrieved from " https://conwaylife.com/w/index.php?title=Golly&oldid=53637 "
+Categories :
+
+    Everything else
+    Software
+
+Hidden categories:
+
+    Pages that link to the ConwayLife.com forums
+    Pages that link to Wikipedia
+    Pages that link to the Life Lexicon
+
+Navigation menu
+Personal tools
+
+    Create account
+    Log in
+
+Namespaces
+
+    Page
+    Discussion
+
+Variants
+
+Views
+
+    Read
+    View source
+    View history
+
+More
+
+Search
+Navigation
+
+    Wiki home
+    ConwayLife.com
+    How to contribute
+    Tiki bar
+    Recent changes
+    Random page
+    Links
+
+Tools
+
+    What links here
+    Related changes
+    Special pages
+    Printable version
+    Permanent link
+    Page information
+
+    This page was last edited on 27 December 2018, at 15:36.
+    Content is available under GNU Free Documentation License 1.2 unless otherwise noted.
+
+    Privacy policy
+    About LifeWiki
+    Disclaimers
+
+    GNU Free Documentation License 1.2
+    Powered by MediaWiki
+
