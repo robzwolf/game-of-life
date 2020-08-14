@@ -1,0 +1,41 @@
+{
+  "name": "game-of-life-implementation-1",
+  "version": "1.0.0",
+  "description": "First visualisation of Conway's Game of Life, using native <div>s on the page.",
+  "scripts": {
+    "test": "eslint src/js/",
+    "lint-fix": "eslint --fix src/js/",
+    "build": "webpack",
+    "watch": "webpack --watch",
+    "clean": "rm -rf node_modules public/dist/",
+    "serve": "static-server public/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robzwolf/game-of-life.git"
+  },
+  "author": "Robbie Jakob-Whitworth",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/robzwolf/game-of-life/issues"
+  },
+  "homepage": "https://github.com/robzwolf/game-of-life#readme",
+  "devDependencies": {
+    "css-loader": "^3.6.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "mini-css-extract-plugin": "^0.8.2",
+    "node-sass": "^4.14.1",
+    "normalize-scss": "^7.0.1",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "prop-types": "^15.7.2",
+    "sass-loader": "^8.0.2",
+    "style-loader": "^1.2.1",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
+  },
+  "dependencies": {
+    "static-server": "^2.2.1"
+  }
+}

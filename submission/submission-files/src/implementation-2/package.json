@@ -1,0 +1,64 @@
+{
+  "name": "game-of-life-implementation-2",
+  "version": "1.0.0",
+  "description": "Second visualisation of Conway's Game of Life, using React to render diffs.",
+  "scripts": {
+    "test": "eslint --ext js,jsx ./src/js/",
+    "lint-fix": "eslint --ext js,jsx --fix ./src/js/",
+    "format": "prettier --write ./src/",
+    "build": "webpack",
+    "watch": "webpack --watch",
+    "clean": "rm -rf node_modules public/dist/",
+    "serve": "static-server public/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robzwolf/game-of-life.git"
+  },
+  "author": "Robbie Jakob-Whitworth",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/robzwolf/game-of-life/issues"
+  },
+  "homepage": "https://github.com/robzwolf/game-of-life#readme",
+  "devDependencies": {
+    "@babel/core": "^7.11.0",
+    "@babel/preset-env": "^7.11.0",
+    "@babel/preset-react": "^7.10.4",
+    "@imaginary-cloud/eslint-config-react": "^1.0.1",
+    "@imaginary-cloud/prettier-config": "^1.0.0",
+    "@typescript-eslint/eslint-plugin": "^2.34.0",
+    "@typescript-eslint/parser": "^2.34.0",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.1.0",
+    "css-loader": "^3.6.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-config-react-app": "^5.2.1",
+    "eslint-plugin-flowtype": "^4.7.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.20.5",
+    "eslint-plugin-react-hooks": "^2.5.1",
+    "mini-css-extract-plugin": "^0.8.2",
+    "node-sass": "^4.14.1",
+    "normalize-scss": "^7.0.1",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "prettier": "^2.0.5",
+    "sass-loader": "^8.0.2",
+    "style-loader": "^1.2.1",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
+  },
+  "dependencies": {
+    "airbnb": "0.0.2",
+    "airbnb-prop-types": "^2.16.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "static-server": "^2.2.1"
+  }
+}
